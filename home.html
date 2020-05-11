@@ -2,16 +2,18 @@
 <html>
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="./hover-min.css"></link>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./hover-min.css">
+    </link>
 
-  <link rel="stylesheet" href="./index.css"></link>
+    <link rel="stylesheet" href="./home.css">
+    </link>
 
 
 
-  <script type="text/javascript" src="./index.js"></script>
-  <meta charset=utf-8 />
+    <script type="text/javascript" src="./index.js"></script>
+    <meta charset=utf-8 />
 
 </head>
 
@@ -20,16 +22,20 @@
 
         <h1>CNFS Workshops - Flash replacement</h1>
     </div>
+
     <div class="container">
+
         <div class="index">
-            <ul class="list-group">            
-            <li class="hvr-grow list-group-item" onclick=onLinkClick(1)>Prototype 1</li>
-            <li class="hvr-grow list-group-item" onclick=onLinkClick(2)>Prototype 2</li>
-            <li class="hvr-grow list-group-item" onclick=onLinkClick(3)>Prototype 3</li>
-            <li class="hvr-grow list-group-item" onclick=onLinkClick(4)>Prototype 4</li>
-            <li class="hvr-grow list-group-item" onclick=onLinkClick(5)>Prototype 5</li>
-            <li class="hvr-grow list-group-item" onclick=onLinkClick(6)>Prototype 6</li>
-            <li class="hvr-grow list-group-item" onclick=onLinkClick(7)>Prototype 7</li>
+            <h2 style="text-align: start;">Phase 1</h2>
+
+            <ul class="list-group">
+                <li class="hvr-grow list-group-item" onclick=onLinkClick(1)>Prototype 1</li>
+                <li class="hvr-grow list-group-item" onclick=onLinkClick(2)>Prototype 2</li>
+                <li class="hvr-grow list-group-item" onclick=onLinkClick(3)>Prototype 3</li>
+                <li class="hvr-grow list-group-item" onclick=onLinkClick(4)>Prototype 4</li>
+                <li class="hvr-grow list-group-item" onclick=onLinkClick(5)>Prototype 5</li>
+                <li class="hvr-grow list-group-item" onclick=onLinkClick(6)>Prototype 6</li>
+                <li class="hvr-grow list-group-item" onclick=onLinkClick(7)>Prototype 7</li>
             </ul>
 
 
@@ -37,13 +43,21 @@
         <div class="links fade">
 
             <button style="font-size: large; font-weight: 900;" class="hvr-pulse btn btn-success" onclick=togglePanes()>Index</button>
-            <ul  class="list-group">
-                <li class="hvr-grow list-group-item"><a target="_blank">Prototype</a></li>
-                <li class="hvr-grow list-group-item"><a target="_blank">Integration</a></li>
+            <ul class="list-group">
+                <li onclick=onActivityClick(0) class=" hvr-grow list-group-item "><a target="_blank ">Prototype</a></li>
+                <li onclick=onActivityClick(1) class="hvr-grow list-group-item "><a target="_blank ">Integration</a></li>
+
             </ul>
+
+            <div class="proto-container fade">
+                <iframe class="proto-iframe" src="./Proto3/QCM.html "></div>
+            </div>
+    
+
 
         </div>
 
+       
     </div>
 
 </body>
