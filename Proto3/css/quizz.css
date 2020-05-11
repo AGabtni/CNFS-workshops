@@ -1,0 +1,46 @@
+
+.flexColumn{
+    display: flex;
+    flex-direction: column;
+}
+
+ul{
+    padding :0 ;
+}
+ul li{
+    list-style: none;
+    border : 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px 0 20px;
+    transition: border 0.1s ease, background-color 0.5s ease;
+}
+
+ul li:hover {
+    background-color: rgba(1,1,1, 0.4);
+}
+
+.selected{
+
+    border: 5px solid rgb(218,165,32);
+    background-color: rgba(218,165,32 0.4);
+}
+.correct{
+
+    border: 5px solid rgb(34,139,34);
+    background-color: rgba( 34,139,34, 0.4);
+}
+
+.incorrect{
+
+    border: 5px solid rgba(160, 49, 35, 0.8);
+    background-color: rgba(160, 49, 35, 0.4);
+}
+
+.feedback{
+    margin: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    word-break: break-word;
+
+}
