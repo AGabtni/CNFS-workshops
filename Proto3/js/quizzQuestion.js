@@ -1,16 +1,16 @@
-
 class Question {
 
 
     choices = [];
     solutions = [];
-
+    statement;
+    feedback;
     //parent html container
     parentContainer;
 
     titleElement;
-    feedbackElement ;
-
+    feedbackElement;
+    statementElement;
 
     // html list elements found 
     // in the parent container
@@ -30,15 +30,54 @@ class Question {
     //  @targetHtmlId : parent container of the question 
     //  @choices : array with the values of the question choices
     //  @solutions : array with the values of the question solutions 
-    constructor(targetHtmlId, choices, solutions) {
+    constructor(targetHtmlId, choices, data) {
+
+        this.parseQuizzData(data)
         this.choices = choices;
-        this.solutions = solutions;
         this.parentContainer = document.getElementById(targetHtmlId);
+        console.log(this.parentContainer)
         this.choiceListElements = this.parentContainer.querySelectorAll("li");
         this.titleElement = this.parentContainer.getElementsByClassName("header")[0];
-        this.feedbackElement = this.parentContainer.getElementsByClassName("feedback")[0]; 
+        this.feedbackElement = this.parentContainer.getElementsByClassName("feedback")[0];
+        this.statementElement = this.parentContainer.getElementsByClassName("statement")[0];
 
     }
+
+
+
+    //Format quizz data  :
+
+
+    parseQuizzData(data) {
+
+
+        this.solutions = data.solution;
+        this.statement = data.statement;
+        this.feedback = data.feedback;
+
+
+
+
+    }
+
+    //fills the question list with 
+    // with the value of the choices 
+    initQuestion() {
+
+
+
+        for (var i = 0; i < this.choiceListElements.length; i++) {
+
+            this.choiceListElements[i].textContent = this.choices[i];
+
+
+        }
+
+        this.feedbackElement.querySelectorAll("p")[0].innerHTML = this.feedback;
+        this.statementElement.querySelectorAll("p")[0].innerHTML = this.statement;
+
+    }
+
 
     // on click of the list element
     // pushes the values of the selected element
@@ -186,19 +225,6 @@ class Question {
         return false;
 
     }
-    //fills the question list with 
-    // with the value of the choices    
-    initQuestion() {
-
-
-
-        for (var i = 0; i < this.choiceListElements.length; i++) {
-
-            this.choiceListElements[i].textContent = this.choices[i];
-
-
-        }
-    }
 
 
 
@@ -207,4 +233,3 @@ class Question {
 
 
 }
-

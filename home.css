@@ -1,5 +1,6 @@
 body {
-    margin: 0
+    margin: 0;
+    flex: 1;
 }
 
 .banner {
@@ -52,7 +53,6 @@ body {
 }
 
 ul {
-    margin: 10px;
     cursor: pointer;
 }
 

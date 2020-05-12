@@ -58,17 +58,7 @@ var quizzData = {
 
 
 };
-var solution = [
-    [1],
-    [1],
-    [0],
-    [0],
-    [1],
-    [1],
-    [0],
-    [0],
-    [0]
-]
+
 window.onload = initQuizz();
 
 
@@ -79,11 +69,10 @@ function initQuizz() {
     for (var q = 1; q < 10; q++) {
         var questionTag = "slide_" + q
 
-        quizz.push(new Question(questionTag, ["True", "False"], quizzData[q - 1]));
+        quizz.push(new Question(questionTag, ["Vrai", "Faux"], quizzData[q - 1]));
 
 
     }
-    console.log(quizz)
     quizz.forEach((element, index) => {
         element.initQuestion();
         element.titleElement.textContent = "Situation  " + (index + 1) + "/" + quizz.length;

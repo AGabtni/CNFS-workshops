@@ -13,9 +13,8 @@ ul li {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
-    margin: 20px;
     transition: border 0.1s ease, background-color 0.5s ease;
-    min-width: 50%;
+    min-width: 200px;
     text-align: center;
 }
 
@@ -25,10 +24,13 @@ ul li:hover {
 
 .horizontal-list {
     list-style: none;
+    width: 100%;
+    justify-content: center;
 }
 
 .horizontal-list li {
     display: inline;
+    margin: 20px;
 }
 
 .selected {
@@ -51,6 +53,7 @@ ul li:hover {
     opacity: 0;
     transition: opacity 0.5s ease;
     word-break: break-word;
+    text-align: start;
 }
 
 .verify-btn {

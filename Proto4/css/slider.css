@@ -33,7 +33,7 @@ img {
 /* Position the "next button" to the right */
 
 .prev {
-    left: -15px;
+    left: 0px;
     border-right: 15px solid green;
 }
 

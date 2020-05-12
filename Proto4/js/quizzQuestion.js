@@ -10,6 +10,7 @@ class Question {
     parentContainer;
 
     titleElement;
+    statementElement;
     feedbackElement;
 
 
@@ -40,10 +41,7 @@ class Question {
         this.choiceListElements = this.parentContainer.querySelectorAll("li");
         this.titleElement = this.parentContainer.getElementsByClassName("header")[0];
         this.feedbackElement = this.parentContainer.getElementsByClassName("feedback")[0];
-
-        this.feedbackElement.querySelectorAll("p")[0].innerHTML = this.feedback;
-
-        console.log(data.statement)
+        this.statementElement = this.parentContainer.getElementsByClassName("statement")[0];
 
     }
 
@@ -59,7 +57,7 @@ class Question {
         this.statement = data.statement;
         this.feedback = data.feedback;
 
-
+        console.log(data.statement)
 
 
 
@@ -67,7 +65,9 @@ class Question {
 
 
     //fills the question list with 
-    // with the value of the choices    
+    // with the value of the choices   
+    // as well as the statement
+    // and the feedback if there is any 
     initQuestion() {
 
 
@@ -78,6 +78,9 @@ class Question {
 
 
         }
+
+        this.feedbackElement.querySelectorAll("p")[0].innerHTML = this.feedback;
+        this.statementElement.querySelectorAll("p")[0].innerHTML = this.statement;
     }
 
     // on click of the list element
