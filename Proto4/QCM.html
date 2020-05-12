@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--DONT FORGET ABOUT THE CSS & THE JSON DATA-->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="css/quizz.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <meta charset=utf-8 />
+
+</head>
+
+<body>
+    <!--COPY CODE FROM HERE-->
+    <div class="slideshow-container">
+
+        <div id="slide_1" class="slide current">
+            <!--Headers row-->
+            <div class="statement" style="display: flex; flex-direction: column;padding-left: 20px;">
+                <h3 class="header">Question 1</h3>
+                <p>The trainee arrives inadequately dressed on the first day of his placement.</p>
+
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                <!--Choices section-->
+                <div style="padding-left: 20px; margin: 10px; ">
+                    <ul class="horizontal-list">
+                        <!--Associate each list element onclick attribute to
+          the question's respective choice-->
+                        <li onclick=quizz[0].onChoiceClick(0)>Choice 1</li>
+                        <li onclick=quizz[0].onChoiceClick(1)>Choice 2</li>
+
+
+                    </ul>
+                </div>
+
+                <!--Feedback section-->
+                <div style="
+                height: 100%;
+                justify-content: center; 
+                align-items: center; 
+                text-align: center;">
+
+                    <button class="verify-btn" onclick=quizz[0].verifySelection() style="width: 100px ;">Check answer</button>
+                    <div class="feedback" style="justify-self: end;">
+                        <!--INSERT FEEDBACK HERE-->
+                        <p></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="slide_2" class="slide current">
+            <!--Headers row-->
+            <div style="display: flex; flex-direction: column;padding-left: 20px;">
+                <h3 class="header">Question 1</h3>
+                <p>The trainee arrives inadequately dressed on the first day of his placement.</p>
+
+            </div>
+
+            <!--Choices section-->
+            <div class="flexColumn" style="float : left; padding-left: 20px; margin: 10px; width: 50%; ">
+                <ul style="list-style:none; ">
+                    <!--Associate each list element onclick attribute to
+          the question's respective choice-->
+                    <li onclick=quizz[1].onChoiceClick(0)>Choice 1</li>
+                    <li onclick=quizz[1].onChoiceClick(1)>Choice 2</li>
+
+
+                </ul>
+            </div>
+
+            <!--Feedback section-->
+            <div class="flexColumn" style="
+                height: 100%;
+                justify-content: center; 
+                align-items: center; 
+                text-align: center;">
+
+                <button class="verify-btn" onclick=quizz[1].verifySelection() style="width: 100px ;">Check answer</button>
+                <div class="feedback" style="justify-self: end;">
+                    <!--INSERT FEEDBACK HERE-->
+                    <p></p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div id="slide_3" class="slide current">
+            <!--Headers row-->
+            <div style="display: flex; flex-direction: column;padding-left: 20px;">
+                <h3 class="header">Question 1</h3>
+                <p>The trainee arrives inadequately dressed on the first day of his placement.</p>
+
+            </div>
+
+            <!--Choices section-->
+            <div class="flexColumn" style="float : left; padding-left: 20px; margin: 10px; width: 50%; ">
+                <ul style="list-style:none; ">
+                    <!--Associate each list element onclick attribute to
+          the question's respective choice-->
+                    <li onclick=quizz[2].onChoiceClick(0)>Choice 1</li>
+                    <li onclick=quizz[2].onChoiceClick(1)>Choice 2</li>
+
+
+                </ul>
+            </div>
+
+            <!--Feedback section-->
+            <div class="flexColumn" style="
+                height: 100%;
+                justify-content: center; 
+                align-items: center; 
+                text-align: center;">
+
+                <button class="verify-btn" onclick=quizz[2].verifySelection() style="width: 100px ;">Check answer</button>
+                <div class="feedback" style="justify-self: end;">
+                    <!--INSERT FEEDBACK HERE-->
+                    <p></p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div id="slide_4" class="slide current">
+            <!--Headers row-->
+            <div style="display: flex; flex-direction: column;padding-left: 20px;">
+                <h3 class="header">Question 1</h3>
+                <p>The trainee arrives inadequately dressed on the first day of his placement.</p>
+
+            </div>
+
+            <!--Choices section-->
+            <div class="flexColumn" style="float : left; padding-left: 20px; margin: 10px; width: 50%; ">
+                <ul style="list-style:none; ">
+                    <!--Associate each list element onclick attribute to
+          the question's respective choice-->
+                    <li onclick=quizz[3].onChoiceClick(0)>Choice 1</li>
+                    <li onclick=quizz[3].onChoiceClick(1)>Choice 2</li>
+
+
+                </ul>
+            </div>
+
+            <!--Feedback section-->
+            <div class="flexColumn" style="
+                height: 100%;
+                justify-content: center; 
+                align-items: center; 
+                text-align: center;">
+
+                <button class="verify-btn" onclick=quizz[3].verifySelection() style="width: 100px ;">Check answer</button>
+                <div class="feedback" style="justify-self: end;">
+                    <!--INSERT FEEDBACK HERE-->
+                    <p></p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div id="slide_5" class="slide current">
+            <!--Headers row-->
+            <div style="display: flex; flex-direction: column;padding-left: 20px;">
+                <h3 class="header">Question 1</h3>
+                <p>The trainee arrives inadequately dressed on the first day of his placement.</p>
+
+            </div>
+
+            <!--Choices section-->
+            <div class="flexColumn" style="float : left; padding-left: 20px; margin: 10px; width: 50%; ">
+                <ul style="list-style:none; ">
+                    <!--Associate each list element onclick attribute to
+          the question's respective choice-->
+                    <li onclick=quizz[4].onChoiceClick(0)>Choice 1</li>
+                    <li onclick=quizz[4].onChoiceClick(1)>Choice 2</li>
+
+
+                </ul>
+            </div>
+
+            <!--Feedback section-->
+            <div class="flexColumn" style="
+                height: 100%;
+                justify-content: center; 
+                align-items: center; 
+                text-align: center;">
+
+                <button class="verify-btn" onclick=quizz[4].verifySelection() style="width: 100px ;">Check answer</button>
+                <div class="feedback" style="justify-self: end;">
+                    <!--INSERT FEEDBACK HERE-->
+                    <p></p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div id="slide_6" class="slide current">
+            <!--Headers row-->
+            <div style="display: flex; flex-direction: column;padding-left: 20px;">
+                <h3 class="header">Question 1</h3>
+                <p>The trainee arrives inadequately dressed on the first day of his placement.</p>
+
+            </div>
+
+            <!--Choices section-->
+            <div class="flexColumn" style="float : left; padding-left: 20px; margin: 10px; width: 50%; ">
+                <ul style="list-style:none; ">
+                    <!--Associate each list element onclick attribute to
+          the question's respective choice-->
+                    <li onclick=quizz[5].onChoiceClick(0)>Choice 1</li>
+                    <li onclick=quizz[5].onChoiceClick(1)>Choice 2</li>
+
+
+                </ul>
+            </div>
+
+            <!--Feedback section-->
+            <div class="flexColumn" style="
+                height: 100%;
+                justify-content: center; 
+                align-items: center; 
+                text-align: center;">
+
+                <button class="verify-btn" onclick=quizz[5].verifySelection() style="width: 100px ;">Check answer</button>
+                <div class="feedback" style="justify-self: end;">
+                    <!--INSERT FEEDBACK HERE-->
+                    <p></p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div id="slide_7" class="slide current">
+            <!--Headers row-->
+            <div style="display: flex; flex-direction: column;padding-left: 20px;">
+                <h3 class="header">Question 1</h3>
+                <p>The trainee arrives inadequately dressed on the first day of his placement.</p>
+
+            </div>
+
+            <!--Choices section-->
+            <div class="flexColumn" style="float : left; padding-left: 20px; margin: 10px; width: 50%; ">
+                <ul style="list-style:none; ">
+                    <!--Associate each list element onclick attribute to
+          the question's respective choice-->
+                    <li onclick=quizz[6].onChoiceClick(0)>Choice 1</li>
+                    <li onclick=quizz[6].onChoiceClick(1)>Choice 2</li>
+
+
+                </ul>
+            </div>
+
+            <!--Feedback section-->
+            <div class="flexColumn" style="
+                height: 100%;
+                justify-content: center; 
+                align-items: center; 
+                text-align: center;">
+
+                <button class="verify-btn" onclick=quizz[6].verifySelection() style="width: 100px ;">Check answer</button>
+                <div class="feedback" style="justify-self: end;">
+                    <!--INSERT FEEDBACK HERE-->
+                    <p></p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div id="slide_8" class="slide current">
+            <!--Headers row-->
+            <div style="display: flex; flex-direction: column;padding-left: 20px;">
+                <h3 class="header">Question 1</h3>
+                <p>The trainee arrives inadequately dressed on the first day of his placement.</p>
+
+            </div>
+
+            <!--Choices section-->
+            <div class="flexColumn" style="float : left; padding-left: 20px; margin: 10px; width: 50%; ">
+                <ul style="list-style:none; ">
+                    <!--Associate each list element onclick attribute to
+          the question's respective choice-->
+                    <li onclick=quizz[7].onChoiceClick(0)>Choice 1</li>
+                    <li onclick=quizz[7].onChoiceClick(1)>Choice 2</li>
+
+
+                </ul>
+            </div>
+
+            <!--Feedback section-->
+            <div class="flexColumn" style="
+                height: 100%;
+                justify-content: center; 
+                align-items: center; 
+                text-align: center;">
+
+                <button class="verify-btn" onclick=quizz[7].verifySelection() style="width: 100px ;">Check answer</button>
+                <div class="feedback" style="justify-self: end;">
+                    <!--INSERT FEEDBACK HERE-->
+                    <p></p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div id="slide_9" class="slide current">
+            <!--Headers row-->
+            <div style="display: flex; flex-direction: column;padding-left: 20px;">
+                <h3 class="header">Question 1</h3>
+                <p>The trainee arrives inadequately dressed on the first day of his placement.</p>
+
+            </div>
+
+            <!--Choices section-->
+            <div class="flexColumn" style="float : left; padding-left: 20px; margin: 10px; width: 50%; ">
+                <ul style="list-style:none; ">
+                    <!--Associate each list element onclick attribute to
+          the question's respective choice-->
+                    <li onclick=quizz[8].onChoiceClick(0)>Choice 1</li>
+                    <li onclick=quizz[8].onChoiceClick(1)>Choice 2</li>
+
+
+                </ul>
+            </div>
+
+            <!--Feedback section-->
+            <div class="flexColumn" style="
+                height: 100%;
+                justify-content: center; 
+                align-items: center; 
+                text-align: center;">
+
+                <button class="verify-btn" onclick=quizz[8].verifySelection() style="width: 100px ;">Check answer</button>
+                <div class="feedback" style="justify-self: end;">
+                    <!--INSERT FEEDBACK HERE-->
+                    <p></p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <a class="prev" onclick="prev(-1)">&#10094;</a>
+        <a class="next" onclick="next(1)">&#10095;</a>
+
+    </div>
+
+    <!--Number of dots must match the number of slides-->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+        <span class="dot" onclick="currentSlide(6)"></span>
+        <span class="dot" onclick="currentSlide(7)"></span>
+        <span class="dot" onclick="currentSlide(8)"></span>
+        <span class="dot" onclick="currentSlide(9)"></span>
+
+    </div>
+
+    <!--TO HERE-->
+
+    <!--DONT FORGET ABOUT THE SCRIPTS-->
+    <script src="js/slider.js"></script>
+    <script src="js/quizzQuestion.js"></script>
+    <script src="activity.js"></script>
+
+</body>
+
+</html>
