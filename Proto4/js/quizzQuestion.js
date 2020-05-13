@@ -57,7 +57,6 @@ class Question {
         this.statement = data.statement;
         this.feedback = data.feedback;
 
-        console.log(data.statement)
 
 
 
@@ -93,7 +92,8 @@ class Question {
 
             var foundChoice = false;
 
-
+            // remove the selected choice
+            // if toggled (double click)
             for (var i = 0; i < this.selectChoices.length; i++) {
 
 
@@ -107,8 +107,10 @@ class Question {
                 }
             }
 
-            if (!foundChoice)
+            if (!foundChoice) {
+                this.selectChoices = []
                 this.selectChoices.push(id);
+            }
 
         } else {
 
@@ -176,7 +178,6 @@ class Question {
 
         }
 
-        console.log(this.correctChoices.length)
 
         //Add missed correct choices to the correcChoices array
         if (this.solutions.length != this.correctChoices.length) {

@@ -50,13 +50,11 @@ function initQuizz() {
     //create question here
     for (var q = 1; q < 7; q++) {
         var questionTag = "slide_" + q
-        console.log(questionTag)
         quizz.push(new Question(questionTag, ["Daily irritant", "Decision-making challenge", "Crisis or fight"], quizzData[q - 1]));
 
 
     }
 
-    console.log(quizz)
 
     quizz.forEach((element, index) => {
         element.initQuestion();

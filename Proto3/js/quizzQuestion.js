@@ -35,7 +35,6 @@ class Question {
         this.parseQuizzData(data)
         this.choices = choices;
         this.parentContainer = document.getElementById(targetHtmlId);
-        console.log(this.parentContainer)
         this.choiceListElements = this.parentContainer.querySelectorAll("li");
         this.titleElement = this.parentContainer.getElementsByClassName("header")[0];
         this.feedbackElement = this.parentContainer.getElementsByClassName("feedback")[0];
@@ -172,7 +171,6 @@ class Question {
 
         }
 
-        console.log(this.correctChoices.length)
 
         //Add missed correct choices to the correcChoices array
         if (this.solutions.length != this.correctChoices.length) {

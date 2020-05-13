@@ -7,13 +7,13 @@ function init() {
     indexContainer = document.getElementsByClassName("index")[0];
     linksContainer = document.getElementsByClassName("links")[0];
     activityContainer = document.getElementsByClassName("proto-container")[0];
-    console.log(activityContainer)
 }
 
 window.onload = init;
 
 function togglePanes() {
 
+    //Switch to prototype view
     if (indexContainer.classList.contains("fade")) {
         linksContainer.classList.add("fade");
         linksContainer.style.visibility = "hidden"
@@ -22,8 +22,10 @@ function togglePanes() {
         indexContainer.style.visibility = "visible"
 
 
-    } else {
-
+    }
+    //Switch to index view
+    else {
+        activityContainer.querySelectorAll("iframe")[0].src = "";
         indexContainer.classList.add("fade");
         indexContainer.style.visibility = "hidden"
 
@@ -41,7 +43,6 @@ function onActivityClick(i) {
     var index = linkHTML.substr(linkHTML.length - 1);
 
 
-    console.log(index)
     var prefix = "./Proto" + index
     var protoLinkString = prefix + "/QCM.html";
     var integrationLinkString = prefix + "/Integration Example/Activity.html";
