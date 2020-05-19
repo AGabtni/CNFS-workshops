@@ -1,0 +1,138 @@
+.flexContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    align-items: center;
+}
+
+.item1 {
+    grid-area: header;
+}
+
+.item2 {
+    grid-area: menu;
+}
+
+.item1,
+.item2 {
+    background-color: aqua;
+    border-radius: 10px;
+}
+
+.item3 {
+    grid-area: main;
+    background-color: yellowgreen;
+}
+
+.item4 {
+    grid-area: right;
+    background-color: yellow;
+}
+
+.item5 {
+    grid-area: categoryA;
+    background-color: yellowgreen;
+}
+
+.item6 {
+    grid-area: categoryB;
+    background-color: yellow;
+}
+
+.item5,
+.item6 {
+    border-radius: 10px;
+}
+
+.grid-container {
+    display: grid;
+    grid-gap: 10px;
+    background-color: whitesmoke;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.grid-container>div {
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+/*Draggable items related classes*/
+
+.keywords-container {
+    grid-template-areas: 'header' 'menu';
+}
+
+.keyword {
+    float: left;
+    padding: 10px;
+    margin: 10px;
+    border: 1px groove black;
+    border-radius: 10px;
+    transition: border .3s ease-in, background-color .1s ease-in;
+}
+
+.keyword:hover {
+    cursor: move;
+}
+
+.correct {
+    border: 3px groove green;
+    background-color: rgba(0, 255, 0, 0.4);
+}
+
+.incorrect {
+    border: 3px groove red;
+    background-color: rgba(255, 0, 0, 0.4);
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    display: flex;
+    width: 100%;
+    font-size: small;
+    background-color: black;
+    color: #fff;
+    text-align: start;
+    border-radius: 6px;
+    padding: 20px;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.tooltip:active .tooltiptext {
+    visibility: hidden;
+}
+
+
+/*Drop area related css*/
+
+.drop-area-container {
+    max-width: 750px;
+    grid-template-areas: 'categoryA categoryA categoryA categoryB categoryB categoryB' 'main main main right right right';
+}
+
+#droppableA,
+#droppableB {
+    width: 100%;
+    border-radius: 10px;
+    min-height: 100px;
+}
+
+#verfication-btn {
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+    margin-right: 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}

@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+
+#main h4.toggle {color:#514971;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: normal;
+font-style: normal;
+font-size: 1.05em;
+text-decoration:none;
+margin: 10px 0px;}
+
+#main h4.toggle a { color:#823131; 
+	text-decoration:underline;
+	font-weight:bold;  }
+
+#main h4.toggle a:hover { color:#6c6d6d;
+	text-decoration:none; }
+	
+#main h4.toggle a:focus { background: #F9F2D2; }
+
+#main h4.toggle:before { content: "↕";
+font-size: 1.3em;
+margin-right: 5px;
+color:#823131; }
+
+div.toggle {background-color:#D9baba;
+border: 2px #000000 solid;
+padding: 5px;}

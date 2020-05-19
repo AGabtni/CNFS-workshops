@@ -1,0 +1,17 @@
+/**
+ * Variable d'environnement pour l'atelier.
+ * Workshop id : identifiant de la Bd ;
+ * PortalUrl: url vers la page d'accueil du portail ;
+ * LogoutUrl: url vers la déconnexion ;
+ * ToolboxUrl: url pour la boîte à outils ;
+ * ToolboxPdfUrl: url pour la production du pdf ;
+ * OptionalHomeworkUrl: url pour les devoirs facultatifs.
+ */
+var environment = {
+    workshopId: 470,
+    portalUrl: 'https://formation.cnfs.ca',
+    logoutUrl: 'https://formation.cnfs.ca/account/logout',
+    toolboxUrl: 'https://ateliers-api.azurewebsites.net/api/ToolBox',
+    toolboxPdfUrl: 'https://ateliers-api.azurewebsites.net/api/ToolboxToPdf/',
+    optionalHomeworkUrl: 'https://ateliers-api.azurewebsites.net/api/OptionalHomework/'
+};

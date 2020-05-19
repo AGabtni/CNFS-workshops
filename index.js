@@ -1,6 +1,7 @@
 var indexContainer;
 var linksContainer;
 var activityContainer
+var activityType;
 
 function init() {
 
@@ -81,7 +82,7 @@ function onLinkClick(index) {
 
     protoLink.innerHTML = "Prototype " + index
 
-    integrationLink.innerHTML = "Integration example for Prototype " + index
+    integrationLink.innerHTML = "Exemple d'intégration pour le Prototype " + index
 
     togglePanes();
 

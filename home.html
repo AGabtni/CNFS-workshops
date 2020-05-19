@@ -20,14 +20,14 @@
 <body>
     <div class="banner">
 
-        <h1>CNFS Workshops - Flash replacement</h1>
+        <h1>Ateliers CNFS - Remplacement de Adobe Flash</h1>
     </div>
 
     <div class="container">
 
         <div class="index">
             <h2 style="text-align: start;">Phase 1</h2>
-
+            <!--
             <ul class="list-group">
                 <li class="hvr-grow list-group-item" onclick=onLinkClick(1)>Prototype 1</li>
                 <li class="hvr-grow list-group-item" onclick=onLinkClick(2)>Prototype 2</li>
@@ -38,27 +38,98 @@
                 <li class="hvr-grow list-group-item" onclick=onLinkClick(7)>Prototype 7</li>
             </ul>
 
+            -->
+
+            <div class="row">
+                <!--Prototype 1-->
+                <div class="col-sm-3">
+                    <div class="card" style="visibility: hidden;">
+                        <div class="card-body">
+                            <h5 class="card-title">Prototype 1</h5>
+                            <p class="card-text">
+                            </p>
+                            <a onclick=onLinkClick(1) class="btn btn-primary">Apperçu</a>
+
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Prototype 4</h5>
+                            <p class="card-text">
+                            </p>
+                            <a onclick=onLinkClick(4) class="btn btn-primary">Apperçu</a>
+                        </div>
+                    </div>
+                    <div class="card" style="visibility: hidden;">
+                        <div class="card-body">
+                            <h5 class="card-title">Prototype 7</h5>
+                            <p class="card-text">
+                            </p>
+                            <a onclick=onLinkClick(7) class="btn btn-primary">Apperçu</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card" style="visibility: hidden;">
+                        <div class="card-body">
+                            <h5 class="card-title">Prototype 2</h5>
+                            <p class="card-text">
+                            </p>
+                            <a onclick=onLinkClick(2) class="btn btn-primary">Apperçu</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Prototype 5</h5>
+                            <p class="card-text">
+                            </p>
+                            <a onclick=onLinkClick(5) class="btn btn-primary">Apperçu</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Prototype 3</h5>
+                            <p class="card-text">
+                            </p>
+                            <a onclick=onLinkClick(3) class="btn btn-primary">Apperçu</a>
+                        </div>
+                    </div>
+                    <div class="card" style="visibility: hidden;">
+                        <div class="card-body">
+                            <h5 class="card-title">Prototype 6</h5>
+                            <p class="card-text">
+                            </p>
+                            <a onclick=onLinkClick(6) class="btn btn-primary">Apperçu</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
 
         </div>
+
+
         <div class="links fade">
 
             <button style="font-size: large; font-weight: 900;" class="hvr-pulse btn btn-success" onclick=togglePanes()>Index</button>
             <ul class="list-group">
                 <li onclick=onActivityClick(0) class=" hvr-grow list-group-item "><a target="_blank ">Prototype</a></li>
-                <li onclick=onActivityClick(1) class="hvr-grow list-group-item "><a target="_blank ">Integration</a></li>
+                <li onclick=onActivityClick(1) class="hvr-grow list-group-item "><a target="_blank ">Integration</a>
+                </li>
 
             </ul>
 
             <div class="proto-container fade">
                 <iframe class="proto-iframe" src="./Proto3/QCM.html "></div>
-            </div>
-    
-
-
         </div>
 
-       
+
+
     </div>
+
+
 
 </body>
 
