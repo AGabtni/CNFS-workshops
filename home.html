@@ -25,83 +25,74 @@
 
     <div class="container">
 
-        <div class="index">
-            <h2 style="text-align: start;">Phase 1</h2>
-            <!--
-            <ul class="list-group">
-                <li class="hvr-grow list-group-item" onclick=onLinkClick(1)>Prototype 1</li>
-                <li class="hvr-grow list-group-item" onclick=onLinkClick(2)>Prototype 2</li>
-                <li class="hvr-grow list-group-item" onclick=onLinkClick(3)>Prototype 3</li>
-                <li class="hvr-grow list-group-item" onclick=onLinkClick(4)>Prototype 4</li>
-                <li class="hvr-grow list-group-item" onclick=onLinkClick(5)>Prototype 5</li>
-                <li class="hvr-grow list-group-item" onclick=onLinkClick(6)>Prototype 6</li>
-                <li class="hvr-grow list-group-item" onclick=onLinkClick(7)>Prototype 7</li>
-            </ul>
 
-            -->
+        <!--INDEX SCREEN-->
+        <div class="index">
+            <h2 style="text-align: start;">Phase 1 : Développement des modèles pour chaque type d'activité</h2>
+
 
             <div class="row">
                 <!--Prototype 1-->
                 <div class="col-sm-3">
-                    <div class="card" style="visibility: hidden;">
+                    <div class="card hvr-grow" style="visibility: hidden;">
                         <div class="card-body">
                             <h5 class="card-title">Prototype 1</h5>
                             <p class="card-text">
                             </p>
-                            <a onclick=onLinkClick(1) class="btn btn-primary">Apperçu</a>
+                            <a onclick=onLinkClick(1) class="hvr-pulse btn btn-primary">Apperçu</a>
 
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card hvr-grow">
                         <div class="card-body">
                             <h5 class="card-title">Prototype 4</h5>
-                            <p class="card-text">
+                            <p class="card-text"> Pour les quizz <strong>Vrai ou Faux</strong>
                             </p>
-                            <a onclick=onLinkClick(4) class="btn btn-primary">Apperçu</a>
+                            <a onclick=onLinkClick(4) class="hvr-pulse btn btn-primary">Apperçu</a>
                         </div>
                     </div>
-                    <div class="card" style="visibility: hidden;">
+                    <div class="card hvr-grow" style="visibility: hidden;">
                         <div class="card-body">
                             <h5 class="card-title">Prototype 7</h5>
                             <p class="card-text">
                             </p>
-                            <a onclick=onLinkClick(7) class="btn btn-primary">Apperçu</a>
+                            <a onclick=onLinkClick(7) class="hvr-pulse btn btn-primary">Apperçu</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="card" style="visibility: hidden;">
+                    <div class="card hvr-grow" style="visibility: hidden;">
                         <div class="card-body">
                             <h5 class="card-title">Prototype 2</h5>
                             <p class="card-text">
                             </p>
-                            <a onclick=onLinkClick(2) class="btn btn-primary">Apperçu</a>
+                            <a onclick=onLinkClick(2) class="hvr-pulse btn btn-primary">Apperçu</a>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card hvr-grow">
                         <div class="card-body">
                             <h5 class="card-title">Prototype 5</h5>
-                            <p class="card-text">
+                            <p class="card-text">Pour les activités de <strong>type "Drag and drop"</strong>
                             </p>
-                            <a onclick=onLinkClick(5) class="btn btn-primary">Apperçu</a>
+                            <a onclick=onLinkClick(5) class="hvr-pulse btn btn-primary">Apperçu</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="card">
+                    <div class="card hvr-grow">
                         <div class="card-body">
                             <h5 class="card-title">Prototype 3</h5>
-                            <p class="card-text">
+                            <p class="card-text">Pour les activités avec des questions à <strong>choix multiples</strong>
                             </p>
-                            <a onclick=onLinkClick(3) class="btn btn-primary">Apperçu</a>
+                            <a onclick=onLinkClick(3) class="hvr-pulse btn btn-primary">Apperçu</a>
                         </div>
                     </div>
-                    <div class="card" style="visibility: hidden;">
+                    <div class="card hvr-grow" style="visibility: hidden;">
                         <div class="card-body">
                             <h5 class="card-title">Prototype 6</h5>
                             <p class="card-text">
                             </p>
-                            <a onclick=onLinkClick(6) class="btn btn-primary">Apperçu</a>
+                            <a onclick=onLinkClick(6) class="hvr-pulse btn btn-primary">Apperçu</a>
                         </div>
                     </div>
                 </div>
@@ -110,14 +101,15 @@
 
         </div>
 
-
+        <!--PROTOTYPE LINKS SCREEN-->
         <div class="links fade">
 
             <button style="font-size: large; font-weight: 900;" class="hvr-pulse btn btn-success" onclick=togglePanes()>Index</button>
             <ul class="list-group">
-                <li onclick=onActivityClick(0) class=" hvr-grow list-group-item "><a target="_blank ">Prototype</a></li>
-                <li onclick=onActivityClick(1) class="hvr-grow list-group-item "><a target="_blank ">Integration</a>
-                    <li onclick=onActivityClick(2) class="hvr-grow list-group-item "><a target="_blank ">Original link</a></li>
+                <li onclick=onActivityClick(0) class=" hvr-grow list-group-item "><a>Prototype</a></li>
+                <li onclick=onActivityClick(1) class="hvr-grow list-group-item "><a>Integration</a>
+                    <li onclick=onActivityClick(2) class="hvr-grow list-group-item "><a>Original link</a>
+                    </li>
 
             </ul>
 

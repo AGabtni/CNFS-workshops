@@ -98,17 +98,23 @@ function onActivityClick(i) {
 
     var protoLinkString = prefix + "/QCM.html";
     var integrationLinkString = prefix + "/Integration Example/Activity.html";
-
+    var screenShotString = "./screenshots/Proto" + index + ".png";
     switch (i) {
 
         case 0:
             frameContainer.src = protoLinkString
+            frameContainer.hidden = false;
+
             break;
         case 1:
             frameContainer.src = integrationLinkString
+            frameContainer.hidden = false;
+
             break;
         case 2:
-            frameContainer.src = originalLink[currentIndex].link
+            frameContainer.src = screenShotString
+
+            frameContainer.hidden = true;
             break;
     }
 
