@@ -98,7 +98,7 @@ function onActivityClick(i) {
 
     var protoLinkString = prefix + "/QCM.html";
     var integrationLinkString = prefix + "/Integration Example/Activity.html";
-    var screenShotString = "./screenshots/Proto" + index + ".png";
+    var screenShotString = "./screenshots/Proto" + index + ".gif";
     switch (i) {
 
         case 0:
@@ -112,7 +112,6 @@ function onActivityClick(i) {
 
             break;
         case 2:
-            frameContainer.src = screenShotString
 
             frameContainer.hidden = true;
             break;
@@ -137,6 +136,7 @@ function onLinkClick(index) {
 
     var protoLink = linksContainer.querySelectorAll("li")[0].querySelectorAll("a")[0];
     var integrationLink = linksContainer.querySelectorAll("li")[1].querySelectorAll("a")[0];
+    document.getElementById("originalLink").href = originalLink[index].link
 
 
 

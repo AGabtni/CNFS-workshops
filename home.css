@@ -63,6 +63,9 @@ li {
 }
 
 .row .card {
-    height: 200px;
+    display: flex;
+    height: 300px;
     margin: 20px;
+    justify-content: center;
+    align-content: center;
 }
