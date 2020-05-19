@@ -3,6 +3,54 @@ var linksContainer;
 var activityContainer
 var activityType;
 
+var currentIndex;
+var originalLink = {
+
+    1: {
+
+        link: "",
+        screenshot: "",
+    },
+    2: {
+
+        link: "",
+        screenshot: "",
+
+    },
+    3: {
+
+        link: "https://formation.cnfs.ca/assets/atelierscnfs/conflict-management/pages/unite3/unite3_1-activite.html",
+        screenshot: "",
+
+    },
+    4: {
+
+        link: "https://formation.cnfs.ca/assets/atelierscnfs/evaluer-le-rendement/pages/unite1/unite1_3-activite.html",
+        screenshot: "",
+
+    },
+    5: {
+
+        link: "https://formation.cnfs.ca/assets/atelierscnfs/evaluer-le-rendement/pages/unite1/unite1_2-activite.html",
+        screenshot: "",
+
+    },
+    6: {
+
+        link: "",
+        screenshot: "",
+
+    },
+    7: {
+
+        link: "",
+        screenshot: "",
+
+    },
+
+
+}
+
 function init() {
 
     indexContainer = document.getElementsByClassName("index")[0];
@@ -38,6 +86,8 @@ function togglePanes() {
 }
 
 function onActivityClick(i) {
+
+    console.log("Current is : " + currentIndex)
     var frameContainer = activityContainer.querySelectorAll("iframe")[0];
 
     var linkHTML = linksContainer.querySelectorAll("li")[0].querySelectorAll("a")[0].innerHTML;
@@ -45,6 +95,7 @@ function onActivityClick(i) {
 
 
     var prefix = "./Proto" + index
+
     var protoLinkString = prefix + "/QCM.html";
     var integrationLinkString = prefix + "/Integration Example/Activity.html";
 
@@ -55,6 +106,9 @@ function onActivityClick(i) {
             break;
         case 1:
             frameContainer.src = integrationLinkString
+            break;
+        case 2:
+            frameContainer.src = originalLink[currentIndex].link
             break;
     }
 
@@ -84,6 +138,8 @@ function onLinkClick(index) {
 
     integrationLink.innerHTML = "Exemple d'intégration pour le Prototype " + index
 
+
+    currentIndex = index;
     togglePanes();
 
 }

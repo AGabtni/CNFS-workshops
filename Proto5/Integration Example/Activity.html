@@ -193,7 +193,42 @@
 
 
             </div>
+            <!--START MODIFICATION HERE-->
+            <div class="flexContainer">
+                <div style="display: flex; flex-direction: row; align-items: center;">
 
+                    <button onclick=quizz.verify() id="verfication-btn">Vérifier</button>
+                    <div class="grid-container keywords-container">
+
+                        <div class="item1">
+                            <h3>Banque de mots</h3>
+                        </div>
+                        <div id="droppable" class="keywords item2">
+
+
+                        </div>
+
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="grid-container drop-area-container">
+
+                    <div class="item5">
+                        <h3>Joue un rôle central</h3>
+                    </div>
+                    <div class="item6">
+                        <h3>Ne joue pas un rôle central</h3>
+                    </div>
+
+                    <div id="droppableA" class="item3"></div>
+                    <div id="droppableB" class="item4"></div>
+
+                </div>
+
+            </div>
+
+            <!--END MODIFICATION HERE-->
             <div class="float_right">
                 <p><a href="https://formation.cnfs.ca/assets/atelierscnfs/evaluer-le-rendement/pages/unite1/unite1_2-activite.html#main_top">Haut de la page</a></p>
             </div>
@@ -206,42 +241,7 @@
 
     </div>
     <!-- End #container-->
-    <!--START MODIFICATION HERE-->
-    <div class="flexContainer">
-        <div style="display: flex; flex-direction: row; align-items: center;">
 
-            <button onclick=quizz.verify() id="verfication-btn">Vérifier</button>
-            <div class="grid-container keywords-container">
-
-                <div class="item1">
-                    <h3>Banque de mots</h3>
-                </div>
-                <div id="droppable" class="keywords item2">
-
-
-                </div>
-
-            </div>
-        </div>
-        <br>
-        <br>
-        <div class="grid-container drop-area-container">
-
-            <div class="item5">
-                <h3>Joue un rôle central</h3>
-            </div>
-            <div class="item6">
-                <h3>Ne joue pas un rôle central</h3>
-            </div>
-
-            <div id="droppableA" class="item3"></div>
-            <div id="droppableB" class="item4"></div>
-
-        </div>
-
-    </div>
-
-    <!--END MODIFICATION HERE-->
 
 
     <script type="text/javascript" src="./Activity_files/Activites_quiz.js.download"></script>
