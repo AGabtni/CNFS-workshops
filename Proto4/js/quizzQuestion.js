@@ -138,21 +138,24 @@ class Question {
         }
         for (var c = 0; c < this.selectChoices.length; c++) {
 
-            this.choiceListElements[this.selectChoices[c]].classList.add("selected")
+            this.choiceListElements[this.selectChoices[c]].classList.add("selected");
+            this.choiceListElements[this.selectChoices[c]].parentNode.querySelectorAll("img")[0].src = "./img/select.png";
+            this.choiceListElements[this.selectChoices[c]].parentNode.querySelectorAll("img")[0].style.opacity = 1.0;
         }
 
         for (var c = 0; c < this.incorrectChoices.length; c++) {
 
-            this.choiceListElements[this.incorrectChoices[c]].classList.add("incorrect")
-            this.choiceListElements[this.incorrectChoices[c]].parentNode.querySelectorAll("img")[0].src = "./img/cross.png"
+            this.choiceListElements[this.incorrectChoices[c]].classList.add("incorrect");
+            this.choiceListElements[this.incorrectChoices[c]].parentNode.querySelectorAll("img")[0].src = "./img/cross.png";
             this.choiceListElements[this.incorrectChoices[c]].parentNode.querySelectorAll("img")[0].style.opacity = 1.0;
         }
         for (var c = 0; c < this.correctChoices.length; c++) {
 
-            this.choiceListElements[this.correctChoices[c]].classList.add("correct")
-            this.choiceListElements[this.correctChoices[c]].parentNode.querySelectorAll("img")[0].src = "./img/tick.png"
-
+            this.choiceListElements[this.correctChoices[c]].classList.add("correct");
+            this.choiceListElements[this.correctChoices[c]].parentNode.querySelectorAll("img")[0].src = "./img/tick.png";
             this.choiceListElements[this.correctChoices[c]].parentNode.querySelectorAll("img")[0].style.opacity = 1.0;
+
+
             this.feedbackElement.style.opacity = 1.0;
         }
 
