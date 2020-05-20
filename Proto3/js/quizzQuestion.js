@@ -68,6 +68,7 @@ class Question {
         for (var i = 0; i < this.choiceListElements.length; i++) {
 
             this.choiceListElements[i].textContent = this.choices[i];
+            this.choiceListElements[i].parentNode.querySelectorAll("img")[0].style.transition = "all 0.2s ease-in"
 
 
         }
@@ -123,6 +124,8 @@ class Question {
             this.choiceListElements[c].classList.remove("selected")
             this.choiceListElements[c].classList.remove("incorrect")
             this.choiceListElements[c].classList.remove("correct")
+            this.choiceListElements[c].parentNode.querySelectorAll("img")[0].style.opacity = "0"
+
             this.feedbackElement.style.opacity = 0;
 
 
@@ -130,15 +133,26 @@ class Question {
         for (var c = 0; c < this.selectChoices.length; c++) {
 
             this.choiceListElements[this.selectChoices[c]].classList.add("selected")
+            this.choiceListElements[this.selectChoices[c]].parentNode.querySelectorAll("img")[0].src = "./img/select.png";
+            this.choiceListElements[this.selectChoices[c]].parentNode.querySelectorAll("img")[0].style.opacity = "1"
+
         }
 
         for (var c = 0; c < this.incorrectChoices.length; c++) {
 
             this.choiceListElements[this.incorrectChoices[c]].classList.add("incorrect")
+
+            this.choiceListElements[this.incorrectChoices[c]].parentNode.querySelectorAll("img")[0].src = "./img/cross.png";
+            this.choiceListElements[this.incorrectChoices[c]].parentNode.querySelectorAll("img")[0].style.opacity = "1"
+
         }
         for (var c = 0; c < this.correctChoices.length; c++) {
 
             this.choiceListElements[this.correctChoices[c]].classList.add("correct")
+
+            this.choiceListElements[this.correctChoices[c]].parentNode.querySelectorAll("img")[0].src = "./img/tick.png";
+            this.choiceListElements[this.correctChoices[c]].parentNode.querySelectorAll("img")[0].style.opacity = "1"
+
             this.feedbackElement.style.opacity = 1.0;
         }
 

@@ -16,6 +16,8 @@ ul li {
     transition: border 0.1s ease, background-color 0.5s ease;
     min-width: 200px;
     text-align: center;
+    width: 100%;
+    display: flex;
 }
 
 ul li:hover {
