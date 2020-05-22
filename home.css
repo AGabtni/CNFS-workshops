@@ -54,6 +54,10 @@ body {
     z-index: -1;
 }
 
+.card {
+    max-width: 300px;
+}
+
 .card,
 ul {
     cursor: pointer;

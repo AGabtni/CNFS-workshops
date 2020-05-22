@@ -35,8 +35,8 @@ class InteractiveVideo {
         this.videoComponent.parentNode.style.transform = "translateY(50px)"
         this.videoComponent.width = "640"
         this.videoComponent.height = "480"
-        this.prev.style.left = "0";
-        this.next.style.right = "0";
+        this.prev.style.left = "-10%";
+        this.next.style.right = "-10%";
 
     }
 
@@ -52,8 +52,8 @@ class InteractiveVideo {
 
         this.videoComponent.width = "320"
         this.videoComponent.height = "240"
-        this.prev.style.left = "20%";
-        this.next.style.right = "20%";
+        this.prev.style.left = "10%";
+        this.next.style.right = "10%";
 
 
     }
@@ -77,11 +77,11 @@ class InteractiveVideo {
             return;
         }
         this.timeOut = setTimeout(() => {
-            this.questionComponent.style.visibility = "hidden"
+            //this.questionComponent.style.visibility = "hidden"
             this.videoComponent.pause()
                 //next(1);
             this.quizzQuestion.updateQuizzList();
-            this.toggleVideoPreview();
+            //this.toggleVideoPreview();
             this.videoComponent.load();
 
             this.timeOut = undefined;

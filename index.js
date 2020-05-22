@@ -43,7 +43,7 @@ var originalLink = {
     },
     7: {
 
-        link: "",
+        link: "https://ateliers-staging.azurewebsites.net/assets/atelierscnfs/l-approche-et-la-supervision-interprofessionnelles/pages/unite6/unite6_3.html",
         screenshot: "",
 
     },
