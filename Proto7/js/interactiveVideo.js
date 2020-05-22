@@ -3,24 +3,40 @@ class InteractiveVideo {
     quizzQuestion;
     questionComponent;
     videoComponent;
+    videoHeader;
     timeOut;
 
 
+
+    //Just for now 
+
+    prev;
+    next;
     constructor(quizzQuestion) {
 
         this.quizzQuestion = quizzQuestion;
         this.quizzQuestion.initQuestion();
         this.videoComponent = this.quizzQuestion.parentContainer.querySelectorAll("video")[0];
         this.questionComponent = this.quizzQuestion.parentContainer.getElementsByClassName("questionContainer")[0];
+        this.videoHeader = this.quizzQuestion.parentContainer.querySelectorAll("h3")[0];
+        this.videoHeader.innerHTML = "Étape " + this.quizzQuestion.parentContainer.id.substring(this.quizzQuestion.parentContainer.id.length - 1);
 
+
+
+        this.prev = this.videoComponent.parentNode.querySelectorAll("a")[0];
+        this.next = this.videoComponent.parentNode.querySelectorAll("a")[1];
+        this.prev.style.transition = "all 0.2s ease-in"
+        this.next.style.transition = "all 0.2s ease-in"
         this.toggleVideoPreview();
     }
 
 
     toggleVideoPreview() {
-        this.videoComponent.style.transform = "translateY(100px)"
+        this.videoComponent.parentNode.style.transform = "translateY(50px)"
         this.videoComponent.width = "640"
         this.videoComponent.height = "480"
+        this.prev.style.left = "0";
+        this.next.style.right = "0";
 
     }
 
@@ -32,9 +48,12 @@ class InteractiveVideo {
 
 
 
-        this.videoComponent.style.transform = "translateY(0px)"
+        this.videoComponent.parentNode.style.transform = "translateY(0px)"
+
         this.videoComponent.width = "320"
         this.videoComponent.height = "240"
+        this.prev.style.left = "20%";
+        this.next.style.right = "20%";
 
 
     }
@@ -60,13 +79,15 @@ class InteractiveVideo {
         this.timeOut = setTimeout(() => {
             this.questionComponent.style.visibility = "hidden"
             this.videoComponent.pause()
-            next(1);
+                //next(1);
             this.quizzQuestion.updateQuizzList();
             this.toggleVideoPreview();
+            this.videoComponent.load();
+
             this.timeOut = undefined;
 
 
-        }, 3000)
+        }, 5000)
 
     }
 

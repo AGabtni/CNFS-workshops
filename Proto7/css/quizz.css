@@ -3,11 +3,11 @@
     flex-direction: column;
 }
 
-ul {
+.choicesList ul {
     padding: 0;
 }
 
-ul li {
+.choicesList ul li {
     list-style: none;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -17,13 +17,14 @@ ul li {
     width: 100%;
 }
 
-ul li:hover {
+.choicesList ul li:hover {
     background-color: rgba(1, 1, 1, 0.4);
+    cursor: pointer;
 }
 
 .selected {
     border: 5px solid rgb(218, 165, 32);
-    background-color: rgba(218, 165, 32 0.4);
+    background-color: rgb(218, 165, 32);
 }
 
 .correct {

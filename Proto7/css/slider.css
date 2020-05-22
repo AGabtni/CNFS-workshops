@@ -44,21 +44,21 @@ img {
     overflow: hidden;
     width: 0;
     height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
 }
 
 
 /* Position the "next button" to the right */
 
 .prev {
-    left: -15px;
-    border-right: 15px solid green;
+    left: -10%;
+    border-right: 30px solid green;
 }
 
 .next {
-    right: 0px;
-    border-left: 15px solid green;
+    right: -10%;
+    border-left: 30px solid green;
 }
 
 
