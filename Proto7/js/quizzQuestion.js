@@ -5,14 +5,12 @@ class Question {
     solutions = [];
     statement;
     feedback;
-
     //parent html container
     parentContainer;
 
     titleElement;
-    statementElement;
     feedbackElement;
-
+    statementElement;
 
     // html list elements found 
     // in the parent container
@@ -34,12 +32,11 @@ class Question {
     //  @solutions : array with the values of the question solutions 
     constructor(targetHtmlId, choices, data) {
 
-        this.parseQuizzData(data);
-
+        this.parseQuizzData(data)
         this.choices = choices;
         this.parentContainer = document.getElementById(targetHtmlId);
         this.choiceListElements = this.parentContainer.querySelectorAll("li");
-        this.titleElement = this.parentContainer.getElementsByClassName("header")[0];
+        //this.titleElement = this.parentContainer.getElementsByClassName("header")[0];
         this.feedbackElement = this.parentContainer.getElementsByClassName("feedback")[0];
         this.statementElement = this.parentContainer.getElementsByClassName("statement")[0];
 
@@ -62,11 +59,8 @@ class Question {
 
     }
 
-
     //fills the question list with 
-    // with the value of the choices   
-    // as well as the statement
-    // and the feedback if there is any 
+    // with the value of the choices 
     initQuestion() {
 
 
@@ -74,13 +68,16 @@ class Question {
         for (var i = 0; i < this.choiceListElements.length; i++) {
 
             this.choiceListElements[i].textContent = this.choices[i];
-            this.choiceListElements[i].parentNode.querySelectorAll("img")[0].style.transition = "all 0.5 ease-in";
+            this.choiceListElements[i].parentNode.querySelectorAll("img")[0].style.transition = "all 0.2s ease-in"
+
 
         }
 
         this.feedbackElement.querySelectorAll("p")[0].innerHTML = this.feedback;
         this.statementElement.querySelectorAll("p")[0].innerHTML = this.statement;
+
     }
+
 
     // on click of the list element
     // pushes the values of the selected element
@@ -92,8 +89,7 @@ class Question {
 
             var foundChoice = false;
 
-            // remove the selected choice
-            // if toggled (double click)
+
             for (var i = 0; i < this.selectChoices.length; i++) {
 
 
@@ -107,10 +103,8 @@ class Question {
                 }
             }
 
-            if (!foundChoice) {
-                this.selectChoices = []
+            if (!foundChoice)
                 this.selectChoices.push(id);
-            }
 
         } else {
 
@@ -121,7 +115,7 @@ class Question {
 
 
     //  update view when new items
-    // are selected or verification button is hit (check the correct and incorrect choices selected)
+    // are selected or verification button is hit
     updateQuizzList() {
 
         //Reset all elements related to the question
@@ -130,33 +124,34 @@ class Question {
             this.choiceListElements[c].classList.remove("selected")
             this.choiceListElements[c].classList.remove("incorrect")
             this.choiceListElements[c].classList.remove("correct")
-            this.choiceListElements[c].parentNode.querySelectorAll("img")[0].style.opacity = 0;
+            this.choiceListElements[c].parentNode.querySelectorAll("img")[0].style.opacity = "0"
+
             this.feedbackElement.style.opacity = 0;
 
 
         }
-
-        //Check the status array for the choices and update the classes accordingly
-        //if there is selected element add the selected css class to that element
         for (var c = 0; c < this.selectChoices.length; c++) {
 
-            this.choiceListElements[this.selectChoices[c]].classList.add("selected");
+            this.choiceListElements[this.selectChoices[c]].classList.add("selected")
             this.choiceListElements[this.selectChoices[c]].parentNode.querySelectorAll("img")[0].src = "./img/select.png";
-            this.choiceListElements[this.selectChoices[c]].parentNode.querySelectorAll("img")[0].style.opacity = 1.0;
+            this.choiceListElements[this.selectChoices[c]].parentNode.querySelectorAll("img")[0].style.opacity = "1"
+
         }
 
         for (var c = 0; c < this.incorrectChoices.length; c++) {
 
-            this.choiceListElements[this.incorrectChoices[c]].classList.add("incorrect");
+            this.choiceListElements[this.incorrectChoices[c]].classList.add("incorrect")
+
             this.choiceListElements[this.incorrectChoices[c]].parentNode.querySelectorAll("img")[0].src = "./img/cross.png";
-            this.choiceListElements[this.incorrectChoices[c]].parentNode.querySelectorAll("img")[0].style.opacity = 1.0;
+            this.choiceListElements[this.incorrectChoices[c]].parentNode.querySelectorAll("img")[0].style.opacity = "1"
+
         }
         for (var c = 0; c < this.correctChoices.length; c++) {
 
-            this.choiceListElements[this.correctChoices[c]].classList.add("correct");
-            this.choiceListElements[this.correctChoices[c]].parentNode.querySelectorAll("img")[0].src = "./img/tick.png";
-            this.choiceListElements[this.correctChoices[c]].parentNode.querySelectorAll("img")[0].style.opacity = 1.0;
+            this.choiceListElements[this.correctChoices[c]].classList.add("correct")
 
+            this.choiceListElements[this.correctChoices[c]].parentNode.querySelectorAll("img")[0].src = "./img/tick.png";
+            this.choiceListElements[this.correctChoices[c]].parentNode.querySelectorAll("img")[0].style.opacity = "1"
 
             this.feedbackElement.style.opacity = 1.0;
         }
@@ -177,7 +172,7 @@ class Question {
         }
         */
 
-        // Filter the selected choices by the user
+        // Filter the selected choices
         // keep the correct one in the array correctChoices array
         // and the incorrect ones in incorrectChoices array
         for (var s = 0; s < this.selectChoices.length; s++) {
@@ -191,7 +186,7 @@ class Question {
         }
 
 
-        //Add missed correct choices by the user  in the correcChoices array
+        //Add missed correct choices to the correcChoices array
         if (this.solutions.length != this.correctChoices.length) {
 
             for (var s = 0; s < this.solutions.length; s++) {
@@ -222,6 +217,10 @@ class Question {
         this.incorrectChoices = [];
         this.correctChoices = [];
 
+
+        //Move to next slide after verification 
+        var slideIndex = this.parentContainer.id.substring(this.parentContainer.id.length - 1) - 1;
+        interactiveVideos[slideIndex].moveToNextClip()
     }
 
     // return true if the selected 

@@ -22,13 +22,14 @@ body {
 
 .index,
 .links {
-    width: 100%;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
     position: absolute;
     top: 0;
     left: 0;
     transition: opacity 0.5s ease;
     z-index: 10;
+    width: 100%;
 }
 
 .proto-container {
@@ -65,7 +66,6 @@ li {
 
 .row .card {
     display: flex;
-    height: 300px;
     margin: 20px;
     justify-content: center;
     align-content: center;
