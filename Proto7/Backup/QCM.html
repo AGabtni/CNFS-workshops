@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--DONT FORGET ABOUT THE CSS-->
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="css/activity.css">
-
+    <link rel="stylesheet" href="css/slider.css">
     <link rel="stylesheet" href="css/quizz.css">
     <link rel="stylesheet" href="css/interactiveVideo.css">
 
@@ -19,14 +18,17 @@
     <div class="slideshow-container">
 
         <div id="slide_1" class="slide current">
-            <h3 class="videoHeader"></h3>
+            <h3 class="videoHeader" style="margin-top: 20px;text-align: center;"></h3>
             <!--Video row-->
-            <div id="interactiveVideo">
+            <div id="interactiveVideo" style="display: flex; justify-content: center; margin: 10px;">
                 <video width="320" height="240" controls>
                     <source src="" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-
+                <div style="display: flex;">
+                    <a class="prev" onclick="prev(-1)">&#10094;</a>
+                    <a class="next" onclick="next(1)">&#10095;</a>
+                </div>
             </div>
             <!--Question row-->
             <div class="questionContainer">
@@ -83,16 +85,19 @@
         </div>
 
 
-        <div id="slide_2" class="slide">
-            <h3 class="videoHeader"></h3>
+        <div id="slide_2" class="slide current">
+            <h3 class="videoHeader" style="margin-top: 20px;text-align: center;"></h3>
             <!--Video row-->
-            <div id="interactiveVideo">
+            <div id="interactiveVideo" style="display: flex; justify-content: center; margin: 10px;">
 
                 <video width="320" height="240" controls>
                     <source src="" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-
+                <div style="display: flex;">
+                    <a class="prev" onclick="prev(-1)">&#10094;</a>
+                    <a class="next" onclick="next(1)">&#10095;</a>
+                </div>
             </div>
             <div class="questionContainer">
                 <!--Headers row-->
@@ -148,16 +153,19 @@
 
         </div>
 
-        <div id="slide_3" class="slide">
-            <h3 class="videoHeader"></h3>
+        <div id="slide_3" class="slide current">
+            <h3 class="videoHeader" style="margin-top: 20px;text-align: center;"></h3>
             <!--Video row-->
-            <div id="interactiveVideo">
+            <div id="interactiveVideo" style="display: flex; justify-content: center; margin: 10px;">
 
                 <video width="320" height="240" controls>
                     <source src="" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-
+                <div style="display: flex;">
+                    <a class="prev" onclick="prev(-1)">&#10094;</a>
+                    <a class="next" onclick="next(1)">&#10095;</a>
+                </div>
             </div>
             <div class="questionContainer">
                 <!--Headers row-->
@@ -211,16 +219,19 @@
 
             </div>
         </div>
-        <div id="slide_4" class="slide">
-            <h3 class="videoHeader"></h3>
+        <div id="slide_4" class="slide current">
+            <h3 class="videoHeader" style="margin-top: 20px;text-align: center;"></h3>
             <!--Video row-->
-            <div id="interactiveVideo">
+            <div id="interactiveVideo" style="display: flex; justify-content: center; margin: 10px;transition: all 0.5s ease;">
 
                 <video width="320" height="240" controls>
                     <source src="./video/clips/clip1.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-
+                <div style="display: flex;">
+                    <a class="prev" onclick="prev(-1)">&#10094;</a>
+                    <a class="next" onclick="next(1)">&#10095;</a>
+                </div>
             </div>
             <div class="questionContainer">
                 <!--Headers row-->
@@ -280,6 +291,8 @@
     <!--TO HERE-->
 
     <!--DONT FORGET ABOUT THE SCRIPTS-->
+    <script type="text/javascript " src="js/slider.js "></script>
+
     <script type="text/javascript " src="js/quizzQuestion.js "></script>
     <script type="text/javascript " src="js/interactiveVideo.js "></script>
 

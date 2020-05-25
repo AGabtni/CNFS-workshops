@@ -28407,7 +28407,8 @@
             display: none !important;
         }
     </style>
-    <link rel="stylesheet" href="../css/activity.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/slider.css">
     <link rel="stylesheet" href="../css/quizz.css">
     <link rel="stylesheet" href="../css/interactiveVideo.css">
 
@@ -28734,20 +28735,20 @@
                 </p>
                 <p>Visionnez chaque section de la capsule vidéo et cochez toutes les réponses qui vous semblent le mieux correspondre aux stratégies que devrait adopter la superviseure à chaque <strong>étape</strong> de la rencontre.
                 </p>
-
-
-                <!--INSERT ACTIVITY HERE -->
                 <div class="slideshow-container">
 
                     <div id="slide_1" class="slide current">
-                        <h3 class="videoHeader"></h3>
+                        <h3 class="videoHeader" style="margin-top: 20px;text-align: center;"></h3>
                         <!--Video row-->
-                        <div id="interactiveVideo">
+                        <div id="interactiveVideo" style="display: flex; justify-content: center; margin: 10px;">
                             <video width="320" height="240" controls>
-                                <source src="" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-
+                              <source src="" type="video/mp4">
+                              Your browser does not support the video tag.
+                          </video>
+                            <div style="display: flex;">
+                                <a class="prev" onclick="prev(-1)">&#10094;</a>
+                                <a class="next" onclick="next(1)">&#10095;</a>
+                            </div>
                         </div>
                         <!--Question row-->
                         <div class="questionContainer">
@@ -28758,7 +28759,7 @@
                             </div>
 
                             <!--Choices section-->
-                            <div class="flexColumn choicesList" style="float : left; padding-left: 20px; margin: 10px; width: 50%; ">
+                            <div class="flexColumn" style="float : left; padding-left: 20px; margin: 10px; width: 50%; ">
                                 <ul style="list-style:none; ">
                                     <!--Associate each list element onclick attribute to the question's respective choice-->
                                     <div style="display : flex; flex-direction: row; align-items: center;">
@@ -28787,13 +28788,13 @@
 
                             <!--Feedback section-->
                             <div class="flexColumn" style="
-                            height: 100%;
-                            justify-content: center; 
-                            align-items: center; 
-                            text-align: center;">
+                          height: 100%;
+                          justify-content: center; 
+                          align-items: center; 
+                          text-align: center;">
 
                                 <button class="verify-btn" onclick=quizz[0].verifySelection() style="width: 100px ;">Vérifier votre
-                                    réponse</button>
+                                  réponse</button>
                                 <div class="feedback" style="justify-self: end;">
                                     <!--INSERT FEEDBACK HERE-->
                                     <p></p>
@@ -28804,16 +28805,19 @@
                     </div>
 
 
-                    <div id="slide_2" class="slide">
-                        <h3 class="videoHeader"></h3>
+                    <div id="slide_2" class="slide current">
+                        <h3 class="videoHeader" style="margin-top: 20px;text-align: center;"></h3>
                         <!--Video row-->
-                        <div id="interactiveVideo">
+                        <div id="interactiveVideo" style="display: flex; justify-content: center; margin: 10px;">
 
                             <video width="320" height="240" controls>
-                                <source src="" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-
+                              <source src="" type="video/mp4">
+                              Your browser does not support the video tag.
+                          </video>
+                            <div style="display: flex;">
+                                <a class="prev" onclick="prev(-1)">&#10094;</a>
+                                <a class="next" onclick="next(1)">&#10095;</a>
+                            </div>
                         </div>
                         <div class="questionContainer">
                             <!--Headers row-->
@@ -28823,7 +28827,7 @@
                             </div>
 
                             <!--Choices section-->
-                            <div class="flexColumn choicesList" style="float : left; padding-left: 20px; margin: 10px; width: 50%; ">
+                            <div class="flexColumn" style="float : left; padding-left: 20px; margin: 10px; width: 50%; ">
                                 <ul style="list-style:none; ">
                                     <!--Associate each list element onclick attribute to the question's respective choice-->
                                     <div style="display : flex; flex-direction: row; align-items: center;">
@@ -28853,13 +28857,13 @@
 
                             <!--Feedback section-->
                             <div class="flexColumn" style="
-                            height: 100%;
-                            justify-content: center; 
-                            align-items: center; 
-                            text-align: center;">
+                          height: 100%;
+                          justify-content: center; 
+                          align-items: center; 
+                          text-align: center;">
 
                                 <button class="verify-btn" onclick=quizz[1].verifySelection() style="width: 100px ;">Vérifier votre
-                                    réponse</button>
+                                  réponse</button>
                                 <div class="feedback" style="justify-self: end;">
                                     <!--INSERT FEEDBACK HERE-->
                                     <p></p>
@@ -28869,16 +28873,19 @@
 
                     </div>
 
-                    <div id="slide_3" class="slide">
-                        <h3 class="videoHeader"></h3>
+                    <div id="slide_3" class="slide current">
+                        <h3 class="videoHeader" style="margin-top: 20px;text-align: center;"></h3>
                         <!--Video row-->
-                        <div id="interactiveVideo">
+                        <div id="interactiveVideo" style="display: flex; justify-content: center; margin: 10px;">
 
                             <video width="320" height="240" controls>
-                                <source src="" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-
+                              <source src="" type="video/mp4">
+                              Your browser does not support the video tag.
+                          </video>
+                            <div style="display: flex;">
+                                <a class="prev" onclick="prev(-1)">&#10094;</a>
+                                <a class="next" onclick="next(1)">&#10095;</a>
+                            </div>
                         </div>
                         <div class="questionContainer">
                             <!--Headers row-->
@@ -28888,7 +28895,7 @@
                             </div>
 
                             <!--Choices section-->
-                            <div class="flexColumn choicesList" style="float : left; padding-left: 20px; margin: 10px; width: 50%; ">
+                            <div class="flexColumn" style="float : left; padding-left: 20px; margin: 10px; width: 50%; ">
                                 <ul style="list-style:none; ">
                                     <!--Associate each list element onclick attribute to the question's respective choice-->
                                     <div style="display : flex; flex-direction: row; align-items: center;">
@@ -28917,13 +28924,13 @@
 
                             <!--Feedback section-->
                             <div class="flexColumn" style="
-                            height: 100%;
-                            justify-content: center; 
-                            align-items: center; 
-                            text-align: center;">
+                          height: 100%;
+                          justify-content: center; 
+                          align-items: center; 
+                          text-align: center;">
 
                                 <button class="verify-btn" onclick=quizz[2].verifySelection() style="width: 100px ;">Vérifier votre
-                                    réponse</button>
+                                  réponse</button>
                                 <div class="feedback" style="justify-self: end;">
                                     <!--INSERT FEEDBACK HERE-->
                                     <p></p>
@@ -28932,16 +28939,19 @@
 
                         </div>
                     </div>
-                    <div id="slide_4" class="slide">
-                        <h3 class="videoHeader"></h3>
+                    <div id="slide_4" class="slide current">
+                        <h3 class="videoHeader" style="margin-top: 20px;text-align: center;"></h3>
                         <!--Video row-->
-                        <div id="interactiveVideo">
+                        <div id="interactiveVideo" style="display: flex; justify-content: center; margin: 10px;transition: all 0.5s ease;">
 
                             <video width="320" height="240" controls>
-                                <source src="./video/clips/clip1.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-
+                              <source src="./video/clips/clip1.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                          </video>
+                            <div style="display: flex;">
+                                <a class="prev" onclick="prev(-1)">&#10094;</a>
+                                <a class="next" onclick="next(1)">&#10095;</a>
+                            </div>
                         </div>
                         <div class="questionContainer">
                             <!--Headers row-->
@@ -28951,8 +28961,7 @@
                             </div>
 
                             <!--Choices section-->
-                            <div class="flexColumn choicesList" style="float : left; padding-left: 20px; margin: 10px; width: 50%; ">
-
+                            <div class="flexColumn " style="float : left; padding-left: 20px; margin: 10px; width: 50%; ">
                                 <ul style="list-style:none; ">
                                     <!--Associate each list element onclick attribute to the question's respective choice-->
                                     <div style="display : flex; flex-direction: row; align-items: center; ">
@@ -28983,7 +28992,7 @@
                             <div class="flexColumn " style=" height: 100%; justify-content: center; align-items: center; text-align: center; ">
 
                                 <button class="verify-btn " onclick=quizz[3].verifySelection() style="width: 100px ; ">Vérifier
-                                    votre réponse</button>
+                                  votre réponse</button>
                                 <div class="feedback " style="justify-self: end; ">
                                     <!--INSERT FEEDBACK HERE-->
                                     <p></p>
@@ -28995,7 +29004,7 @@
 
 
                 </div>
-                <!--END OF MODIFICATION HERE -->
+
                 <p>La <a href="https://formation.cnfs.ca/assets/atelierscnfs/l-approche-et-la-supervision-interprofessionnelles/pages/unite6/unite6_3/unite6-3_transcript_proteges_partages.pdf" onclick="window.open(this.href);return false;">version imprimable</a>                    (.pdf, 205 Ko) contient le verbatim de la vidéo <em>Protégés et partagés!</em>.</p>
 
 
@@ -29062,13 +29071,10 @@
     <!-- End #container-->
     <script type="text/javascript " src="../js/slider.js "></script>
 
-
-    <!--ACTIVTY RELATED SCRIPTS-->
     <script type="text/javascript " src="../js/quizzQuestion.js "></script>
     <script type="text/javascript " src="../js/interactiveVideo.js "></script>
-    <script type="text/javascript " src="../activity.js "></script>
 
-    <!--END OF ACTIVTY RELATED SCRIPTS-->
+    <script type="text/javascript " src="../activity.js "></script>
 
 </body>
 

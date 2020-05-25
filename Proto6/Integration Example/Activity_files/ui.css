@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.ui-widget-content { 
+width:90%; 
+background-color:#f9f9f9; 
+color: #362b36;
+padding:10px;
+border-top: 1px #5E5E5E solid;
+border-right: 3px #5E5E5E solid;
+border-left: 1px #5E5E5E solid;
+border-bottom: 3px #5E5E5E solid;
+}
+
+.ui-widget-header { 
+background-color: #F1F2F2;
+color: #000; 
+padding:10px;
+border:none;
+}
+
+.ui-widget-header a { color: #222222; }
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight {
+background-color:#F1F2F2; 
+color: #000000;
+border:none;
+padding:10px;
+
+
+}
+
+/* The folowing was added merely because the padding was causing issues with a paragraph fill-in-the-blanks-type activity. */
+.ui-state-highlight_showhide {
+background-color:#fbf5d0;
+border:none;
+color: #363636; 
+}

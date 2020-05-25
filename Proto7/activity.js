@@ -61,7 +61,8 @@ function initQuizz() {
 
 
     //create question here
-    for (var q = 1; q < 5; q++) {
+
+    for (var q = 1; q < Object.keys(quizzData).length + 1; q++) {
         var newQuestion = new Question("slide_" + q, quizzData[q - 1].choices, quizzData[q - 1])
         var newInteractiveVideo = new InteractiveVideo(newQuestion);
         newInteractiveVideo.loadClip("./video/clips/clip" + q + ".mp4");

@@ -1,0 +1,79 @@
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.choicesList ul {
+    padding: 0;
+}
+
+.choicesList ul li {
+    list-style: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px 20px 20px;
+    transition: border 0.1s ease, background-color 0.5s ease;
+    width: 100%;
+}
+
+.choicesList ul li:hover {
+    background-color: rgba(1, 1, 1, 0.4);
+    cursor: pointer;
+}
+
+.selected {
+    border: 5px solid rgb(218, 165, 32);
+    background-color: rgb(218, 165, 32);
+}
+
+.correct {
+    border: 5px solid rgb(34, 139, 34);
+    background-color: rgba( 34, 139, 34, 0.4);
+}
+
+.incorrect {
+    border: 5px solid rgba(160, 49, 35, 0.8);
+    background-color: rgba(160, 49, 35, 0.4);
+}
+
+.feedback {
+    margin: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    word-break: break-word;
+}
+
+.verify-btn {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 1px solid #5EBA7D;
+    transition: background 0.5s ease, border 0.5s ease-in;
+    outline: none;
+    user-select: none;
+    box-shadow: 0 9px #999;
+}
+
+.verify-btn:hover {
+    background-color: #5EBA7D;
+    border: 10px solid #254A32;
+    user-select: none;
+}
+
+.verify-btn:active {
+    background-color: #3e8e41;
+    box-shadow: 0 1px #666;
+    transform: translateY(4px);
+}
