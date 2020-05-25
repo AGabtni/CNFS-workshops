@@ -20,7 +20,11 @@ class DNDQuestion {
         },
 
         dragula: function() {
-            this.dragula = dragula([document.querySelector('#keywords'), document.querySelector('#right').querySelector("p")], {});
+            this.dragula = dragula([document.querySelector('#keywords'), document.querySelector('#right').querySelector("p")],
+                //Dragula options here
+                {
+                    revertOnSpill: true,
+                });
         },
 
         canMove: function() {
