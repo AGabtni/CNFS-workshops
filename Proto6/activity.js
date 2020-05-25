@@ -43,7 +43,7 @@ var questionData = {
 var dndQuestion;
 window.onload = initQuizz();
 
-
+window.addEventListener('touchmove', function() {})
 
 function initQuizz() {
 
