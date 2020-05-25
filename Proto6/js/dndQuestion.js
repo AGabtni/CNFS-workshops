@@ -7,8 +7,6 @@ class DNDQuestion {
 
     dragAndDrop = {
 
-        limit: 2,
-        count: 0,
 
         init: function() {
             this.dragula();
@@ -20,20 +18,32 @@ class DNDQuestion {
         },
 
         dragula: function() {
-            this.dragula = dragula([document.querySelector('#keywords'), document.querySelector('#right').querySelector("p")],
+            this.dragula = dragula([document.querySelector('#keywords')],
                 //Dragula options here
                 {
                     revertOnSpill: true,
+                    accepts: function(el, target, source, sibling) {
+
+                        if (source.classList.contains("full"))
+                            source.classList.remove("full");
+                        return !target.classList.contains("full"); // elements can be dropped in any of the `containers` by default
+                    },
                 });
         },
 
         canMove: function() {
-            return this.count < this.limit;
+
+
         },
 
         dropped: function(el) {
-            this.count++;
-        }
+
+            if (el.parentNode.id != "keywords")
+                el.parentNode.classList.add("full")
+
+            console.log("Dropped in area " + el.parentNode.id)
+        },
+
 
     };
 
@@ -42,7 +52,6 @@ class DNDQuestion {
 
         this.dropAreas = document.getElementsByClassName("drop-area");
         this.bankContainer = document.querySelector("#" + bankContainerId)
-        console.log(this.dropAreas)
 
 
         for (var d = 0; d < Object.keys(data).length; d++) {
@@ -55,15 +64,18 @@ class DNDQuestion {
 
 
         }
-
-
         this.dragAndDrop.init();
+        for (var a = 0; a < this.dropAreas.length; a++) {
+            this.dragAndDrop.dragula.containers.push(this.dropAreas[a])
+
+        }
+
 
     }
 
 
     initQuestion() {
-
+        console.log("here")
 
     }
 

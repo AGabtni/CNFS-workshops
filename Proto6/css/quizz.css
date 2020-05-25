@@ -3,6 +3,7 @@
     padding: 10px;
     display: flex;
     align-items: center;
+    min-height: 200px;
 }
 
 .bank-header {
@@ -12,8 +13,12 @@
 }
 
 .keywords-bank #keywords {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    min-height: 200px;
+    width: 100%;
+    grid-template-columns: auto auto auto auto auto;
+    align-content: center;
+    justify-content: center;
 }
 
 .keyword {
@@ -28,18 +33,14 @@
 
 .drop-area-container {
     background-color: yellowgreen;
-    display: flex;
     padding: 20px;
     bottom: 50%;
     margin: 20px;
-}
-
-.drop-area-container p {
     line-height: 50px;
 }
 
 .drop-area {
-    height: 10px;
-    width: 10px;
-    border: 2px strong black;
+    display: inline-block;
+    width: 200px;
+    height: 75px;
 }
