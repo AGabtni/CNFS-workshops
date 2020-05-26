@@ -1,10 +1,19 @@
 .keywords-bank {
     background-color: cornflowerblue;
-    padding: 10px;
+    margin: 20px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 200px;
+}
+
+.drop-area-container {
+    background-color: #B1CAF6;
+    padding: 20px;
+    bottom: 50%;
+    margin: 20px;
+    line-height: 100px;
 }
 
 .bank-header {
@@ -24,37 +33,38 @@
 }
 
 .keyword {
-    word-wrap: break-word;
-    align-items: center;
+    display: inline;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
     border-radius: 10px;
     background-color: white;
-    padding: 20px;
-    margin: 10px;
     cursor: pointer;
     transition: all 0.5s ease-in;
 }
 
+.feedbackImg {
+    height: 25px;
+    width: 25px;
+    vertical-align: middle;
+    margin: 10px;
+}
+
 .correct {
-    background-color: green;
+    border-radius: 10px;
+    color: green;
 }
 
 .incorrect {
-    background-color: red;
-}
-
-.drop-area-container {
-    background-color: yellowgreen;
-    padding: 20px;
-    bottom: 50%;
-    margin: 20px;
-    line-height: 50px;
+    border-radius: 10px;
+    color: red;
 }
 
 .drop-area {
     display: inline-block;
     text-align: center;
     justify-items: center;
-    width: 200px;
-    height: 75px;
+    width: 250px;
+    height: 50px;
     transition: all 0.5s ease-in;
 }

@@ -47,8 +47,7 @@ window.addEventListener('touchmove', function() {})
 
 function initQuizz() {
 
-    dndQuestion = new DNDQuestion(questionData, "keywords");
-    dndQuestion.initQuestion();
-
+    dndQuestion = new DNDQuestion("keywords");
+    dndQuestion.initQuestion(questionData);
 
 }
