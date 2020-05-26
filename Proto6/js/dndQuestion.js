@@ -134,7 +134,6 @@ class DNDQuestion {
 
         this.resetAllContainers();
 
-        this.showSolution();
         var dropAreas = document.getElementsByClassName("full");
 
 
