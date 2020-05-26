@@ -80,6 +80,7 @@ class DNDQuestion {
                 }
             }
 
+            dndQuestion.updateUI();
 
         },
 
@@ -178,26 +179,73 @@ class DNDQuestion {
 
     }
 
+    updateUI() {
 
+
+        var dropAreas = document.getElementsByClassName("drop-area");
+
+        if (!dropAreas.length)
+            return;
+
+        for (var a = 0; a < dropAreas.length; a++) {
+
+            if (dropAreas[a].classList.contains("full"))
+                dropAreas[a].style.backgroundColor = "rgba(0,0,0,0)";
+            else
+
+                dropAreas[a].style.backgroundColor = "rgb(255,255,255,0.7)";
+
+        }
+    }
+
+    isCorrectAnswer(keywordId) {
+
+        var keyword = document.querySelector(keywordId);
+        if (keyword.parentNode.id == "keywords") {
+            return false;
+        }
+
+        var keywordId = Number(keyword.id.substring(keyword.id.length - 1));
+        var currentDropAreaId = Number(keyword.parentNode.id.substring(keyword.parentNode.id.length - 1))
+        var correctDropAreaId = this.jsonData[keywordId].classification
+        if (currentDropAreaId == correctDropAreaId)
+            return true;
+
+
+        return false;
+
+
+    }
     showSolution() {
 
-
+        this.resetAllContainers();
 
         for (var k = 0; k < Object.keys(this.jsonData).length; k++) {
 
 
-            var correctDropArea = document.querySelector("#dropArea" + this.jsonData[k].classification);
-            if (correctDropArea.getElementsByClassName("keyword").length > 0)
-                continue;
 
-            var keyword = document.querySelector("#keyword" + k);
 
-            correctDropArea.appendChild(keyword);
-            correctDropArea.classList.add("full");
+
+            if (!this.isCorrectAnswer("#keyword" + k)) {
+                var keyword = document.querySelector("#keyword" + k);
+                var correctDropArea = document.querySelector("#dropArea" + this.jsonData[k].classification);
+                correctDropArea.appendChild(keyword);
+                correctDropArea.classList.add("full");
+
+            }
+
+
+
+
+
+
         }
 
-
+        this.updateUI();
+        this.verifyItems();
     }
+
+
     initQuestion(data) {
 
         this.jsonData = data;

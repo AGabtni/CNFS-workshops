@@ -20,7 +20,7 @@
 
     <div class="keywords-bank">
         <div class="bank-header">
-            Bank :
+            Banque de mots :
         </div>
         <div id="keywords">
 
@@ -44,10 +44,10 @@
 
 
         <div style="display: flex; flex-direction: row; justify-content: flex-end;">
+            <button id="verificationButton" class="activity-button" onclick=dndQuestion.verifyItems()><span>Vérifier </span></button>
 
+            <button id="solutionButton" class="activity-button" onclick=dndQuestion.showSolution()><span>Réponse </span></button>
 
-            <button style="width :100px; height: 75px;" onclick=dndQuestion.verifyItems()>Vérifier</button>
-            <button style="width :100px; height: 75px;" onclick=dndQuestion.showSolution()>Réponse</button>
         </div>
 
     </div>
