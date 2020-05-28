@@ -21,6 +21,7 @@ class DNDQuestion {
         drake: function() {
             this.dragula.on('drop', this.dropped.bind(this));
             this.dragula.on('drag', this.dragged.bind(this));
+            this.dragula.on('cancel', this.dropped.bind(this));
 
         },
 
@@ -31,19 +32,25 @@ class DNDQuestion {
                     revertOnSpill: true,
                     removeOnSpill: false,
                     accepts: (el, target, source, sibling) => {
-                        if (target.id == "keywords")
-                            return true;
 
 
-                        return !target.classList.contains("full");
+
+                        this.resetHoverContainers()
+
+                        if (target.id != "keywords") {
+                            target.classList.add("hovering");
+                            var headerId = target.id.substring(target.id.length - 1)
+                            var header = document.querySelector("#header" + headerId);
+                            header.classList.add("header-hover");
+                        }
+                        return true;
                     }
+
+
                 });
         },
 
-        canMove: function() {
 
-
-        },
 
         //On keyword drag handler : 
         dragged: function(el) {
@@ -53,7 +60,7 @@ class DNDQuestion {
 
             dndQuestion.resetAllContainers()
 
-            el.parentNode.style.width = "250px"
+            this.resetHoverContainers();
 
 
         },
@@ -61,30 +68,28 @@ class DNDQuestion {
         //On keyword drop handler 
         dropped: function(el) {
 
-            //Ignore if the drop area is the keywords bank container
-            if (el.parentNode.id != "keywords") {
-                //For this prototype (6) only since we don't want more than
-                // 1 item per drop area .
-                el.parentNode.classList.add("full");
 
-            }
+            this.resetHoverContainers();
 
 
 
-
-            //Remove the css "full" tag from all containers that still has it, but don't contain
-            // a keyword in their children
-            var dropAreas = document.getElementsByClassName("drop-area");
-            for (var a = 0; a < dropAreas.length; a++) {
-                if (dropAreas[a].classList.contains("full") && !dropAreas[a].getElementsByClassName("keyword").length) {
-                    dropAreas[a].classList.remove("full")
-
-                }
-            }
-
-            dndQuestion.updateUI();
 
         },
+
+        resetHoverContainers: function() {
+            var currentDropAreas = document.getElementsByClassName("hovering");
+            while (currentDropAreas.length > 0) {
+                currentDropAreas[0].classList.remove("hovering")
+            }
+
+
+            var currentHeaders = document.getElementsByClassName("header-hover");
+            while (currentHeaders.length > 0) {
+                currentHeaders[0].classList.remove("header-hover")
+            }
+
+
+        }
 
 
 
@@ -159,90 +164,77 @@ class DNDQuestion {
     verifyItems() {
 
 
-
-        var dropAreas = document.getElementsByClassName("full");
-
-
-        for (var a = 0; a < dropAreas.length; a++) {
-
-
-            var keyword = dropAreas[a].querySelector(".keyword");
-
-            //Ignore this keyword if its already correctly placed
-            if (keyword.classList.contains("correct"))
-                continue;
-
-            //Reset the keyword feedback class and image 
-            //if it was misplaced by the user
-            else if (keyword.classList.contains("incorrect")) {
-
-                keyword.classList.remove("incorrect")
-                keyword.removeChild(keyword.querySelector("img"))
-
-            }
-
-
-
-
-
-            //Append feedback img inside keyword
-            var feedBackImg = document.createElement("img");
-            feedBackImg.classList.add("feedbackImg");
-            keyword.parentNode.style.width = "250px"
-            keyword.appendChild(feedBackImg)
-
-            //Verify in the json data if the keyword is correctly classified in
-            // its drop area
-            var keywordId = Number(keyword.id.substring(keyword.id.length - 1))
-
-
-            if (this.jsonData[keywordId].classification == Number(dropAreas[a].id.substring(dropAreas[a].id.length - 1))) {
-
-                keyword.classList.add("correct")
-                feedBackImg.src = "./img/tick.png"
-
-                // Adjust the drop container to fit the the dragged keyword 
-                // for a cool effect (dont get excited its not that cool)
-                var xOffset = 30;
-                var adjustedWidth = Math.ceil(keyword.parentNode.clientWidth * (keyword.offsetWidth / keyword.parentNode.clientWidth)) + xOffset;
-                keyword.parentNode.style.width = adjustedWidth + "px";
-
-            } else {
-
-
-                keyword.classList.add("incorrect")
-                feedBackImg.src = "./img/cross.png"
-
-            }
-
-
-        }
-
-
-
-    }
-
-
-    //Update the css for the "full" drop areas
-    // just to add a visual indication that there is a word placed there
-    updateUI() {
-
-
         var dropAreas = document.getElementsByClassName("drop-area");
 
-        if (!dropAreas.length)
-            return;
 
         for (var a = 0; a < dropAreas.length; a++) {
 
-            if (dropAreas[a].classList.contains("full"))
-                dropAreas[a].style.backgroundColor = "rgba(0,0,0,0)";
-            else
 
-                dropAreas[a].style.backgroundColor = "rgb(255,255,255,0.7)";
+            //Check all words placed in that area
+            var keywords = dropAreas[a].getElementsByClassName("keyword");
+            for (var k = 0; k < keywords.length; k++) {
+
+                var currentKeyword = keywords[k];
+                //Ignore this keyword if its already correctly placed
+                if (currentKeyword.classList.contains("correct"))
+                    continue;
+                //Reset the keyword feedback class and image 
+                //if it was misplaced by the user
+                else if (currentKeyword.classList.contains("incorrect")) {
+
+                    currentKeyword.classList.remove("incorrect")
+                    currentKeyword.removeChild(currentKeyword.querySelector("img"))
+
+                }
+
+
+
+
+                //Append feedback img inside keyword
+                var feedBackImg = document.createElement("img");
+                feedBackImg.classList.add("feedbackImg");
+                currentKeyword.parentNode.style.width = "250px"
+                currentKeyword.appendChild(feedBackImg);
+
+
+                //Verify according to the json data if the keyword is correctly classified in
+                // its drop area
+                var keywordId = Number(currentKeyword.id.substring(currentKeyword.id.length - 1))
+
+
+                if (this.jsonData[keywordId].classification == Number(dropAreas[a].id.substring(dropAreas[a].id.length - 1))) {
+
+                    currentKeyword.classList.add("correct")
+                    feedBackImg.src = "./img/tick.png"
+
+
+
+                } else {
+
+
+                    currentKeyword.classList.add("incorrect")
+                    feedBackImg.src = "./img/cross.png"
+
+                }
+
+
+            }
+
+
+
+
+
+
+
+
+
 
         }
+
+
+
     }
+
 
 
     //Check if the keyword with keywordId is placed correctly
@@ -277,26 +269,15 @@ class DNDQuestion {
 
         for (var k = 0; k < Object.keys(this.jsonData).length; k++) {
 
-
-
-
-
             if (!this.isCorrectAnswer("#keyword" + k)) {
                 var keyword = document.querySelector("#keyword" + k);
                 var correctDropArea = document.querySelector("#dropArea" + this.jsonData[k].classification);
                 correctDropArea.appendChild(keyword);
-                correctDropArea.classList.add("full");
 
             }
 
-
-
-
-
-
         }
 
-        this.updateUI();
         this.verifyItems();
     }
 

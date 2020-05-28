@@ -1,4 +1,4 @@
-var quizzData = {
+var questionData = {
 
 
     0: {
@@ -67,28 +67,14 @@ var quizzData = {
 
 
 };
-
-var quizz;
-
+var dndQuestion;
 window.onload = initQuizz();
+
+window.addEventListener('touchmove', function() {})
 
 function initQuizz() {
 
+    dndQuestion = new DNDQuestion("keywords");
+    dndQuestion.initQuestion(questionData);
 
-    quizz = new DragNDrop("item2", quizzData);
-    quizz.quizzInit()
-
-
-
-    $("#droppable").sortable({
-        revert: true
-    });
-
-    $("#droppableA").sortable({
-        revert: true
-    });
-
-    $("#droppableB").sortable({
-        revert: true
-    });
 }

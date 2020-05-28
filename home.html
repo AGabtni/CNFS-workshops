@@ -34,7 +34,7 @@
             <div class="row" style="display : flex ; margin-top: 50px;">
 
                 <!--Prototype 1-->
-                <div class="card hvr-grow" style="opacity: 0.4;z-index: -99;">
+                <div class="card hvr-grow">
                     <div class="card-body">
                         <h5 class="card-title">Prototype 1</h5>
                         <p class="card-text">
@@ -80,7 +80,7 @@
                 </div>
 
                 <!--Prototype 5-->
-                <div class="card hvr-grow" style="opacity: 0.4;z-index: -99;">
+                <div class="card hvr-grow">
 
                     <div class="card-body">
                         <h5 class="card-title">Prototype 5</h5>
@@ -129,7 +129,7 @@
         <div class="links fade">
 
             <button style="width : 100px ; font-size: large; font-weight: 900;" class="hvr-pulse btn btn-success" onclick=togglePanes()>Index</button>
-            <ul class="list-group">
+            <ul class="list-group" style="margin: 30px">
                 <li onclick=onActivityClick(0) class=" hvr-grow list-group-item "><a>Prototype</a></li>
                 <li onclick=onActivityClick(1) class="hvr-grow list-group-item "><a>Integration</a>
                     <li onclick=onActivityClick(2) class="hvr-grow list-group-item "><a id="originalLink" target="_blank">Lien de l'activité d'origine</a>
@@ -138,6 +138,8 @@
             </ul>
 
             <div class="proto-container fade">
+                <button style="position: absolute ; top : 0px  ; font-size: large; font-weight: 900;" class="hvr-pulse btn btn-success"><a target="_blank">Ouvrir dans une nouvelle fenêtre</a></button>
+
                 <iframe class="proto-iframe" src="./Proto3/QCM.html "></div>
         </div>
 

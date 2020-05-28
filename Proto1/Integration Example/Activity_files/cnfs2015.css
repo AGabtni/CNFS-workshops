@@ -75,7 +75,7 @@ margin-left: 85px;}
 #atelier_headings_text h1.h1_black {color:#000000;
 padding-top:15px;}
 
-#main h1 { color: #9c001d;
+#main h1 { color: #820b19;
 font-size: 1.6em;
 margin:5px 0px 5px 0px;}
 
@@ -83,7 +83,7 @@ margin:5px 0px 5px 0px;}
 margin:5px 0px 5px 0px;
 border-top: #BCBEC0 2px dotted;
 padding-top: 10px;
-color:#9c001d;}
+color:#820b19;}
 
 #main h3 { font-size: 1.3em;
 margin:5px 0px 5px 0px;
@@ -94,7 +94,7 @@ margin:5px 0px 5px 0px;
 color:#000000;}
 
 #main h5 { font-size: 0.9em;
-color:#9c001d;}
+color:#820b19;}
 
 #main h6 { font-size: 0.9em;
 color:#000000;
@@ -148,7 +148,7 @@ text-align:-moz-center; }
 /*------------------------------------------------------------------------------------------*/
 
 a:link { color: #820b19;}
-a:visited { color: #133863; }
+a:visited { color: #820b19; }
 a:hover { color: #6c6d6d; }
 
 /*------------------------------------------------------------------------------------------*/
@@ -183,7 +183,7 @@ padding-left: 20px;}
 ul.objectif li:before { content: "»";
 font-size: 1.3em;
 margin-right: 5px;
-color:#355c93; }
+color:#820b19; }
 
 /*------------------------------------------------------------------------------------------*/
 /*------------------------------------S-1.6 Forms------------------------------------*/
@@ -193,8 +193,8 @@ margin-bottom: 15px;}
 
 legend  {font-size: 1.1em;
 margin:5px 0px 5px 0px;
-color:#823131;
-width:90%;}
+color:#6d5247;
+width:100%;}
 
 textarea {font-size: .9em;}
 
@@ -320,7 +320,7 @@ html #side_nav  a.current-parent {font-weight:bold;}
 
 #side_nav .section-nav li a:hover {text-decoration:underline;}
 
-#side_nav .section-nav li a.current {color:#133863;
+#side_nav .section-nav li a.current {color:#820b19;
 background-color:#ffffff;}
 
 #side_nav .section-nav li.current-child a {border-top:0;
@@ -427,6 +427,17 @@ min-width: 960px;
 padding: 10px 0px 10px 0px;
 margin: 15px 0px 15px -15px;}
 
+#index_pre-atelier {
+min-width: 960px;
+padding: 10px 0px 10px 0px;
+margin: 15px 0px 15px -15px;}
+
+#index_post-atelier {
+min-width: 960px;
+padding: 10px 0px 10px 0px;
+margin: 15px 0px 15px -15px;}
+
+
 /*-------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------S-8 MISC----------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -518,8 +529,40 @@ width:50%;}
 .txt_highlight_beige {background-color: #dcc5ac;}
 .txt_highlight_pink {background-color: #f995be;}
 
+
+/* Manu - from supervision 2013 */
+.video_turtle {width: 150px;
+height:297px;
+background-image:url(../medias/images/turtle_video.png);
+float:left;}
+
+.video_title {padding-top:100px;
+width:400px;
+height:200px;
+float:right;
+background-image:url(../medias/images/blank.png);}
+
+.icon-right {color:#00A261;}
+.icon-wrong {color:#e74c3c;}
+.icon-unchecked {color:#DDD;}
+
+.bxslider .show-feedback{background-color:#A9483A; color:#FFF;}
+
+.bxslider_bg{background-color:#dfe0de; padding:15px 15px 0px 15px;}
+iframe {border:5px solid #000;
+    border-radius: 20px !important;
+}
+
 .rappel-icon{
 	background-image: url('../images/Rappel_icon-01.png');
+	width:25px; 
+	height:25px; 
+	background-size:25px 25px; 
+	display:inline-block;
+}
+
+.devoir-icon{
+	background-image: url('../images/Devoir_icon-01.png');
 	width:25px; 
 	height:25px; 
 	background-size:25px 25px; 

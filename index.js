@@ -8,7 +8,7 @@ var originalLink = {
 
     1: {
 
-        link: "",
+        link: "https://ateliers-staging.azurewebsites.net/assets/atelierscnfs/explorer-divers-modeles-de-supervision/medias/Video/unite5_2.html",
         screenshot: "",
     },
     2: {
@@ -69,12 +69,17 @@ function togglePanes() {
 
         indexContainer.classList.remove("fade");
         indexContainer.style.visibility = "visible"
+        activityContainer.classList.remove("fade");
+
 
 
     }
     //Switch to index view
     else {
         activityContainer.querySelectorAll("iframe")[0].src = "";
+        activityContainer.querySelectorAll("button")[0].querySelectorAll("a")[0].href = "";
+
+        activityContainer.classList.add("fade");
         indexContainer.classList.add("fade");
         indexContainer.style.visibility = "hidden"
 
@@ -87,7 +92,6 @@ function togglePanes() {
 
 function onActivityClick(i) {
 
-    console.log("Current is : " + currentIndex)
     var frameContainer = activityContainer.querySelectorAll("iframe")[0];
 
     var linkHTML = linksContainer.querySelectorAll("li")[0].querySelectorAll("a")[0].innerHTML;
@@ -96,37 +100,30 @@ function onActivityClick(i) {
 
     var prefix = "./Proto" + index
 
-    var protoLinkString = prefix + "/QCM.html";
-    var integrationLinkString = prefix + "/Integration Example/Activity.html";
     var screenShotString = "./screenshots/Proto" + index + ".gif";
     switch (i) {
 
         case 0:
+            var protoLinkString = prefix + "/QCM.html";
+
             frameContainer.src = protoLinkString
-            frameContainer.hidden = false;
+            activityContainer.querySelectorAll("button")[0].querySelectorAll("a")[0].href = protoLinkString;
+            activityContainer.classList.remove("fade");
 
             break;
         case 1:
+            var integrationLinkString = prefix + "/Integration Example/Activity.html";
+
             frameContainer.src = integrationLinkString
-            frameContainer.hidden = false;
+            activityContainer.querySelectorAll("button")[0].querySelectorAll("a")[0].href = integrationLinkString;
+            activityContainer.classList.remove("fade");
 
             break;
         case 2:
-
-            frameContainer.hidden = true;
+            activityContainer.classList.add("fade");
             break;
     }
 
-
-    if (activityContainer.classList.contains("fade")) {
-        activityContainer.classList.remove("fade");
-
-
-    } else {
-
-        activityContainer.classList.remove("fade");
-
-    }
 
 
 }

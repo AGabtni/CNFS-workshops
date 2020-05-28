@@ -3,58 +3,56 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--DONT FORGET ABOUT THE CSS & THE JSON DATA-->
+
+
+    <!--DONT FORGET ABOUT THE CSS-->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/dragula/dragula.css">
     <link rel="stylesheet" href="css/quizz.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/hover-CSS/hover-min.css">
 
     <meta charset=utf-8 />
 
 </head>
 
 <body>
-
-    <!--COPY PASE IN WORKSHOP FROM HERE-->
-    <div class="flexContainer">
-        <div style="display: flex; flex-direction: row; align-items: center;">
-
-            <button onclick=quizz.verify() id="verfication-btn">Vérifier</button>
-            <div class="grid-container keywords-container">
-
-                <div class="item1">
-                    <h3>Banque de mots</h3>
-                </div>
-                <div id="droppable" class="keywords item2">
+    <!--COPY CODE FROM HERE-->
 
 
-                </div>
-
-            </div>
+    <div class="keywords-bank">
+        <div class="bank-header">
+            Banque de mots :
         </div>
-        <br>
-        <br>
-        <div class="grid-container drop-area-container">
-
-            <div class="item5">
-                <h3>Joue un rôle central</h3>
-            </div>
-            <div class="item6">
-                <h3>Ne joue pas un rôle central</h3>
-            </div>
-
-            <div id="droppableA" class="item3"></div>
-            <div id="droppableB" class="item4"></div>
+        <div id="keywords">
 
         </div>
 
     </div>
 
-    <!--END OF COPY-->
+
+
+    <div class="drop-area-container">
+
+        <div id="header0" class="area-header">Joue un rôle central</div>
+        <div id="header1" class="area-header">Ne joue pas un rôle central</div>
+        <div id="dropArea0" class="drop-area"></div>
+        <div id="dropArea1" class="drop-area"></div>
+
+        <button id="verificationButton" class="activity-button" onclick=dndQuestion.verifyItems()><span>Vérifier </span></button>
+
+        <button id="solutionButton" class="activity-button" onclick=dndQuestion.showSolution()><span>Réponse </span></button>
+
+
+    </div>
+
+    <!--TO HERE-->
+
+    <!--DONT FORGET ABOUT THE SCRIPTS-->
+
+    <script type="text/javascript" src="js/dragula/dragula.js"></script>
+    <script type="text/javascript" src="js/dndQuestion.js"></script>
+
+    <script type="text/javascript" src="activity.js"></script>
 </body>
-
-<!--DON'T FORGET ABOUT THE SCRIPTS-->
-<script src="js/quizz.js"></script>
-<script src="activity.js"></script>
-
 
 </html>
