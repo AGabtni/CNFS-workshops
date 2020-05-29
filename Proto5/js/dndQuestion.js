@@ -123,7 +123,7 @@ class DNDQuestion {
         this.jsonData = data;
         //Create keywords dynamicly and append them to wrapping container
         for (var d = 0; d < Object.keys(data).length; d++) {
-            var newKeyword = document.createElement("span");
+            var newKeyword = document.createElement("div");
             newKeyword.innerHTML = data[d].keyword;
             newKeyword.classList.add("hvr-glow")
 
