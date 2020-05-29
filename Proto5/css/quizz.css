@@ -9,6 +9,7 @@
 
 #header0 {
     grid-area: header1;
+    background-color: chartreuse;
 }
 
 #header1 {
@@ -18,6 +19,7 @@
 #dropArea0 {
     grid-area: main1;
     background-color: chartreuse;
+    background-color: darkorange;
 }
 
 #dropArea1 {
