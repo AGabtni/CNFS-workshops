@@ -42,6 +42,12 @@ class DNDQuestion {
                             var headerId = target.id.substring(target.id.length - 1)
                             var header = document.querySelector("#header" + headerId);
                             header.classList.add("header-hover");
+                        } else if (target.id == "keywords") {
+                            target.classList.add("hovering");
+                            var headerId = target.id.substring(target.id.length - 1)
+                            var header = document.getElementsByClassName("bank-header")[0];
+                            header.classList.add("header-hover");
+
                         }
                         return true;
                     }
@@ -125,7 +131,7 @@ class DNDQuestion {
         for (var d = 0; d < Object.keys(data).length; d++) {
             var newKeyword = document.createElement("div");
             newKeyword.innerHTML = data[d].keyword;
-            newKeyword.classList.add("hvr-glow")
+            newKeyword.classList.add("hvr-float-shadow")
 
             newKeyword.classList.add("keyword")
             newKeyword.id = "keyword" + d;
