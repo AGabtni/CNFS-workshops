@@ -25,10 +25,15 @@
     background-color: darkorange;
 }
 
+#footer {
+    grid-area: footer;
+    margin-top: 20px;
+}
+
 .drop-area-container {
     display: grid;
     grid-template-columns: repeat(auto-fill);
-    grid-template-areas: "header1 header1 header2 header2" "main1  main1 main2  main2";
+    grid-template-areas: "header1 header1 header2 header2" "main1  main1 main2  main2" "footer footer footer footer";
     justify-items: center;
     text-align: center;
     background-color: #B1CAF6;
@@ -55,7 +60,11 @@
 }
 
 .keyword {
-    display: flex;
+    display: flex !important;
+    flex-direction: row;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
     padding: 10px;
     margin: 10px;
     border-radius: 10px;

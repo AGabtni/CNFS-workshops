@@ -125,8 +125,9 @@ class DNDQuestion {
         for (var d = 0; d < Object.keys(data).length; d++) {
             var newKeyword = document.createElement("span");
             newKeyword.innerHTML = data[d].keyword;
-            newKeyword.classList.add("keyword")
             newKeyword.classList.add("hvr-glow")
+
+            newKeyword.classList.add("keyword")
             newKeyword.id = "keyword" + d;
 
             this.bankContainer.appendChild(newKeyword)
