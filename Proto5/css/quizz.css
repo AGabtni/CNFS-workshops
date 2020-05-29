@@ -14,12 +14,12 @@
 
 #header1 {
     grid-area: header2;
+    background-color: darkorange;
 }
 
 #dropArea0 {
     grid-area: main1;
     background-color: chartreuse;
-    background-color: darkorange;
 }
 
 #dropArea1 {
