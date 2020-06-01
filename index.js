@@ -8,7 +8,7 @@ var originalLink = {
 
     1: {
 
-        link: "https://ateliers-staging.azurewebsites.net/assets/atelierscnfs/explorer-divers-modeles-de-supervision/medias/Video/unite5_2.html",
+        link: "https://ateliers-staging.azurewebsites.net/assets/atelierscnfs/explorer-divers-modeles-de-supervision/medias/Video/unite5_4.html",
         screenshot: "",
     },
     2: {

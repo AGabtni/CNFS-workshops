@@ -1,104 +1,101 @@
 class DNDQuestion {
 
-    keywordsBank = [];
-
-    bankContainer;
-    dropAreas = [];
-    jsonData;
-
-    //Dragula object
-    dragAndDrop = {
 
 
-
-
-        init: function() {
-            this.dragula();
-            this.drake();
-            this.currenSource;
-        },
-
-        drake: function() {
-            this.dragula.on('drop', this.dropped.bind(this));
-            this.dragula.on('drag', this.dragged.bind(this));
-
-        },
-
-        dragula: function() {
-            this.dragula = dragula([document.querySelector('#keywords')],
-                //Dragula options here
-                {
-                    revertOnSpill: true,
-                    removeOnSpill: false,
-                    accepts: (el, target, source, sibling) => {
-                        if (target.id == "keywords")
-                            return true;
-
-
-                        return !target.classList.contains("full");
-                    }
-                });
-        },
-
-        canMove: function() {
-
-
-        },
-
-        //On keyword drag handler : 
-        dragged: function(el) {
-
-            if (el.parentNode.id == "keywords")
-                return;
-
-            dndQuestion.resetAllContainers()
-
-            el.parentNode.style.width = "250px"
-
-
-        },
-
-        //On keyword drop handler 
-        dropped: function(el) {
-
-            //Ignore if the drop area is the keywords bank container
-            if (el.parentNode.id != "keywords") {
-                //For this prototype (6) only since we don't want more than
-                // 1 item per drop area .
-                el.parentNode.classList.add("full");
-
-            }
-
-
-
-
-            //Remove the css "full" tag from all containers that still has it, but don't contain
-            // a keyword in their children
-            var dropAreas = document.getElementsByClassName("drop-area");
-            for (var a = 0; a < dropAreas.length; a++) {
-                if (dropAreas[a].classList.contains("full") && !dropAreas[a].getElementsByClassName("keyword").length) {
-                    dropAreas[a].classList.remove("full")
-
-                }
-            }
-
-            dndQuestion.updateUI();
-
-        },
-
-
-
-
-
-
-    };
 
 
     constructor(bankContainerId) {
+        this.keywordsBank = [];
 
         this.dropAreas = document.getElementsByClassName("drop-area");
         this.bankContainer = document.querySelector("#" + bankContainerId)
+            //Dragula object
 
+        this.dragAndDrop = {
+
+
+
+
+            init: function() {
+                this.dragula();
+                this.drake();
+                this.currenSource;
+            },
+
+            drake: function() {
+                this.dragula.on('drop', this.dropped.bind(this));
+                this.dragula.on('drag', this.dragged.bind(this));
+
+            },
+
+            dragula: function() {
+                this.dragula = dragula([document.querySelector('#keywords')],
+                    //Dragula options here
+                    {
+                        revertOnSpill: true,
+                        removeOnSpill: false,
+                        accepts: (el, target, source, sibling) => {
+                            if (target.id == "keywords")
+                                return true;
+
+
+                            return !target.classList.contains("full");
+                        }
+                    });
+            },
+
+            canMove: function() {
+
+
+            },
+
+            //On keyword drag handler : 
+            dragged: function(el) {
+
+                if (el.parentNode.id == "keywords")
+                    return;
+
+                dndQuestion.resetAllContainers()
+
+                el.parentNode.style.width = "250px"
+
+
+            },
+
+            //On keyword drop handler 
+            dropped: function(el) {
+
+                //Ignore if the drop area is the keywords bank container
+                if (el.parentNode.id != "keywords") {
+                    //For this prototype (6) only since we don't want more than
+                    // 1 item per drop area .
+                    el.parentNode.classList.add("full");
+
+                }
+
+
+
+
+                //Remove the css "full" tag from all containers that still has it, but don't contain
+                // a keyword in their children
+                var dropAreas = document.getElementsByClassName("drop-area");
+                for (var a = 0; a < dropAreas.length; a++) {
+                    if (dropAreas[a].classList.contains("full") && !dropAreas[a].getElementsByClassName("keyword").length) {
+                        dropAreas[a].classList.remove("full")
+
+                    }
+                }
+
+                dndQuestion.updateUI();
+
+            },
+
+
+
+
+
+
+        };
         this.dragAndDrop.init();
 
         //Dynamicly add drop containers to dragula

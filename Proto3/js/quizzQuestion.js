@@ -1,30 +1,18 @@
 class Question {
 
 
-    choices = [];
-    solutions = [];
-    statement;
-    feedback;
-    //parent html container
-    parentContainer;
 
-    titleElement;
-    feedbackElement;
-    statementElement;
 
     // html list elements found 
     // in the parent container
-    choiceListElements = [];
 
     //Array for the selected choices 
     // by the user
-    selectChoices = [];
 
     // Arrays for  the correct & incorrect
     // choices selected fills up 
     // after hitting the verify button
-    incorrectChoices = [];
-    correctChoices = [];
+
 
     //Creates a question object .
     //  @targetHtmlId : parent container of the question 
@@ -40,6 +28,11 @@ class Question {
         this.feedbackElement = this.parentContainer.getElementsByClassName("feedback")[0];
         this.statementElement = this.parentContainer.getElementsByClassName("statement")[0];
 
+
+        this.selectedChoices = [];
+
+        this.incorrectChoices = [];
+        this.correctChoices = [];
     }
 
 
@@ -81,22 +74,22 @@ class Question {
 
     // on click of the list element
     // pushes the values of the selected element
-    // to selectChoices if its not already present in 
+    // to selectedChoices if its not already present in 
     // the former array
     onChoiceClick(id) {
 
-        if (this.selectChoices.length > 0) {
+        if (this.selectedChoices.length > 0) {
 
             var foundChoice = false;
 
 
-            for (var i = 0; i < this.selectChoices.length; i++) {
+            for (var i = 0; i < this.selectedChoices.length; i++) {
 
 
-                if (this.selectChoices[i] == id) {
+                if (this.selectedChoices[i] == id) {
 
                     foundChoice = true;
-                    this.selectChoices.splice(i, 1);
+                    this.selectedChoices.splice(i, 1);
                     this.updateQuizzList()
 
                     return;
@@ -104,11 +97,11 @@ class Question {
             }
 
             if (!foundChoice)
-                this.selectChoices.push(id);
+                this.selectedChoices.push(id);
 
         } else {
 
-            this.selectChoices.push(id);
+            this.selectedChoices.push(id);
         }
         this.updateQuizzList()
     }
@@ -130,12 +123,14 @@ class Question {
 
 
         }
-        for (var c = 0; c < this.selectChoices.length; c++) {
+        if (this.selectedChoices.length > 0) {
+            for (var c = 0; c < this.selectedChoices.length; c++) {
 
-            this.choiceListElements[this.selectChoices[c]].classList.add("selected")
-            this.choiceListElements[this.selectChoices[c]].parentNode.querySelectorAll("img")[0].src = "./img/select.png";
-            this.choiceListElements[this.selectChoices[c]].parentNode.querySelectorAll("img")[0].style.opacity = "1"
+                this.choiceListElements[this.selectedChoices[c]].classList.add("selected")
+                this.choiceListElements[this.selectedChoices[c]].parentNode.querySelectorAll("img")[0].src = "./img/select.png";
+                this.choiceListElements[this.selectedChoices[c]].parentNode.querySelectorAll("img")[0].style.opacity = "1"
 
+            }
         }
 
         for (var c = 0; c < this.incorrectChoices.length; c++) {
@@ -166,7 +161,7 @@ class Question {
         // Just an option
         // to reset the quizz if there is no inputs
         /*
-        if (this.selectChoices.length == 0) {
+        if (this.selectedChoices.length == 0) {
             this.updateQuizzList();
             return;
         }
@@ -175,13 +170,13 @@ class Question {
         // Filter the selected choices
         // keep the correct one in the array correctChoices array
         // and the incorrect ones in incorrectChoices array
-        for (var s = 0; s < this.selectChoices.length; s++) {
+        for (var s = 0; s < this.selectedChoices.length; s++) {
 
 
-            if (!this.isCorrectChoice(this.selectChoices[s]))
-                this.incorrectChoices.push(this.selectChoices[s]);
+            if (!this.isCorrectChoice(this.selectedChoices[s]))
+                this.incorrectChoices.push(this.selectedChoices[s]);
             else
-                this.correctChoices.push(this.selectChoices[s]);
+                this.correctChoices.push(this.selectedChoices[s]);
 
         }
 
@@ -213,7 +208,7 @@ class Question {
         //  empty selected and incorrect
         //  choices after a verification
         //  after the visual update
-        this.selectChoices = [];
+        this.selectedChoices = [];
         this.incorrectChoices = [];
         this.correctChoices = [];
 

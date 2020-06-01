@@ -1,18 +1,11 @@
 class InteractiveVideo {
 
-    quizzQuestion;
-    questionComponent;
-    videoComponent;
-    videoHeader;
-    timeOut;
 
-    currentSlideIndex;
 
 
     constructor(quizzQuestion) {
         this.currentSlideIndex = Number(quizzQuestion.parentContainer.id.substring(quizzQuestion.parentContainer.id.length - 1))
 
-        console.log(this.currentSlideIndex);
         this.quizzQuestion = quizzQuestion;
         this.quizzQuestion.initQuestion();
 
@@ -77,10 +70,9 @@ class InteractiveVideo {
             return;
         }
         this.timeOut = setTimeout(() => {
-            //this.questionComponent.style.visibility = "hidden"
             this.videoComponent.pause()
             this.quizzQuestion.updateQuizzList();
-            this.toggleVideoPreview();
+            //this.toggleVideoPreview();
             this.videoComponent.load();
             this.timeOut = undefined;
 
@@ -91,7 +83,7 @@ class InteractiveVideo {
                 if (window.pageYOffset != currentScroll)
                     return;
 
-                this.scrollToSlide(this.currentSlideIndex);
+                //this.scrollToSlide(this.currentSlideIndex);
 
             }, 2000)
 
@@ -105,8 +97,7 @@ class InteractiveVideo {
         var slides = document.getElementsByClassName("slide");
         var nextSlideId = index + 1;
         var nextSlide;
-        console.log(index)
-        console.log(nextSlideId)
+
         if (index === slides.length)
             nextSlide = document.querySelector("#slide_1")
         else

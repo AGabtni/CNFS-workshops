@@ -1,111 +1,109 @@
 class DNDQuestion {
 
-    keywordsBank = [];
-
-    bankContainer;
-    dropAreas = [];
-    jsonData;
-
-    //Dragula object
-    dragAndDrop = {
 
 
 
-
-        init: function() {
-            this.dragula();
-            this.drake();
-            this.currenSource;
-        },
-
-        drake: function() {
-            this.dragula.on('drop', this.dropped.bind(this));
-            this.dragula.on('drag', this.dragged.bind(this));
-            this.dragula.on('cancel', this.dropped.bind(this));
-
-        },
-
-        dragula: function() {
-            this.dragula = dragula([document.querySelector('#keywords')],
-                //Dragula options here
-                {
-                    revertOnSpill: true,
-                    removeOnSpill: false,
-                    accepts: (el, target, source, sibling) => {
-
-
-
-                        this.resetHoverContainers()
-
-                        if (target.id != "keywords") {
-                            target.classList.add("hovering");
-                            var headerId = target.id.substring(target.id.length - 1)
-                            var header = document.querySelector("#header" + headerId);
-                            header.classList.add("header-hover");
-                        } else if (target.id == "keywords") {
-                            target.classList.add("hovering");
-                            var headerId = target.id.substring(target.id.length - 1)
-                            var header = document.getElementsByClassName("bank-header")[0];
-                            header.classList.add("header-hover");
-
-                        }
-                        return true;
-                    }
-
-
-                });
-        },
-
-
-
-        //On keyword drag handler : 
-        dragged: function(el) {
-
-            if (el.parentNode.id == "keywords")
-                return;
-
-            dndQuestion.resetAllContainers()
-
-            this.resetHoverContainers();
-
-
-        },
-
-        //On keyword drop handler 
-        dropped: function(el) {
-
-
-            this.resetHoverContainers();
-
-
-
-
-        },
-
-        resetHoverContainers: function() {
-            var currentDropAreas = document.getElementsByClassName("hovering");
-            while (currentDropAreas.length > 0) {
-                currentDropAreas[0].classList.remove("hovering")
-            }
-
-
-            var currentHeaders = document.getElementsByClassName("header-hover");
-            while (currentHeaders.length > 0) {
-                currentHeaders[0].classList.remove("header-hover")
-            }
-
-
-        }
-
-
-
-
-
-
-    };
 
 
     constructor(bankContainerId) {
+        //Dragula object
+        this.dragAndDrop = {
+
+
+
+
+            init: function() {
+                this.dragula();
+                this.drake();
+                this.currenSource;
+            },
+
+            drake: function() {
+                this.dragula.on('drop', this.dropped.bind(this));
+                this.dragula.on('drag', this.dragged.bind(this));
+                this.dragula.on('cancel', this.dropped.bind(this));
+
+            },
+
+            dragula: function() {
+                this.dragula = dragula([document.querySelector('#keywords')],
+                    //Dragula options here
+                    {
+                        revertOnSpill: true,
+                        removeOnSpill: false,
+                        accepts: (el, target, source, sibling) => {
+
+
+
+                            this.resetHoverContainers()
+
+                            if (target.id != "keywords") {
+                                target.classList.add("hovering");
+                                var headerId = target.id.substring(target.id.length - 1)
+                                var header = document.querySelector("#header" + headerId);
+                                header.classList.add("header-hover");
+                            } else if (target.id == "keywords") {
+                                target.classList.add("hovering");
+                                var headerId = target.id.substring(target.id.length - 1)
+                                var header = document.getElementsByClassName("bank-header")[0];
+                                header.classList.add("header-hover");
+
+                            }
+                            return true;
+                        }
+
+
+                    });
+            },
+
+
+
+            //On keyword drag handler : 
+            dragged: function(el) {
+
+                if (el.parentNode.id == "keywords")
+                    return;
+
+                dndQuestion.resetAllContainers()
+
+                this.resetHoverContainers();
+
+
+            },
+
+            //On keyword drop handler 
+            dropped: function(el) {
+
+
+                this.resetHoverContainers();
+
+
+
+
+            },
+
+            resetHoverContainers: function() {
+                var currentDropAreas = document.getElementsByClassName("hovering");
+                while (currentDropAreas.length > 0) {
+                    currentDropAreas[0].classList.remove("hovering")
+                }
+
+
+                var currentHeaders = document.getElementsByClassName("header-hover");
+                while (currentHeaders.length > 0) {
+                    currentHeaders[0].classList.remove("header-hover")
+                }
+
+
+            }
+
+
+
+
+
+
+        };
+        this.keywordsBank = [];
 
         this.dropAreas = document.getElementsByClassName("drop-area");
         this.bankContainer = document.querySelector("#" + bankContainerId)

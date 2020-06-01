@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<meta charset="UTF-8">
 
 
 
@@ -7,16 +8,40 @@
 <head>
     <link rel="stylesheet" href="css/quizz.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <script type="application/javascript" src="./js/videoActivity.js"></script>
+
+    <script src="https://kit.fontawesome.com/c9a98fd9da.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-    <h2>4. La rétroaction</h2>
-    <p>À titre d'exemple, nous vous proposons de regarder la vidéo suivante afin de constater comment les stagiaires peuvent se fournir de la rétroaction. </p>
+    <h2> 4. La rétroaction
+    </h2>
+    <p> À titre d 'exemple, nous vous proposons de regarder la vidéo suivante afin de constater comment les stagiaires peuvent se fournir de la rétroaction. </p>
     <p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/U_KsFp3wkIQ?rel=0" frameborder="0" allowfullscreen=""></iframe>
+        <div class="preview-container">
+
+            <div class="preview-background">
+            </div>
+            <div class="preview-content">
+                <button id="previewButton" data-target="simpleModal_6" data-toggle="modal"><i  style="position: relative;z-index: -99;"class="fa fa-play fa-2x"></i></button>
+            </div>
+        </div>
 
     </p>
+    <div id="simpleModal_6" class="modal">
+        <div class="modal-window modal-out">
+            <div class="modal-header">
+                <span class="close" data-dismiss="modal">&times;</span>
+            </div>
+
+            <div class="modal-video">
+                <iframe width="560" height="349" src="https://www.youtube.com/embed/U_KsFp3wkIQ?rel=0" allowfullscreen="">
+                </iframe>
+            </div>
+        </div>
+    </div>
 </body>
 
 

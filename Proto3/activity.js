@@ -43,6 +43,9 @@ var quizzData = {
 
 };
 window.onload = initQuizz();
+window.onerror = function(message, source, lineno, colno, error) {
+    alert(message + ": " + source + " : " + lineno + " : " + colno + ": " + error);
+}
 
 function initQuizz() {
 

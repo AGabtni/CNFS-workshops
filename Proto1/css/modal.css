@@ -1,0 +1,135 @@
+.preview-container {
+    position: relative;
+    display: flex;
+    align-content: center;
+    width: 560px;
+    height: 349px;
+}
+
+.preview-background {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-image: url(http://i4.ytimg.com/vi/U_KsFp3wkIQ/default.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -99;
+}
+
+.preview-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
+
+#previewButton {
+    box-sizing: border-box;
+    display: block;
+    width: 80px;
+    height: 80px;
+    padding-top: 14px;
+    padding-left: 8px;
+    line-height: 20px;
+    border: 6px solid #fff;
+    border-radius: 50%;
+    color: #f5f5f5;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 20px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+#previewButton:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 10px rgba(255, 255, 100, 1);
+    text-shadow: 0px 0px 10px rgba(255, 255, 100, 1);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+    overflow: auto;
+    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+}
+
+.modal-window {
+    position: relative;
+    border-radius: 5px;
+    background-color: #000000;
+    margin: 5% 15%;
+    padding: 20px;
+    transition: all 0.3s ease-in;
+}
+
+.modal-in {
+    transform: translate(0, 0);
+}
+
+.modal-out {
+    transform: translate(0, -150%);
+}
+
+.modal-window.small {
+    width: 30%;
+}
+
+.modal-window.large {
+    width: 75%;
+}
+
+.modal-header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.modal-video {
+    position: relative;
+    padding-bottom: calc(var(--aspect-ratio, .5625) * 100%);
+    /* 16:9 */
+    height: 0;
+}
+
+.modal-video iframe {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.close {
+    position: relative;
+    color: rgba(255, 255, 255, 0.5);
+    height: 30px;
+    width: 30px;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 30px;
+    text-align: center;
+    transition: all 0.2s ease-in;
+}
+
+.close:hover,
+.close:focus {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.open {
+    display: block;
+}
