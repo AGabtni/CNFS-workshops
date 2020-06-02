@@ -14,7 +14,7 @@
     background-image: url(http://i4.ytimg.com/vi/U_KsFp3wkIQ/default.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    z-index: -99;
+    z-index: 0;
 }
 
 .preview-content {
@@ -28,6 +28,7 @@
 }
 
 #previewButton {
+    z-index: 1;
     box-sizing: border-box;
     display: block;
     width: 80px;
@@ -46,10 +47,20 @@
     transition: all 0.3s ease;
 }
 
+#previewButton i {
+    position: relative;
+    -webkit-user-select: none!important;
+    -moz-user-select: none!important;
+    -ms-user-select: none!important;
+    -o-user-select: none!important;
+    user-select: none!important;
+}
+
 #previewButton:hover {
     background-color: rgba(0, 0, 0, 0.8);
     box-shadow: 0px 0px 10px rgba(255, 255, 100, 1);
     text-shadow: 0px 0px 10px rgba(255, 255, 100, 1);
+    cursor: pointer;
 }
 
 .modal {
