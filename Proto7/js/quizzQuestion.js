@@ -198,7 +198,6 @@ class Question {
 
         //Move to next slide after verification 
         var slideIndex = this.parentContainer.id.substring(this.parentContainer.id.length - 1) - 1;
-        interactiveVideos[slideIndex].moveToNextClip()
     }
 
     // return true if the selected 

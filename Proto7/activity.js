@@ -3,6 +3,7 @@ var interactiveVideos = [];
 var quizzData = {
 
     0: {
+        "youtubeVideoId": 'fm2ruTcSePw',
         "statement": "A cette étape de la discussion, que devrait faire la superviseure pour aider les stagiaires à cheminer vers une identité professionnelle collective ?",
         "choices": ["Demander aux stagiaires de revoir l’objectif commun de l’équipe",
             "Demander à chacun de discuter de leur expérience professionnelle avec la patiente",
@@ -16,6 +17,8 @@ var quizzData = {
 
     },
     1: {
+        "youtubeVideoId": 'T4OiU5sVQ5Y',
+
         "statement": "A cette étape de la discussion, que devrait faire la superviseure pour aider les stagiaires à cheminer vers une identité professionnelle collective ?",
         "choices": ["Demander à chacun de discuter de leur expérience professionnelle avec la patiente",
             "Demander à chacun de discuter de leur expérience professionnelle avec la patiente",
@@ -28,6 +31,8 @@ var quizzData = {
 
     },
     2: {
+        "youtubeVideoId": 'PRWsoAYJEA4',
+
         "statement": "A cette étape de la discussion, que devrait faire la superviseure pour aider les stagiaires à cheminer vers une identité professionnelle collective ?",
         "choices": ["Expliquer les avantages de travailler en CIP",
             "Demander à chacun de discuter de leur expérience professionnelle avec la patiente",
@@ -40,6 +45,7 @@ var quizzData = {
 
     },
     3: {
+        "youtubeVideoId": 'MJ7lvAiYv_Y',
         "statement": "A cette étape de la discussion, que devrait faire la superviseure pour aider les stagiaires à cheminer vers une identité professionnelle collective ?",
         "choices": ["Expliquer les avantages de travailler en CIP",
             "Demander à chacun de discuter de leur expérience professionnelle avec la patiente",
@@ -65,13 +71,13 @@ function initQuizz() {
     for (var q = 1; q < Object.keys(quizzData).length + 1; q++) {
         var newQuestion = new Question("slide_" + q, quizzData[q - 1].choices, quizzData[q - 1])
         var newInteractiveVideo = new InteractiveVideo(newQuestion);
-        newInteractiveVideo.loadClip("./video/clips/clip" + q + ".mp4");
         quizz.push(newQuestion);
         interactiveVideos.push(newInteractiveVideo);
 
 
     }
 
+    console.log("whos faster")
 
 
 

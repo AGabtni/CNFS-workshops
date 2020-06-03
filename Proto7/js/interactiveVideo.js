@@ -12,105 +12,63 @@ class InteractiveVideo {
 
         this.videoHeader = this.quizzQuestion.parentContainer.querySelectorAll("h3")[0];
         this.videoHeader.innerHTML = "Étape " + this.quizzQuestion.parentContainer.id.substring(this.quizzQuestion.parentContainer.id.length - 1);
-        this.videoComponent = this.quizzQuestion.parentContainer.querySelectorAll("video")[0];
+        this.videoComponent = this.quizzQuestion.parentContainer.querySelectorAll("div")[0];
         this.questionComponent = this.quizzQuestion.parentContainer.getElementsByClassName("questionContainer")[0];
 
 
 
-        this.toggleVideoPreview();
     }
 
-
-    toggleVideoPreview() {
+    //On video ready
+    toggleVideoPreview(YTPlayer) {
 
         this.questionComponent.style.transform = "scale(0)"
         this.questionComponent.style.height = 0
 
-        this.videoComponent.parentNode.style.transform = "translateY(20px)"
-        this.videoComponent.width = "640"
-        this.videoComponent.height = "480"
+        YTPlayer.f.style.transform = "translateY(20px)"
+        YTPlayer.f.width = "640"
+        YTPlayer.f.height = "480"
 
 
     }
 
     // Handler for when the video ends
-    videoHandler() {
+    videoHandler(YTPlayer) {
 
         this.questionComponent.style.height = "100%"
         this.questionComponent.style.transform = "scale(1)"
-
         this.questionComponent.style.opacity = 1.0;
 
 
-
-        this.videoComponent.parentNode.style.transform = "translateY(0px)"
-
-        this.videoComponent.width = "320"
-        this.videoComponent.height = "240"
+        YTPlayer.f.style.transform = "translateY(0px)"
+        YTPlayer.f.width = "320"
+        YTPlayer.f.height = "240"
 
 
 
     }
 
-    //Load clip into video source tag
-    loadClip(clipPath) {
 
-        this.videoComponent.querySelectorAll("source")[0].src = clipPath;
-        this.videoComponent.load();
-        this.videoComponent.addEventListener('ended', event => this.videoHandler(), false);
 
-    }
 
 
     //Move to next slide after 2s 
     //Called when verification button is hit
+    //Resets the question too 
     moveToNextClip() {
 
         if (this.timeOut !== undefined) {
             return;
         }
         this.timeOut = setTimeout(() => {
-            this.videoComponent.pause()
             this.quizzQuestion.updateQuizzList();
             //this.toggleVideoPreview();
-            this.videoComponent.load();
             this.timeOut = undefined;
 
 
-            //Scroll to next question if no scroll was detected by the user
-            var currentScroll = window.pageYOffset
-            setTimeout(() => {
-                if (window.pageYOffset != currentScroll)
-                    return;
 
-                //this.scrollToSlide(this.currentSlideIndex);
-
-            }, 2000)
 
         }, 5000)
-
-    }
-
-    //Scroll to next slide 
-    scrollToSlide(index) {
-
-        var slides = document.getElementsByClassName("slide");
-        var nextSlideId = index + 1;
-        var nextSlide;
-
-        if (index === slides.length)
-            nextSlide = document.querySelector("#slide_1")
-        else
-            nextSlide = document.querySelector("#slide_" + nextSlideId)
-
-
-        console.log(nextSlide.offsetTop)
-
-        window.scrollTo({
-            top: nextSlide.offsetTop,
-            left: 0,
-            behavior: 'smooth'
-        })
 
     }
 

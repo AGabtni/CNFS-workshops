@@ -3,8 +3,10 @@
     transition: all 0.5s 0.2s ease-in;
 }
 
-#interactiveVideo video {
+.interactive-video {
     transition: all 0.2s ease-in;
+    border: 5px solid black;
+    border-radius: 20px !important;
 }
 
 .videoHeader {
