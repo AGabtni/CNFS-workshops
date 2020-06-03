@@ -8,6 +8,8 @@
     </link>
 
     <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="./spe.css">
+
     </link>
 
 
@@ -34,15 +36,23 @@
             <div class="row" style="display : flex ; margin-top: 50px;">
 
                 <!--Prototype 1-->
-                <div class="card hvr-grow">
-                    <div class="card-body">
+                <div class="card hvr-grow" id="overlayContainer">
+                    <div class="card-body" id="over1">
                         <h5 class="card-title">Prototype 1</h5>
                         <p class="card-text">
                             Pour les activités avec <strong>seulement une vidéo</strong>
+
                         </p>
                         <a onclick=onLinkClick(1) class="hvr-pulse btn btn-primary">Apperçu</a>
 
                     </div>
+                    <!-- 
+                        <div id="over2">
+                            <div class="stamp">
+                                Approved </div>
+                        </div>
+                    -->
+
                 </div>
 
                 <!--Prototype 2-->
@@ -54,47 +64,68 @@
                         </p>
                         <a onclick=onLinkClick(2) class="hvr-pulse btn btn-primary">Apperçu</a>
                     </div>
+
+
                 </div>
 
                 <!--Prototype 3-->
-                <div class="card hvr-grow">
-                    <div class="card-body">
+                <div class="card hvr-grow" id="overlayContainer">
+                    <div class="card-body" id="over1">
                         <h5 class="card-title">Prototype 3</h5>
                         <p class="card-text">Pour les activités avec des questions à <strong>choix multiples</strong>
                         </p>
                         <a onclick=onLinkClick(3) class="hvr-pulse btn btn-primary">Apperçu</a>
                     </div>
+
+                    <!-- 
+                        <div id="over2">
+                        <div class="stamp">
+                            Approved </div>
+                        </div>
+                    -->
                 </div>
             </div>
 
             <div class="row" style="display : flex ; ">
 
                 <!--Prototype 4-->
-                <div class="card hvr-grow">
-                    <div class="card-body">
+                <div class="card hvr-grow" id="overlayContainer">
+                    <div class="card-body" id="over1">
                         <h5 class="card-title">Prototype 4</h5>
                         <p class="card-text"> Pour les quizz <strong>Vrai ou Faux</strong>
                         </p>
                         <a onclick=onLinkClick(4) class="hvr-pulse btn btn-primary">Apperçu</a>
                     </div>
+
+                    <!-- 
+                        <div id="over2">
+                        <div class="stamp">
+                            Approved </div>
+                         </div>
+                    -->
                 </div>
 
                 <!--Prototype 5-->
-                <div class="card hvr-grow">
+                <div class="card hvr-grow" id="overlayContainer">
 
-                    <div class="card-body">
+                    <div class="card-body" id="over1">
                         <h5 class="card-title">Prototype 5</h5>
                         <p class="card-text">Pour les activités de <strong>classification</strong>
                         </p>
                         <a onclick=onLinkClick(5) class="hvr-pulse btn btn-primary">Apperçu</a>
                     </div>
+
+                    <!-- 
+                    <div id="over2">
+                    <div class="stamp">
+                        Approved </div>
+                    </div>
+                    -->
                 </div>
 
                 <!--Prototype 6-->
-
-
-                <div class="card hvr-grow">
-                    <div class="card-body">
+                <div class="card hvr-grow" id="overlayContainer">
+                    <div class="card-body" id="over1">
                         <h5 class="card-title">Prototype 6</h5>
                         <p class="card-text">Pour les activités de <strong>type "Drag and drop"</strong>
 
@@ -102,7 +133,16 @@
                         </p>
                         <a onclick=onLinkClick(6) class="hvr-pulse btn btn-primary">Apperçu</a>
                     </div>
+
+                    <!-- 
+                        <div id="over2">
+                        <div class="stamp">
+                            Approved </div>
+                        </div>
+                    -->
                 </div>
+
+
             </div>
 
             <div class="row" style="display : flex ;">
@@ -110,8 +150,8 @@
                 <!--Prototype 7-->
 
 
-                <div class="card hvr-grow">
-                    <div class="card-body">
+                <div class="card hvr-grow" id="overlayContainer">
+                    <div class="card-body" id="over1">
                         <h5 class="card-title">Prototype 7</h5>
                         <p class="card-text">
                             Modèle pour <strong> les vidéos interactives </strong>
@@ -119,7 +159,15 @@
 
                         <a onclick=onLinkClick(7) class="hvr-pulse btn btn-primary">Apperçu</a>
                     </div>
+                    <!-- 
+                        <div id="over2">
+                        <div class="stamp">
+                            Approved </div>
+                        </div>
+                    -->
                 </div>
+
+
             </div>
 
         </div>
@@ -140,7 +188,7 @@
             <div class="proto-container fade">
                 <button style="position: absolute ; top : 0px  ; font-size: large; font-weight: 900;" class="hvr-pulse btn btn-success"><a target="_blank">Ouvrir dans une nouvelle fenêtre</a></button>
 
-                <iframe class="proto-iframe" src="./Proto3/QCM.html "></div>
+                <iframe class="proto-iframe"></div>
         </div>
 
 

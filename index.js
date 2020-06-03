@@ -104,7 +104,7 @@ function onActivityClick(i) {
     switch (i) {
 
         case 0:
-            var protoLinkString = prefix + "/QCM.html";
+            var protoLinkString = prefix + "/activity.html";
 
             frameContainer.src = protoLinkString
             activityContainer.querySelectorAll("button")[0].querySelectorAll("a")[0].href = protoLinkString;
