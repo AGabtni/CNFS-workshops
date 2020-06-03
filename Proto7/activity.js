@@ -77,7 +77,6 @@ function initQuizz() {
 
     }
 
-    console.log("whos faster")
 
 
 
