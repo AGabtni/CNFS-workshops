@@ -25,7 +25,6 @@
           for (var p = 0; p < interactiveVideos.length; p++) {
 
               var playerTag = interactiveVideos[p].videoComponent.id;
-              console.log(interactiveVideos[p].videoComponent.id);
               player = new YT.Player(playerTag, {
                   height: '480',
                   width: '640',
@@ -37,7 +36,6 @@
               });
               players.push(player);
           }
-          console.log(interactiveVideos.length)
       }
 
       // 4. The API will call this function when the video player is ready.
@@ -51,7 +49,6 @@
 
           if (event.data == YT.PlayerState.ENDED) {
               var targetId = Number(event.target.f.id.substring(event.target.f.id.length - 1)) - 1
-              console.log(players[targetId])
               interactiveVideos[targetId].videoHandler(players[targetId]);
           }
       }
