@@ -4,8 +4,13 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!--ACTIVITY CSS-->
     <link rel="stylesheet" href="../css/slider.css">
     <link rel="stylesheet" href="../css/quizz.css">
+
+
+
 
     <title>Activity</title>
     <script type="text/javascript" src="./Activity_files/jquery-1.10.2.js.download"></script>
@@ -31,10 +36,9 @@
 
 
     <!-- TODO: Added these scripts for quizzes. Remove if unwanted. -->
-    <!-- Bootstrap 3.3.5 CSS -->
-    <!-- <link rel="stylesheet" href="../../js/activite_2015/bootstrap.css">-->
-    <!-- Bootstrap 3.3.5 JS -->
-    <script src="./Activity_files/bootstrap.min.js.download"></script>
+    <!-- Bootstrap 3.3.7 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 
     <!-- Font Awesome: icons -->
     <link rel="stylesheet" type="text/css" href="./Activity_files/font-awesome.css">
@@ -196,53 +200,48 @@
                 </ol>
 
                 <h3>Activity</h3>
-                <!--TO REMOVE-->
 
-
-                <!--END TO REMOVE-->
 
 
                 <!--PROTO 3-->
                 <!--START EDIT HERE-->
+                <div class="slideshow-container" class="row">
 
-                <div class="slideshow-container">
-
-                    <div id="slide_1" class="slide current">
+                    <div id="slide_1" class="slide current col-md-1">
                         <!--Headers row-->
-                        <div class="statement" style="display: flex; flex-direction: column;padding-left: 20px;">
+                        <div class="statement row">
                             <h3 class="header">Question 1</h3>
                             <p></p>
 
                         </div>
 
                         <!--Choices section-->
-                        <div class="flexColumn" style="float : left; padding-left: 20px; margin: 10px; width: 50%; ">
-                            <ul style="list-style:none; ">
+                        <div class="row">
+                            <ul class="choices-list">
                                 <!--Associate each list element onclick attribute to the question's respective choice-->
-                                <div style="display : flex; flex-direction: row; align-items: center;">
-                                    <li onclick=quizz[0].onChoiceClick(0)>1</li>
-                                    <img src="img/cross.png" height="42" width="42" style="opacity : 0">
+                                <div>
+                                    <li onclick=quizz[0].onChoiceClick(0)><span></span>
+                                    </li>
                                 </div>
-                                <div style="display : flex; flex-direction: row; align-items: center;">
-                                    <li onclick=quizz[0].onChoiceClick(1)>2</li>
-                                    <img src="img/cross.png" height="42" width="42" style="opacity : 0">
+                                <div>
+                                    <li onclick=quizz[0].onChoiceClick(1)><span></span></li>
                                 </div>
-                                <div style="display : flex; flex-direction: row; align-items: center;">
-                                    <li onclick=quizz[0].onChoiceClick(2)>3</li>
-                                    <img src="img/cross.png" height="42" width="42" style="opacity : 0">
+                                <div>
+                                    <li onclick=quizz[0].onChoiceClick(2)><span></span></li>
+
                                 </div>
 
                             </ul>
                         </div>
 
                         <!--Feedback section-->
-                        <div class="flexColumn" style="
+                        <div class="row" style="
                             height: 100%;
                             justify-content: center; 
                             align-items: center; 
                             text-align: center;">
 
-                            <button class="verify-btn" onclick=quizz[0].verifySelection() style="width: 100px ;">Check
+                            <button class="btn btn-lg verify-btn" onclick=quizz[0].verifySelection()>Check
                                 answer</button>
                             <div class="feedback" style="justify-self: end;">
                                 <!--INSERT FEEDBACK HERE-->
@@ -251,45 +250,47 @@
                         </div>
 
 
+                        <a class="prev" onclick="prev(-1)">&#10094;</a>
+                        <a class="next" onclick="next(1)">&#10095;</a>
                     </div>
 
 
-                    <div id="slide_2" class="slide">
+                    <div id="slide_2" class="slide col-md-1">
                         <!--Headers row-->
-                        <div class="statement" style="display: flex; flex-direction: column;padding-left: 20px;">
+                        <div class="statement row">
                             <h3 class="header">Question 1</h3>
                             <p></p>
 
                         </div>
 
                         <!--Choices section-->
-                        <div class="flexColumn" style="float : left; padding-left: 20px; margin: 10px; width: 50%; ">
-                            <ul style="list-style:none; ">
+                        <div class="row">
+                            <ul class="choices-list">
                                 <!--Associate each list element onclick attribute to the question's respective choice-->
-                                <div style="display : flex; flex-direction: row; align-items: center;">
-                                    <li onclick=quizz[1].onChoiceClick(0)>1</li>
-                                    <img src="img/cross.png" height="42" width="42" style="opacity : 0">
+                                <div>
+                                    <li onclick=quizz[1].onChoiceClick(0)><span></span></li>
+
                                 </div>
-                                <div style="display : flex; flex-direction: row; align-items: center;">
-                                    <li onclick=quizz[1].onChoiceClick(1)>2</li>
-                                    <img src="img/cross.png" height="42" width="42" style="opacity : 0">
+                                <div>
+                                    <li onclick=quizz[1].onChoiceClick(1)><span></span></li>
+
                                 </div>
-                                <div style="display : flex; flex-direction: row; align-items: center;">
-                                    <li onclick=quizz[1].onChoiceClick(2)>3</li>
-                                    <img src="img/cross.png" height="42" width="42" style="opacity : 0">
+                                <div>
+                                    <li onclick=quizz[1].onChoiceClick(2)><span></span></li>
+
                                 </div>
 
                             </ul>
                         </div>
 
                         <!--Feedback section-->
-                        <div class="flexColumn" style="
+                        <div class="row" style="
                             height: 100%;
                             justify-content: center; 
                             align-items: center; 
                             text-align: center;">
 
-                            <button class="verify-btn" onclick=quizz[1].verifySelection() style="width: 100px ;">Check
+                            <button class="btn btn-lg verify-btn" onclick=quizz[1].verifySelection()>Check
                                 answer</button>
                             <div class="feedback" style="justify-self: end;">
                                 <!--INSERT FEEDBACK HERE-->
@@ -297,45 +298,94 @@
                             </div>
                         </div>
 
+                        <a class="prev" onclick="prev(-1)">&#10094;</a>
+                        <a class="next" onclick="next(1)">&#10095;</a>
 
                     </div>
 
-                    <div id="slide_3" class="slide">
+                    <div id="slide_3" class="slide col-md-1">
                         <!--Headers row-->
-                        <div class="statement" style="display: flex; flex-direction: column;padding-left: 20px;">
+                        <div class="statement row">
                             <h3 class="header">Question 1</h3>
                             <p></p>
 
                         </div>
 
                         <!--Choices section-->
-                        <div class="flexColumn" style="float : left; padding-left: 20px; margin: 10px; width: 50%; ">
-                            <ul style="list-style:none; ">
+                        <div class="row">
+                            <ul class="choices-list">
                                 <!--Associate each list element onclick attribute to the question's respective choice-->
-                                <div style="display : flex; flex-direction: row; align-items: center;">
-                                    <li onclick=quizz[2].onChoiceClick(0)>1</li>
-                                    <img src="img/cross.png" height="42" width="42" style="opacity : 0">
+                                <div>
+                                    <li onclick=quizz[2].onChoiceClick(0)><span></span></li>
+
                                 </div>
-                                <div style="display : flex; flex-direction: row; align-items: center;">
-                                    <li onclick=quizz[2].onChoiceClick(1)>2</li>
-                                    <img src="img/cross.png" height="42" width="42" style="opacity : 0">
+                                <div>
+                                    <li onclick=quizz[2].onChoiceClick(1)><span></span></li>
+
                                 </div>
-                                <div style="display : flex; flex-direction: row; align-items: center;">
-                                    <li onclick=quizz[2].onChoiceClick(2)>3</li>
-                                    <img src="img/cross.png" height="42" width="42" style="opacity : 0">
+                                <div>
+                                    <li onclick=quizz[2].onChoiceClick(2)><span></span></li>
+
                                 </div>
 
                             </ul>
                         </div>
 
                         <!--Feedback section-->
-                        <div class="flexColumn" style="
+                        <div class="row" style="
                             height: 100%;
                             justify-content: center; 
                             align-items: center; 
                             text-align: center;">
 
-                            <button class="verify-btn" onclick=quizz[2].verifySelection() style="width: 100px ;">Check
+                            <button class="btn btn-lg verify-btn" onclick=quizz[2].verifySelection()>Check
+                                answer</button>
+                            <div class="feedback" style="justify-self: end;">
+                                <!--INSERT FEEDBACK HERE-->
+                                <p></p>
+                            </div>
+
+                        </div>
+
+
+                        <a class="prev" onclick="prev(-1)">&#10094;</a>
+                        <a class="next" onclick="next(1)">&#10095;</a>
+                    </div>
+                    <div id="slide_4" class="slide col-md-1">
+                        <!--Headers row-->
+                        <div class="statement row">
+                            <h3 class="header">Question 1</h3>
+                            <p></p>
+
+                        </div>
+
+                        <!--Choices section-->
+                        <div class="row">
+                            <ul class="choices-list">
+                                <!--Associate each list element onclick attribute to the question's respective choice-->
+                                <div>
+                                    <li onclick=quizz[3].onChoiceClick(0)><span></span></li>
+
+                                </div>
+                                <div>
+                                    <li onclick=quizz[3].onChoiceClick(1)><span></span></li>
+
+                                </div>
+                                <div>
+                                    <li onclick=quizz[3].onChoiceClick(2)><span></span></li>
+
+                                </div>
+
+                            </ul>
+                        </div>
+
+                        <!--Feedback section-->
+                        <div class="row" style="
+                            justify-content: center; 
+                            align-items: center; 
+                            text-align: center;">
+
+                            <button class="btn btn-lg verify-btn" onclick=quizz[3].verifySelection()>Check
                                 answer</button>
                             <div class="feedback" style="justify-self: end;">
                                 <!--INSERT FEEDBACK HERE-->
@@ -343,44 +393,45 @@
                             </div>
                         </div>
 
+                        <a class="prev" onclick="prev(-1)">&#10094;</a>
+                        <a class="next" onclick="next(1)">&#10095;</a>
 
                     </div>
-                    <div id="slide_4" class="slide">
+                    <div id="slide_5" class="slide col-md-1">
                         <!--Headers row-->
-                        <div class="statement" style="display: flex; flex-direction: column;padding-left: 20px;">
+                        <div class="statement row">
                             <h3 class="header">Question 1</h3>
                             <p></p>
 
                         </div>
 
                         <!--Choices section-->
-                        <div class="flexColumn" style="float : left; padding-left: 20px; margin: 10px; width: 50%; ">
-                            <ul style="list-style:none; ">
+                        <div class="row">
+                            <ul class="choices-list">
                                 <!--Associate each list element onclick attribute to the question's respective choice-->
-                                <div style="display : flex; flex-direction: row; align-items: center;">
-                                    <li onclick=quizz[3].onChoiceClick(0)>1</li>
-                                    <img src="img/cross.png" height="42" width="42" style="opacity : 0">
+                                <div>
+                                    <li onclick=quizz[4].onChoiceClick(0)><span></span></li>
+
                                 </div>
-                                <div style="display : flex; flex-direction: row; align-items: center;">
-                                    <li onclick=quizz[3].onChoiceClick(1)>2</li>
-                                    <img src="img/cross.png" height="42" width="42" style="opacity : 0">
+                                <div>
+                                    <li onclick=quizz[4].onChoiceClick(1)><span></span></li>
+
                                 </div>
-                                <div style="display : flex; flex-direction: row; align-items: center;">
-                                    <li onclick=quizz[3].onChoiceClick(2)>3</li>
-                                    <img src="img/cross.png" height="42" width="42" style="opacity : 0">
+                                <div>
+                                    <li onclick=quizz[4].onChoiceClick(2)><span></span></li>
+
                                 </div>
 
                             </ul>
                         </div>
 
                         <!--Feedback section-->
-                        <div class="flexColumn" style="
-                            height: 100%;
+                        <div class="row" style="
                             justify-content: center; 
                             align-items: center; 
                             text-align: center;">
 
-                            <button class="verify-btn" onclick=quizz[3].verifySelection() style="width: 100px ;">Check
+                            <button class="btn btn-lg verify-btn" onclick=quizz[4].verifySelection()>Check
                                 answer</button>
                             <div class="feedback" style="justify-self: end;">
                                 <!--INSERT FEEDBACK HERE-->
@@ -388,107 +439,61 @@
                             </div>
                         </div>
 
+                        <a class="prev" onclick="prev(-1)">&#10094;</a>
+                        <a class="next" onclick="next(1)">&#10095;</a>
 
                     </div>
-                    <div id="slide_5" class="slide">
+
+                    <div id="slide_6" class="slide col-md-1">
                         <!--Headers row-->
-                        <div class="statement" style="display: flex; flex-direction: column;padding-left: 20px;">
+                        <div class="statement row">
                             <h3 class="header">Question 1</h3>
                             <p></p>
 
                         </div>
 
                         <!--Choices section-->
-                        <div class="flexColumn" style="float : left; padding-left: 20px; margin: 10px; width: 50%; ">
-                            <ul style="list-style:none; ">
+                        <div class="row">
+                            <ul class="choices-list">
                                 <!--Associate each list element onclick attribute to the question's respective choice-->
-                                <div style="display : flex; flex-direction: row; align-items: center;">
-                                    <li onclick=quizz[4].onChoiceClick(0)>1</li>
-                                    <img src="img/cross.png" height="42" width="42" style="opacity : 0">
+                                <div>
+                                    <li onclick=quizz[5].onChoiceClick(0)><span></span></li>
+
                                 </div>
-                                <div style="display : flex; flex-direction: row; align-items: center;">
-                                    <li onclick=quizz[4].onChoiceClick(1)>2</li>
-                                    <img src="img/cross.png" height="42" width="42" style="opacity : 0">
+                                <div>
+                                    <li onclick=quizz[5].onChoiceClick(1)><span></span></li>
+
                                 </div>
-                                <div style="display : flex; flex-direction: row; align-items: center;">
-                                    <li onclick=quizz[4].onChoiceClick(2)>3</li>
-                                    <img src="img/cross.png" height="42" width="42" style="opacity : 0">
+                                <div>
+                                    <li onclick=quizz[5].onChoiceClick(2)><span></span></li>
+
                                 </div>
 
                             </ul>
                         </div>
 
                         <!--Feedback section-->
-                        <div class="flexColumn" style="
-                            height: 100%;
+                        <div class="row" style="
                             justify-content: center; 
                             align-items: center; 
                             text-align: center;">
 
-                            <button class="verify-btn" onclick=quizz[4].verifySelection() style="width: 100px ;">Check
+                            <button class="btn btn-lg verify-btn" onclick=quizz[5].verifySelection()>Check
                                 answer</button>
                             <div class="feedback" style="justify-self: end;">
                                 <!--INSERT FEEDBACK HERE-->
                                 <p></p>
                             </div>
                         </div>
-
-
-                    </div>
-
-                    <div id="slide_6" class="slide">
-                        <!--Headers row-->
-                        <div class="statement" style="display: flex; flex-direction: column;padding-left: 20px;">
-                            <h3 class="header">Question 1</h3>
-                            <p></p>
-
-                        </div>
-
-                        <!--Choices section-->
-                        <div class="flexColumn" style="float : left; padding-left: 20px; margin: 10px; width: 50%; ">
-                            <ul style="list-style:none; ">
-                                <!--Associate each list element onclick attribute to the question's respective choice-->
-                                <div style="display : flex; flex-direction: row; align-items: center;">
-                                    <li onclick=quizz[5].onChoiceClick(0)>1</li>
-                                    <img src="img/cross.png" height="42" width="42" style="opacity : 0">
-                                </div>
-                                <div style="display : flex; flex-direction: row; align-items: center;">
-                                    <li onclick=quizz[5].onChoiceClick(1)>2</li>
-                                    <img src="img/cross.png" height="42" width="42" style="opacity : 0">
-                                </div>
-                                <div style="display : flex; flex-direction: row; align-items: center;">
-                                    <li onclick=quizz[5].onChoiceClick(2)>3</li>
-                                    <img src="img/cross.png" height="42" width="42" style="opacity : 0">
-                                </div>
-
-                            </ul>
-                        </div>
-
-                        <!--Feedback section-->
-                        <div class="flexColumn" style="
-                            height: 100%;
-                            justify-content: center; 
-                            align-items: center; 
-                            text-align: center;">
-
-                            <button class="verify-btn" onclick=quizz[5].verifySelection() style="width: 100px ;">Check
-                                answer</button>
-                            <div class="feedback" style="justify-self: end;">
-                                <!--INSERT FEEDBACK HERE-->
-                                <p></p>
-                            </div>
-                        </div>
-
+                        <a class="prev" onclick="prev(-1)">&#10094;</a>
+                        <a class="next" onclick="next(1)">&#10095;</a>
+                        <!--Number of dots must match the number of slides-->
 
                     </div>
 
-                    <a class="prev" onclick="prev(-1)">&#10094;</a>
-                    <a class="next" onclick="next(1)">&#10095;</a>
 
                 </div>
-
-                <!--Number of dots must match the number of slides-->
-                <div style="text-align:center">
+                <div style="text-align:center; position: relative;bottom: 30px;">
                     <span class="dot" onclick="currentSlide(1)"></span>
                     <span class="dot" onclick="currentSlide(2)"></span>
                     <span class="dot" onclick="currentSlide(3)"></span>
@@ -497,6 +502,9 @@
                     <span class="dot" onclick="currentSlide(6)"></span>
 
                 </div>
+
+
+
                 <!--END OF EDIT-->
 
 

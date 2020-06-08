@@ -3,22 +3,53 @@
     flex-direction: column;
 }
 
-ul {
-    padding: 0;
+.statement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-ul li {
+.statement h3 {
+    color: #791619!important;
+    font-weight: 700;
+}
+
+.choices-list {
     list-style: none;
-    border: 1px solid #ccc;
+    padding: 0;
+    align-items: center;
+}
+
+.choices-list li {
+    list-style: none;
+    border: 1px solid #ae7375;
     border-radius: 5px;
     padding: 10px;
-    margin: 20px 20px 20px;
-    transition: border 0.1s ease, background-color 0.5s ease;
-    width: 100%;
+    margin: 20px;
+    transition: all 0.1s ease;
+    width: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-ul li:hover {
-    background-color: rgba(1, 1, 1, 0.4);
+.choices-list li span {
+    text-align: center;
+    margin: 0 0 0 auto;
+}
+
+.choices-list div {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+.choices-list li:hover {
+    background-color: rgba(121, 22, 25, 0.4);
 }
 
 .selected {
@@ -32,8 +63,17 @@ ul li:hover {
 }
 
 .incorrect {
-    border: 5px solid rgba(160, 49, 35, 0.8);
-    background-color: rgba(160, 49, 35, 0.4);
+    border: 5px solid rgba(255, 0, 0, 0.8);
+    background-color: rgba(255, 0, 0, 0.4);
+}
+
+.feedback-img {
+    margin-left: auto;
+    align-self: stretch;
+    height: 42px;
+    width: 42px;
+    opacity: 0;
+    transition: "all 0.2s ease-in";
 }
 
 .feedback {
@@ -44,35 +84,23 @@ ul li:hover {
 }
 
 .verify-btn {
-    -webkit-touch-callout: none;
-    /* iOS Safari */
-    -webkit-user-select: none;
-    /* Safari */
-    -khtml-user-select: none;
-    /* Konqueror HTML */
-    -moz-user-select: none;
-    /* Old versions of Firefox */
-    -ms-user-select: none;
-    /* Internet Explorer/Edge */
-    user-select: none;
-    height: 100px;
-    width: 100px;
+    color: white!important;
     border-radius: 50%;
-    border: 1px solid #5EBA7D;
-    transition: background 0.5s ease, border 0.5s ease-in;
+    background-color: #791619;
+    border: 1px solid #6e1417;
     outline: none;
-    user-select: none;
     box-shadow: 0 9px #999;
+    text-align: center;
+    transition: background-color 0.2s ease-in, border 0.05s ease-in;
 }
 
 .verify-btn:hover {
     background-color: #5EBA7D;
-    border: 10px solid #254A32;
-    user-select: none;
+    border: 1px solid #254A32;
 }
 
 .verify-btn:active {
     background-color: #3e8e41;
-    box-shadow: 0 1px #666;
+    box-shadow: 0 2.5px #999!important;
     transform: translateY(4px);
 }

@@ -60,8 +60,11 @@ class Question {
 
         for (var i = 0; i < this.choiceListElements.length; i++) {
 
-            this.choiceListElements[i].textContent = this.choices[i];
-            this.choiceListElements[i].parentNode.querySelectorAll("img")[0].style.transition = "all 0.2s ease-in"
+            this.choiceListElements[i].querySelector("span").innerHTML = this.choices[i];
+            var feedbackImage = document.createElement("IMG");
+            feedbackImage.classList.add("feedback-img");
+
+            this.choiceListElements[i].append(feedbackImage);
 
 
         }
