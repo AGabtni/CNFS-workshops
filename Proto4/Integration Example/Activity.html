@@ -20,7 +20,6 @@
     <!--PROTO STYLESHEETS-->
     <link rel="stylesheet" href="../css/slider.css">
     <link rel="stylesheet" href="../css/quizz.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!--Begin Tooltip CSS-->
     <link rel="stylesheet" type="text/css" href="./Activité_files/jquery_ui.css" media="all">
@@ -38,7 +37,7 @@
     <!-- Bootstrap 3.3.5 CSS -->
     <!-- <link rel="stylesheet" href="../../js/activite_2015/bootstrap.css">-->
     <!-- Bootstrap 3.3.5 JS -->
-    <script src="./Activité_files/bootstrap.min.js.download"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Font Awesome: icons -->
     <link rel="stylesheet" type="text/css" href="./Activité_files/font-awesome.css">
@@ -210,14 +209,14 @@
                         <div class="row">
                             <!--Choices section-->
                             <div style="width : 100% ;">
-                                <ul class="horizontal-list">
+                                <ul class="choices-list">
                                     <!--Associate each list element onclick attribute to
-          the question's respective choice-->
+                      the question's respective choice-->
                                     <div style="display: flex; align-items: center;">
-                                        <li onclick=quizz[0].onChoiceClick(0)></li><img height="42" width="42" style="opacity : 0">
+                                        <li onclick=quizz[0].onChoiceClick(0)><span></span></li><img id="selectImage" height="42" width="42" style="opacity : 0">
                                     </div>
                                     <div style="display: flex; align-items: center;">
-                                        <li onclick=quizz[0].onChoiceClick(1)></li><img height="42" width="42" style="opacity : 0">
+                                        <li onclick=quizz[0].onChoiceClick(1)><span></span></li><img id="selectImage" height="42" width="42" style="opacity : 0">
                                     </div>
 
 
@@ -251,14 +250,14 @@
                         <div style="display: flex; flex-direction: column; align-items: center;">
                             <!--Choices section-->
                             <div style="width : 100% ;">
-                                <ul class="horizontal-list">
+                                <ul class="choices-list">
                                     <!--Associate each list element onclick attribute to
-          the question's respective choice-->
+                      the question's respective choice-->
                                     <div style="display: flex; align-items: center;">
-                                        <li onclick=quizz[1].onChoiceClick(0)></li><img height="42" width="42" style="opacity : 0">
+                                        <li onclick=quizz[1].onChoiceClick(0)><span></span></li><img id="selectImage" height="42" width="42" style="opacity : 0">
                                     </div>
                                     <div style="display: flex; align-items: center;">
-                                        <li onclick=quizz[1].onChoiceClick(1)></li><img height="42" width="42" style="opacity : 0">
+                                        <li onclick=quizz[1].onChoiceClick(1)><span></span></li><img id="selectImage" height="42" width="42" style="opacity : 0">
                                     </div>
 
 
@@ -293,14 +292,14 @@
                         <div style="display: flex; flex-direction: column; align-items: center;">
                             <!--Choices section-->
                             <div style="width : 100% ;">
-                                <ul class="horizontal-list">
+                                <ul class="choices-list">
                                     <!--Associate each list element onclick attribute to
-          the question's respective choice-->
+                      the question's respective choice-->
                                     <div style="display: flex; align-items: center;">
-                                        <li onclick=quizz[2].onChoiceClick(0)></li><img height="42" width="42" style="opacity : 0">
+                                        <li onclick=quizz[2].onChoiceClick(0)><span></span></li><img id="selectImage" height="42" width="42" style="opacity : 0">
                                     </div>
                                     <div style="display: flex; align-items: center;">
-                                        <li onclick=quizz[2].onChoiceClick(1)></li><img height="42" width="42" style="opacity : 0">
+                                        <li onclick=quizz[2].onChoiceClick(1)><span></span></li><img id="selectImage" height="42" width="42" style="opacity : 0">
                                     </div>
 
 
@@ -334,14 +333,14 @@
                         <div style="display: flex; flex-direction: column; align-items: center;">
                             <!--Choices section-->
                             <div style="width : 100% ;">
-                                <ul class="horizontal-list">
+                                <ul class="choices-list">
                                     <!--Associate each list element onclick attribute to
-          the question's respective choice-->
+                      the question's respective choice-->
                                     <div style="display: flex; align-items: center;">
-                                        <li onclick=quizz[3].onChoiceClick(0)></li><img height="42" width="42" style="opacity : 0">
+                                        <li onclick=quizz[3].onChoiceClick(0)><span></span></li><img id="selectImage" height="42" width="42" style="opacity : 0">
                                     </div>
                                     <div style="display: flex; align-items: center;">
-                                        <li onclick=quizz[3].onChoiceClick(1)></li><img height="42" width="42" style="opacity : 0">
+                                        <li onclick=quizz[3].onChoiceClick(1)><span></span></li><img id="selectImage" height="42" width="42" style="opacity : 0">
                                     </div>
 
 
@@ -375,14 +374,14 @@
                         <div style="display: flex; flex-direction: column; align-items: center;">
                             <!--Choices section-->
                             <div style="width : 100% ;">
-                                <ul class="horizontal-list">
+                                <ul class="choices-list">
                                     <!--Associate each list element onclick attribute to
-          the question's respective choice-->
+                      the question's respective choice-->
                                     <div style="display: flex; align-items: center;">
-                                        <li onclick=quizz[4].onChoiceClick(0)></li><img height="42" width="42" style="opacity : 0">
+                                        <li onclick=quizz[4].onChoiceClick(0)><span></span></li><img id="selectImage" height="42" width="42" style="opacity : 0">
                                     </div>
                                     <div style="display: flex; align-items: center;">
-                                        <li onclick=quizz[4].onChoiceClick(1)></li><img height="42" width="42" style="opacity : 0">
+                                        <li onclick=quizz[4].onChoiceClick(1)><span></span></li><img id="selectImage" height="42" width="42" style="opacity : 0">
                                     </div>
 
 
@@ -416,14 +415,14 @@
                         <div style="display: flex; flex-direction: column; align-items: center;">
                             <!--Choices section-->
                             <div style="width : 100% ;">
-                                <ul class="horizontal-list">
+                                <ul class="choices-list">
                                     <!--Associate each list element onclick attribute to
-          the question's respective choice-->
+                      the question's respective choice-->
                                     <div style="display: flex; align-items: center;">
-                                        <li onclick=quizz[5].onChoiceClick(0)></li><img height="42" width="42" style="opacity : 0">
+                                        <li onclick=quizz[5].onChoiceClick(0)><span></span></li><img id="selectImage" height="42" width="42" style="opacity : 0">
                                     </div>
                                     <div style="display: flex; align-items: center;">
-                                        <li onclick=quizz[5].onChoiceClick(1)></li><img height="42" width="42" style="opacity : 0">
+                                        <li onclick=quizz[5].onChoiceClick(1)><span></span></li><img id="selectImage" height="42" width="42" style="opacity : 0">
                                     </div>
 
 
@@ -457,14 +456,14 @@
                         <div style="display: flex; flex-direction: column; align-items: center;">
                             <!--Choices section-->
                             <div style="width : 100% ;">
-                                <ul class="horizontal-list">
+                                <ul class="choices-list">
                                     <!--Associate each list element onclick attribute to
-          the question's respective choice-->
+                      the question's respective choice-->
                                     <div style="display: flex; align-items: center;">
-                                        <li onclick=quizz[6].onChoiceClick(0)></li><img height="42" width="42" style="opacity : 0">
+                                        <li onclick=quizz[6].onChoiceClick(0)><span></span></li><img id="selectImage" height="42" width="42" style="opacity : 0">
                                     </div>
                                     <div style="display: flex; align-items: center;">
-                                        <li onclick=quizz[6].onChoiceClick(1)></li><img height="42" width="42" style="opacity : 0">
+                                        <li onclick=quizz[6].onChoiceClick(1)><span></span></li><img id="selectImage" height="42" width="42" style="opacity : 0">
                                     </div>
 
 
@@ -498,14 +497,14 @@
                         <div style="display: flex; flex-direction: column; align-items: center;">
                             <!--Choices section-->
                             <div style="width : 100% ;">
-                                <ul class="horizontal-list">
+                                <ul class="choices-list">
                                     <!--Associate each list element onclick attribute to
-          the question's respective choice-->
+                      the question's respective choice-->
                                     <div style="display: flex; align-items: center;">
-                                        <li onclick=quizz[7].onChoiceClick(0)></li><img height="42" width="42" style="opacity : 0">
+                                        <li onclick=quizz[7].onChoiceClick(0)><span></span></li><img id="selectImage" height="42" width="42" style="opacity : 0">
                                     </div>
                                     <div style="display: flex; align-items: center;">
-                                        <li onclick=quizz[7].onChoiceClick(1)></li><img height="42" width="42" style="opacity : 0">
+                                        <li onclick=quizz[7].onChoiceClick(1)><span></span></li><img id="selectImage" height="42" width="42" style="opacity : 0">
                                     </div>
 
 
@@ -539,14 +538,14 @@
                         <div style="display: flex; flex-direction: column; align-items: center;">
                             <!--Choices section-->
                             <div style="width : 100% ;">
-                                <ul class="horizontal-list">
+                                <ul class="choices-list">
                                     <!--Associate each list element onclick attribute to
-          the question's respective choice-->
+                      the question's respective choice-->
                                     <div style="display: flex; align-items: center;">
-                                        <li onclick=quizz[8].onChoiceClick(0)></li><img height="42" width="42" style="opacity : 0">
+                                        <li onclick=quizz[8].onChoiceClick(0)><span></span></li><img id="selectImage" height="42" width="42" style="opacity : 0">
                                     </div>
                                     <div style="display: flex; align-items: center;">
-                                        <li onclick=quizz[8].onChoiceClick(1)></li><img height="42" width="42" style="opacity : 0">
+                                        <li onclick=quizz[8].onChoiceClick(1)><span></span></li><img id="selectImage" height="42" width="42" style="opacity : 0">
                                     </div>
 
 
@@ -586,6 +585,7 @@
                     <span class="dot" onclick="currentSlide(9)"></span>
 
                 </div>
+
 
                 <!--TO HERE-->
 

@@ -14,7 +14,7 @@
     font-weight: 700;
 }
 
-.horizontal-list {
+.choices-list {
     padding: 0;
     display: flex;
     list-style: none;
@@ -22,7 +22,7 @@
     justify-content: center;
 }
 
-.horizontal-list li {
+.choices-list li {
     display: flex;
     list-style: none;
     border: 1px solid #ae7375;
@@ -34,9 +34,16 @@
     text-align: center;
     width: 100%;
     cursor: pointer;
+    justify-content: center;
+    align-items: center;
 }
 
-.horizontal-list li:hover {
+.choices-list li span {
+    text-align: center;
+    margin: 0 0 0 auto;
+}
+
+.choices-list li:hover {
     background-color: #79161966;
 }
 
@@ -70,6 +77,15 @@
     transition: opacity 0.5s ease;
     word-break: break-word;
     text-align: start;
+}
+
+.feedback-img {
+    margin-left: auto;
+    align-self: stretch;
+    height: 30px;
+    width: 30px;
+    opacity: 0;
+    transition: "all 0.2s ease-in";
 }
 
 .verify-btn {
