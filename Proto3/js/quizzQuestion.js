@@ -62,9 +62,13 @@ class Question {
 
             this.choiceListElements[i].querySelector("span").innerHTML = this.choices[i];
             var feedbackImage = document.createElement("IMG");
-            feedbackImage.classList.add("feedback-img");
-
             this.choiceListElements[i].append(feedbackImage);
+            var selectImage = document.createElement("IMG");
+
+            feedbackImage.id = "feedbackImg";
+            selectImage.id = "selectImg";
+            this.choiceListElements[i].parentNode.append(selectImage);
+
 
 
         }
@@ -120,7 +124,8 @@ class Question {
             this.choiceListElements[c].classList.remove("selected")
             this.choiceListElements[c].classList.remove("incorrect")
             this.choiceListElements[c].classList.remove("correct")
-            this.choiceListElements[c].parentNode.querySelectorAll("img")[0].style.opacity = "0"
+            this.choiceListElements[c].querySelectorAll("#feedbackImg")[0].style.opacity = "0"
+            this.choiceListElements[c].parentNode.querySelectorAll("#selectImg")[0].style.opacity = "0"
 
             this.feedbackElement.style.opacity = 0;
 
@@ -130,8 +135,8 @@ class Question {
             for (var c = 0; c < this.selectedChoices.length; c++) {
 
                 this.choiceListElements[this.selectedChoices[c]].classList.add("selected")
-                this.choiceListElements[this.selectedChoices[c]].parentNode.querySelectorAll("img")[0].src = "./img/select.png";
-                this.choiceListElements[this.selectedChoices[c]].parentNode.querySelectorAll("img")[0].style.opacity = "1"
+                this.choiceListElements[this.selectedChoices[c]].parentNode.querySelectorAll("#selectImg")[0].src = "./img/select.png";
+                this.choiceListElements[this.selectedChoices[c]].parentNode.querySelectorAll("#selectImg")[0].style.opacity = "1"
 
             }
         }
@@ -140,16 +145,16 @@ class Question {
 
             this.choiceListElements[this.incorrectChoices[c]].classList.add("incorrect")
 
-            this.choiceListElements[this.incorrectChoices[c]].parentNode.querySelectorAll("img")[0].src = "./img/cross.png";
-            this.choiceListElements[this.incorrectChoices[c]].parentNode.querySelectorAll("img")[0].style.opacity = "1"
+            this.choiceListElements[this.incorrectChoices[c]].querySelectorAll("#feedbackImg")[0].src = "./img/cross.png";
+            this.choiceListElements[this.incorrectChoices[c]].querySelectorAll("#feedbackImg")[0].style.opacity = "1"
 
         }
         for (var c = 0; c < this.correctChoices.length; c++) {
 
             this.choiceListElements[this.correctChoices[c]].classList.add("correct")
 
-            this.choiceListElements[this.correctChoices[c]].parentNode.querySelectorAll("img")[0].src = "./img/tick.png";
-            this.choiceListElements[this.correctChoices[c]].parentNode.querySelectorAll("img")[0].style.opacity = "1"
+            this.choiceListElements[this.correctChoices[c]].querySelectorAll("#feedbackImg")[0].src = "./img/tick.png";
+            this.choiceListElements[this.correctChoices[c]].querySelectorAll("#feedbackImg")[0].style.opacity = "1"
 
             this.feedbackElement.style.opacity = 1.0;
         }
