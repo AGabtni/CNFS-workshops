@@ -20,6 +20,7 @@
     <!--PROTO STYLESHEETS-->
     <link rel="stylesheet" href="../css/slider.css">
     <link rel="stylesheet" href="../css/quizz.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!--Begin Tooltip CSS-->
     <link rel="stylesheet" type="text/css" href="./Activité_files/jquery_ui.css" media="all">
@@ -196,21 +197,22 @@
                 </p>
 
                 <!--COPY CODE FROM HERE-->
-                <div class="slideshow-container">
 
-                    <div id="slide_1" class="slide current">
+                <div class="slideshow-container row">
+
+                    <div id="slide_1" class="slide current col-md-1">
                         <!--Headers row-->
-                        <div class="statement" style="display: flex; flex-direction: column;padding-left: 20px;">
+                        <div class="statement row">
                             <h3 class="header"></h3>
                             <p></p>
 
                         </div>
-                        <div style="display: flex; flex-direction: column; align-items: center;">
+                        <div class="row">
                             <!--Choices section-->
                             <div style="width : 100% ;">
                                 <ul class="horizontal-list">
                                     <!--Associate each list element onclick attribute to
-                      the question's respective choice-->
+          the question's respective choice-->
                                     <div style="display: flex; align-items: center;">
                                         <li onclick=quizz[0].onChoiceClick(0)></li><img height="42" width="42" style="opacity : 0">
                                     </div>
@@ -223,13 +225,9 @@
                             </div>
 
                             <!--Feedback section-->
-                            <div style="
-                            height: 100%;
-                            justify-content: center; 
-                            align-items: center; 
-                            text-align: center;">
+                            <div class="row feedback-container">
 
-                                <button class="verify-btn" onclick=quizz[0].verifySelection() style="width: 100px ;">Vérifier</button>
+                                <button class="btn btn-lg verify-btn" onclick=quizz[0].verifySelection()>Vérifier</button>
                                 <div class="feedback" style="justify-self: end;">
                                     <!--INSERT FEEDBACK HERE-->
                                     <p></p>
@@ -237,11 +235,15 @@
                             </div>
 
                         </div>
+
+                        <a class="prev" onclick="prev(-1)">&#10094;</a>
+                        <a class="next" onclick="next(1)">&#10095;</a>
+
                     </div>
 
-                    <div id="slide_2" class="slide">
+                    <div id="slide_2" class="slide col-md-1">
                         <!--Headers row-->
-                        <div class="statement" style="display: flex; flex-direction: column;padding-left: 20px;">
+                        <div class="statement">
                             <h3 class="header"></h3>
                             <p></p>
 
@@ -251,7 +253,7 @@
                             <div style="width : 100% ;">
                                 <ul class="horizontal-list">
                                     <!--Associate each list element onclick attribute to
-                      the question's respective choice-->
+          the question's respective choice-->
                                     <div style="display: flex; align-items: center;">
                                         <li onclick=quizz[1].onChoiceClick(0)></li><img height="42" width="42" style="opacity : 0">
                                     </div>
@@ -264,13 +266,10 @@
                             </div>
 
                             <!--Feedback section-->
-                            <div style="
-                            height: 100%;
-                            justify-content: center; 
-                            align-items: center; 
-                            text-align: center;">
+                            <div class="row feedback-container">
 
-                                <button class="verify-btn" onclick=quizz[1].verifySelection() style="width: 100px ;">Vérifier</button>
+
+                                <button class="btn btn-lg verify-btn" onclick=quizz[1].verifySelection()>Vérifier</button>
                                 <div class="feedback" style="justify-self: end;">
                                     <!--INSERT FEEDBACK HERE-->
                                     <p></p>
@@ -278,11 +277,15 @@
                             </div>
 
                         </div>
+
+                        <a class="prev" onclick="prev(-1)">&#10094;</a>
+                        <a class="next" onclick="next(1)">&#10095;</a>
+
                     </div>
 
-                    <div id="slide_3" class="slide">
+                    <div id="slide_3" class="slide col-md-1">
                         <!--Headers row-->
-                        <div class="statement" style="display: flex; flex-direction: column;padding-left: 20px;">
+                        <div class="statement">
                             <h3 class="header"></h3>
                             <p></p>
 
@@ -292,7 +295,7 @@
                             <div style="width : 100% ;">
                                 <ul class="horizontal-list">
                                     <!--Associate each list element onclick attribute to
-                      the question's respective choice-->
+          the question's respective choice-->
                                     <div style="display: flex; align-items: center;">
                                         <li onclick=quizz[2].onChoiceClick(0)></li><img height="42" width="42" style="opacity : 0">
                                     </div>
@@ -305,25 +308,25 @@
                             </div>
 
                             <!--Feedback section-->
-                            <div style="
-                            height: 100%;
-                            justify-content: center; 
-                            align-items: center; 
-                            text-align: center;">
+                            <div class="row feedback-container">
 
-                                <button class="verify-btn" onclick=quizz[2].verifySelection() style="width: 100px ;">Vérifier</button>
-                                <div class="feedback" style="justify-self: end;">
+
+                                <button class="btn btn-lg verify-btn" onclick=quizz[2].verifySelection() style="width: 100px ;">Vérifier</button>
+                                <div class="feedback">
                                     <!--INSERT FEEDBACK HERE-->
                                     <p></p>
                                 </div>
                             </div>
 
                         </div>
+                        <a class="prev" onclick="prev(-1)">&#10094;</a>
+                        <a class="next" onclick="next(1)">&#10095;</a>
+
                     </div>
 
-                    <div id="slide_4" class="slide">
+                    <div id="slide_4" class="slide col-md-1">
                         <!--Headers row-->
-                        <div class="statement" style="display: flex; flex-direction: column;padding-left: 20px;">
+                        <div class="statement">
                             <h3 class="header"></h3>
                             <p></p>
 
@@ -333,7 +336,7 @@
                             <div style="width : 100% ;">
                                 <ul class="horizontal-list">
                                     <!--Associate each list element onclick attribute to
-                      the question's respective choice-->
+          the question's respective choice-->
                                     <div style="display: flex; align-items: center;">
                                         <li onclick=quizz[3].onChoiceClick(0)></li><img height="42" width="42" style="opacity : 0">
                                     </div>
@@ -346,13 +349,10 @@
                             </div>
 
                             <!--Feedback section-->
-                            <div style="
-                            height: 100%;
-                            justify-content: center; 
-                            align-items: center; 
-                            text-align: center;">
+                            <div class="row feedback-container">
 
-                                <button class="verify-btn" onclick=quizz[3].verifySelection() style="width: 100px ;">Vérifier</button>
+
+                                <button class="btn btn-lg verify-btn" onclick=quizz[3].verifySelection()>Vérifier</button>
                                 <div class="feedback" style="justify-self: end;">
                                     <!--INSERT FEEDBACK HERE-->
                                     <p></p>
@@ -360,11 +360,14 @@
                             </div>
 
                         </div>
+                        <a class="prev" onclick="prev(-1)">&#10094;</a>
+                        <a class="next" onclick="next(1)">&#10095;</a>
+
                     </div>
 
-                    <div id="slide_5" class="slide">
+                    <div id="slide_5" class="slide col-md-1">
                         <!--Headers row-->
-                        <div class="statement" style="display: flex; flex-direction: column;padding-left: 20px;">
+                        <div class="statement">
                             <h3 class="header"></h3>
                             <p></p>
 
@@ -374,7 +377,7 @@
                             <div style="width : 100% ;">
                                 <ul class="horizontal-list">
                                     <!--Associate each list element onclick attribute to
-                      the question's respective choice-->
+          the question's respective choice-->
                                     <div style="display: flex; align-items: center;">
                                         <li onclick=quizz[4].onChoiceClick(0)></li><img height="42" width="42" style="opacity : 0">
                                     </div>
@@ -387,13 +390,10 @@
                             </div>
 
                             <!--Feedback section-->
-                            <div style="
-                            height: 100%;
-                            justify-content: center; 
-                            align-items: center; 
-                            text-align: center;">
+                            <div class="row feedback-container">
 
-                                <button class="verify-btn" onclick=quizz[4].verifySelection() style="width: 100px ;">Vérifier</button>
+
+                                <button class="btn btn-lg verify-btn" onclick=quizz[4].verifySelection()>Vérifier</button>
                                 <div class="feedback" style="justify-self: end;">
                                     <!--INSERT FEEDBACK HERE-->
                                     <p></p>
@@ -401,11 +401,14 @@
                             </div>
 
                         </div>
+                        <a class="prev" onclick="prev(-1)">&#10094;</a>
+                        <a class="next" onclick="next(1)">&#10095;</a>
+
                     </div>
 
-                    <div id="slide_6" class="slide">
+                    <div id="slide_6" class="slide col-md-1">
                         <!--Headers row-->
-                        <div class="statement" style="display: flex; flex-direction: column;padding-left: 20px;">
+                        <div class="statement">
                             <h3 class="header"></h3>
                             <p></p>
 
@@ -415,7 +418,7 @@
                             <div style="width : 100% ;">
                                 <ul class="horizontal-list">
                                     <!--Associate each list element onclick attribute to
-                      the question's respective choice-->
+          the question's respective choice-->
                                     <div style="display: flex; align-items: center;">
                                         <li onclick=quizz[5].onChoiceClick(0)></li><img height="42" width="42" style="opacity : 0">
                                     </div>
@@ -428,13 +431,10 @@
                             </div>
 
                             <!--Feedback section-->
-                            <div style="
-                            height: 100%;
-                            justify-content: center; 
-                            align-items: center; 
-                            text-align: center;">
+                            <div class="row feedback-container">
 
-                                <button class="verify-btn" onclick=quizz[5].verifySelection() style="width: 100px ;">Vérifier</button>
+
+                                <button class="btn btn-lg verify-btn" onclick=quizz[5].verifySelection() style="width: 100px ;">Vérifier</button>
                                 <div class="feedback" style="justify-self: end;">
                                     <!--INSERT FEEDBACK HERE-->
                                     <p></p>
@@ -442,11 +442,14 @@
                             </div>
 
                         </div>
+                        <a class="prev" onclick="prev(-1)">&#10094;</a>
+                        <a class="next" onclick="next(1)">&#10095;</a>
+
                     </div>
 
-                    <div id="slide_7" class="slide">
+                    <div id="slide_7" class="slide col-md-1">
                         <!--Headers row-->
-                        <div class="statement" style="display: flex; flex-direction: column;padding-left: 20px;">
+                        <div class="statement">
                             <h3 class="header"></h3>
                             <p></p>
 
@@ -456,7 +459,7 @@
                             <div style="width : 100% ;">
                                 <ul class="horizontal-list">
                                     <!--Associate each list element onclick attribute to
-                      the question's respective choice-->
+          the question's respective choice-->
                                     <div style="display: flex; align-items: center;">
                                         <li onclick=quizz[6].onChoiceClick(0)></li><img height="42" width="42" style="opacity : 0">
                                     </div>
@@ -469,13 +472,10 @@
                             </div>
 
                             <!--Feedback section-->
-                            <div style="
-                            height: 100%;
-                            justify-content: center; 
-                            align-items: center; 
-                            text-align: center;">
+                            <div class="row feedback-container">
 
-                                <button class="verify-btn" onclick=quizz[6].verifySelection() style="width: 100px ;">Vérifier</button>
+
+                                <button class="btn btn-lg verify-btn" onclick=quizz[6].verifySelection()>Vérifier</button>
                                 <div class="feedback" style="justify-self: end;">
                                     <!--INSERT FEEDBACK HERE-->
                                     <p></p>
@@ -483,11 +483,14 @@
                             </div>
 
                         </div>
+                        <a class="prev" onclick="prev(-1)">&#10094;</a>
+                        <a class="next" onclick="next(1)">&#10095;</a>
+
                     </div>
 
-                    <div id="slide_8" class="slide">
+                    <div id="slide_8" class="slide col-md-1">
                         <!--Headers row-->
-                        <div class="statement" style="display: flex; flex-direction: column;padding-left: 20px;">
+                        <div class="statement">
                             <h3 class="header"></h3>
                             <p></p>
 
@@ -497,7 +500,7 @@
                             <div style="width : 100% ;">
                                 <ul class="horizontal-list">
                                     <!--Associate each list element onclick attribute to
-                      the question's respective choice-->
+          the question's respective choice-->
                                     <div style="display: flex; align-items: center;">
                                         <li onclick=quizz[7].onChoiceClick(0)></li><img height="42" width="42" style="opacity : 0">
                                     </div>
@@ -510,13 +513,10 @@
                             </div>
 
                             <!--Feedback section-->
-                            <div style="
-                            height: 100%;
-                            justify-content: center; 
-                            align-items: center; 
-                            text-align: center;">
+                            <div class="row feedback-container">
 
-                                <button class="verify-btn" onclick=quizz[7].verifySelection() style="width: 100px ;">Vérifier</button>
+
+                                <button class="btn btn-lg verify-btn" onclick=quizz[7].verifySelection()>Vérifier</button>
                                 <div class="feedback" style="justify-self: end;">
                                     <!--INSERT FEEDBACK HERE-->
                                     <p></p>
@@ -524,11 +524,14 @@
                             </div>
 
                         </div>
+                        <a class="prev" onclick="prev(-1)">&#10094;</a>
+                        <a class="next" onclick="next(1)">&#10095;</a>
+
                     </div>
 
-                    <div id="slide_9" class="slide">
+                    <div id="slide_9" class="slide col-md-1">
                         <!--Headers row-->
-                        <div class="statement" style="display: flex; flex-direction: column;padding-left: 20px;">
+                        <div class="statement">
                             <h3 class="header"></h3>
                             <p></p>
 
@@ -538,7 +541,7 @@
                             <div style="width : 100% ;">
                                 <ul class="horizontal-list">
                                     <!--Associate each list element onclick attribute to
-                      the question's respective choice-->
+          the question's respective choice-->
                                     <div style="display: flex; align-items: center;">
                                         <li onclick=quizz[8].onChoiceClick(0)></li><img height="42" width="42" style="opacity : 0">
                                     </div>
@@ -551,13 +554,10 @@
                             </div>
 
                             <!--Feedback section-->
-                            <div style="
-                            height: 100%;
-                            justify-content: center; 
-                            align-items: center; 
-                            text-align: center;">
+                            <div class="row feedback-container">
 
-                                <button class="verify-btn" onclick=quizz[8].verifySelection() style="width: 100px ;">Vérifier</button>
+
+                                <button class="btn btn-lg verify-btn" onclick=quizz[8].verifySelection()>Vérifier</button>
                                 <div class="feedback" style="justify-self: end;">
                                     <!--INSERT FEEDBACK HERE-->
                                     <p></p>
@@ -565,14 +565,16 @@
                             </div>
 
                         </div>
+
+                        <a class="prev" onclick="prev(-1)">&#10094;</a>
+                        <a class="next" onclick="next(1)">&#10095;</a>
+
                     </div>
-                    <a class="prev" onclick="prev(-1)">&#10094;</a>
-                    <a class="next" onclick="next(1)">&#10095;</a>
 
                 </div>
 
                 <!--Number of dots must match the number of slides-->
-                <div style="text-align:center">
+                <div style="text-align:center; position: relative;bottom: 30px;">
                     <span class="dot" onclick="currentSlide(1)"></span>
                     <span class="dot" onclick="currentSlide(2)"></span>
                     <span class="dot" onclick="currentSlide(3)"></span>
