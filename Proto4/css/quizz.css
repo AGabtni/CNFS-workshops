@@ -3,36 +3,41 @@
     flex-direction: column;
 }
 
-ul {
-    padding: 0;
+.statement {
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-ul li {
-    list-style: none;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    transition: border 0.1s ease, background-color 0.5s ease;
-    min-width: 200px;
-    text-align: center;
-    width: 100%;
-    display: flex;
-}
-
-ul li:hover {
-    background-color: rgba(1, 1, 1, 0.4);
+.statement h3 {
+    color: #791619!important;
+    font-weight: 700;
 }
 
 .horizontal-list {
+    padding: 0;
+    display: flex;
     list-style: none;
     width: 100%;
     justify-content: center;
 }
 
 .horizontal-list li {
-    display: inline;
+    display: flex;
+    list-style: none;
+    border: 1px solid #ae7375;
+    border-radius: 5px;
     margin: 20px;
+    padding: 10px;
+    transition: border 0.1s ease, background-color 0.5s ease;
+    min-width: 200px;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+.horizontal-list li:hover {
+    background-color: #79161966;
 }
 
 .selected {
@@ -50,8 +55,17 @@ ul li:hover {
     background-color: rgba(160, 49, 35, 0.4);
 }
 
+.feedback-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 .feedback {
     margin: 10px;
+    margin-top: 50px;
     opacity: 0;
     transition: opacity 0.5s ease;
     word-break: break-word;
@@ -59,35 +73,23 @@ ul li:hover {
 }
 
 .verify-btn {
-    -webkit-touch-callout: none;
-    /* iOS Safari */
-    -webkit-user-select: none;
-    /* Safari */
-    -khtml-user-select: none;
-    /* Konqueror HTML */
-    -moz-user-select: none;
-    /* Old versions of Firefox */
-    -ms-user-select: none;
-    /* Internet Explorer/Edge */
-    user-select: none;
-    height: 100px;
-    width: 100px;
+    color: white!important;
     border-radius: 50%;
-    border: 1px solid #5EBA7D;
-    transition: background 0.5s ease, border 0.5s ease-in;
+    background-color: #791619;
+    border: 1px solid #6e1417;
     outline: none;
-    user-select: none;
     box-shadow: 0 9px #999;
+    text-align: center;
+    transition: background-color 0.2s ease-in, border 0.05s ease-in;
 }
 
 .verify-btn:hover {
     background-color: #5EBA7D;
-    border: 10px solid #254A32;
-    user-select: none;
+    border: 1px solid #254A32;
 }
 
 .verify-btn:active {
     background-color: #3e8e41;
-    box-shadow: 0 1px #666;
+    box-shadow: 0 2.5px #999!important;
     transform: translateY(4px);
 }

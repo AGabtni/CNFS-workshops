@@ -11,11 +11,10 @@ img {
 /* Slideshow container */
 
 .slideshow-container {
-    max-width: 1000px;
-    position: relative;
-    margin: auto;
+    border: 4px solid #791619;
+    border-radius: 10px;
     display: flex;
-    padding: 20px;
+    padding: 50px;
 }
 
 .prev,
@@ -25,21 +24,23 @@ img {
     overflow: hidden;
     width: 0;
     height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    cursor: pointer;
+    transition: all 0.5s ease;
 }
 
 
 /* Position the "next button" to the right */
 
 .prev {
-    left: 0px;
-    border-right: 15px solid green;
+    left: 0.1%;
+    border-right: 20px solid #791619;
 }
 
 .next {
     right: 0px;
-    border-left: 15px solid green;
+    border-left: 20px solid #791619;
 }
 
 
@@ -47,7 +48,7 @@ img {
 
 .prev:hover,
 .next:hover {
-    box-shadow: 0 50px 10px -17px rgba(0, 0, 0, 0.5);
+    transform: scale(1.5);
 }
 
 
@@ -58,7 +59,7 @@ img {
     height: 15px;
     width: 15px;
     margin: 0 2px;
-    background-color: #bbb;
+    background-color: #ae7375;
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
@@ -66,7 +67,7 @@ img {
 
 .active,
 .dot:hover {
-    background-color: #717171;
+    background-color: #934446;
 }
 
 
