@@ -17,7 +17,7 @@ img {
     border-radius: 10px;
     display: flex;
     align-items: center;
-    padding: 50px;
+    padding: 25px 25px 50px;
 }
 
 @media only screen and (max-width: 300px) {
@@ -62,6 +62,7 @@ img {
 .prev i:hover,
 .next i:hover {
     transform: scale(1.5);
+    color: #9C001D;
 }
 
 
@@ -91,15 +92,19 @@ img {
 
 .moved-left {
     position: relative;
-    animation: animateleft 0.4s
+    animation: animateleft 0.5s
 }
 
 @keyframes animateleft {
-    from {
+    0% {
         left: -300px;
         opacity: 0
     }
-    to {
+    70% {
+        left: 0;
+        opacity: 0.4
+    }
+    100% {
         left: 0;
         opacity: 1
     }
@@ -107,15 +112,19 @@ img {
 
 .moved-right {
     position: relative;
-    animation: animateright 0.4s
+    animation: animateright 0.5s
 }
 
 @keyframes animateright {
-    from {
+    0% {
         right: -300px;
         opacity: 0
     }
-    to {
+    70% {
+        right: 0;
+        opacity: 0.4
+    }
+    100% {
         right: 0;
         opacity: 1
     }
