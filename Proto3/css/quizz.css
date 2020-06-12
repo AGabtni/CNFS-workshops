@@ -72,6 +72,7 @@
     height: 42px;
     width: 42px;
     opacity: 0;
+    transition: "all 0.2s ease-in";
 }
 
 #feedbackImg {
@@ -79,7 +80,6 @@
     width: 30px!important;
     margin-left: auto;
     align-self: stretch;
-    transition: "all 0.2s ease-in";
 }
 
 .feedback {

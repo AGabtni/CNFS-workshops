@@ -81,12 +81,7 @@ function initQuizz() {
 
 }
 
-function resetQuestions() {
+function ondisabled() {
 
-    quizz.forEach((element, index) => {
-        element.updateQuizzList();
-    });
-
-
-
+    console.log("NO")
 }

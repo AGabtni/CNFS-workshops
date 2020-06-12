@@ -209,6 +209,7 @@ class Question {
                     this.correctChoices.push(solution);
             }
         }
+        this.selectedChoices = [];
 
 
         this.updateQuizzList()
@@ -216,7 +217,6 @@ class Question {
         //  empty selected and incorrect
         //  choices after a verification
         //  after the visual update
-        this.selectedChoices = [];
         this.incorrectChoices = [];
         this.correctChoices = [];
 
