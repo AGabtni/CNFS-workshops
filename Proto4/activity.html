@@ -16,7 +16,7 @@
 <body>
     <!--COPY CODE FROM HERE-->
 
-    <div class="slideshow-container" onclick=ondisabled()>
+    <div class="slideshow-container">
 
         <div id="slide_1" class="slide current col-md-1">
             <!--Headers row-->
@@ -29,22 +29,28 @@
 
             <div class="feedback">
                 <!--INSERT FEEDBACK HERE-->
-                <i class="fa"></i>
+                <i class="fa fa-question-circle-o "></i>
                 <p></p>
             </div>
             <!--Choices section-->
             <ul class="choices-list">
                 <!--Associate each list element onclick attribute to
       the question's respective choice-->
-                <li onclick=quizz[0].onChoiceClick(0)><input type="radio" name="optradio"><span></span></li>
-                <li onclick=quizz[0].onChoiceClick(1)><input type="radio" name="optradio"><span></span></li>
+                <div>
+                    <li onclick=quizz[0].onChoiceClick(0)><input type="radio" name="optradio"><span></span></li>
+                    <i class="fa "></i>
+                </div>
+                <div>
+                    <li onclick=quizz[0].onChoiceClick(1)><input type="radio" name="optradio"><span></span></li>
+                    <i class="fa "></i>
+                </div>
 
             </ul>
 
 
             <div style="margin: 20px 50px 0 50px;">
                 <button class="btn activity-btn" id="verifyButton" onclick=quizz[0].verifySelection()>Vérifier</button>
-                <button class="btn activity-btn" id="retryButton" onclick=quizz[0].resetQuizz()>Réessayer</button>
+
             </div>
 
 
@@ -68,22 +74,28 @@
 
             <div class="feedback">
                 <!--INSERT FEEDBACK HERE-->
-                <i class="fa"></i>
+                <i class="fa fa-question-circle-o "></i>
                 <p></p>
             </div>
             <!--Choices section-->
             <ul class="choices-list">
                 <!--Associate each list element onclick attribute to
       the question's respective choice-->
-                <li onclick=quizz[1].onChoiceClick(0)><input type="radio" name="optradio"><span></span></li>
-                <li onclick=quizz[1].onChoiceClick(1)><input type="radio" name="optradio"><span></span></li>
+                <div>
+                    <li onclick=quizz[1].onChoiceClick(0)><input type="radio" name="optradio"><span></span></li>
+                    <i class="fa "></i>
+                </div>
+                <div>
+                    <li onclick=quizz[1].onChoiceClick(1)><input type="radio" name="optradio"><span></span></li>
+                    <i class="fa "></i>
+                </div>
 
             </ul>
 
 
             <div style="margin: 20px 50px 0 50px;">
                 <button class="btn activity-btn" id="verifyButton" onclick=quizz[1].verifySelection()>Vérifier</button>
-                <button class="btn activity-btn" id="retryButton" onclick=quizz[1].resetQuizz()>Réessayer</button>
+
             </div>
 
 
@@ -107,22 +119,26 @@
 
             <div class="feedback">
                 <!--INSERT FEEDBACK HERE-->
-                <i class="fa"></i>
+                <i class="fa fa-question-circle-o "></i>
                 <p></p>
             </div>
             <!--Choices section-->
             <ul class="choices-list">
                 <!--Associate each list element onclick attribute to
       the question's respective choice-->
-                <li onclick=quizz[2].onChoiceClick(0)><input type="radio" name="optradio"><span></span></li>
-                <li onclick=quizz[2].onChoiceClick(1)><input type="radio" name="optradio"><span></span></li>
-
+                <div>
+                    <li onclick=quizz[2].onChoiceClick(0)><input type="radio" name="optradio"><span></span></li>
+                    <i class="fa "></i>
+                </div>
+                <div>
+                    <li onclick=quizz[2].onChoiceClick(1)><input type="radio" name="optradio"><span></span></li>
+                    <i class="fa "></i>
+                </div>
             </ul>
 
 
             <div style="margin: 20px 50px 0 50px;">
                 <button class="btn activity-btn" id="verifyButton" onclick=quizz[2].verifySelection()>Vérifier</button>
-                <button class="btn activity-btn" id="retryButton" onclick=quizz[2].resetQuizz()>Réessayer</button>
             </div>
 
 
@@ -147,22 +163,27 @@
 
             <div class="feedback">
                 <!--INSERT FEEDBACK HERE-->
-                <i class="fa"></i>
+                <i class="fa fa-question-circle-o "></i>
                 <p></p>
             </div>
             <!--Choices section-->
             <ul class="choices-list">
                 <!--Associate each list element onclick attribute to
       the question's respective choice-->
-                <li onclick=quizz[0].onChoiceClick(0)><input type="radio" name="optradio"><span></span></li>
-                <li onclick=quizz[0].onChoiceClick(1)><input type="radio" name="optradio"><span></span></li>
-
+                <div>
+                    <li onclick=quizz[3].onChoiceClick(0)><input type="radio" name="optradio"><span></span></li>
+                    <i class="fa "></i>
+                </div>
+                <div>
+                    <li onclick=quizz[3].onChoiceClick(1)><input type="radio" name="optradio"><span></span></li>
+                    <i class="fa "></i>
+                </div>
             </ul>
 
 
             <div style="margin: 20px 50px 0 50px;">
                 <button class="btn activity-btn" id="verifyButton" onclick=quizz[3].verifySelection()>Vérifier</button>
-                <button class="btn activity-btn" id="retryButton" onclick=quizz[3].resetQuizz()>Réessayer</button>
+
             </div>
 
 
@@ -187,22 +208,27 @@
 
             <div class="feedback">
                 <!--INSERT FEEDBACK HERE-->
-                <i class="fa"></i>
+                <i class="fa fa-question-circle-o "></i>
                 <p></p>
             </div>
             <!--Choices section-->
             <ul class="choices-list">
                 <!--Associate each list element onclick attribute to
       the question's respective choice-->
-                <li onclick=quizz[4].onChoiceClick(0)><input type="radio" name="optradio"><span></span></li>
-                <li onclick=quizz[4].onChoiceClick(1)><input type="radio" name="optradio"><span></span></li>
-
+                <div>
+                    <li onclick=quizz[4].onChoiceClick(0)><input type="radio" name="optradio"><span></span></li>
+                    <i class="fa "></i>
+                </div>
+                <div>
+                    <li onclick=quizz[4].onChoiceClick(1)><input type="radio" name="optradio"><span></span></li>
+                    <i class="fa "></i>
+                </div>
             </ul>
 
 
             <div style="margin: 20px 50px 0 50px;">
                 <button class="btn activity-btn" id="verifyButton" onclick=quizz[4].verifySelection()>Vérifier</button>
-                <button class="btn activity-btn" id="retryButton" onclick=quizz[4].resetQuizz()>Réessayer</button>
+
             </div>
 
 
@@ -226,22 +252,27 @@
 
             <div class="feedback">
                 <!--INSERT FEEDBACK HERE-->
-                <i class="fa"></i>
+                <i class="fa fa-question-circle-o "></i>
                 <p></p>
             </div>
             <!--Choices section-->
             <ul class="choices-list">
                 <!--Associate each list element onclick attribute to
       the question's respective choice-->
-                <li onclick=quizz[5].onChoiceClick(0)><input type="radio" name="optradio"><span></span></li>
-                <li onclick=quizz[5].onChoiceClick(1)><input type="radio" name="optradio"><span></span></li>
-
+                <div>
+                    <li onclick=quizz[5].onChoiceClick(0)><input type="radio" name="optradio"><span></span></li>
+                    <i class="fa "></i>
+                </div>
+                <div>
+                    <li onclick=quizz[5].onChoiceClick(1)><input type="radio" name="optradio"><span></span></li>
+                    <i class="fa "></i>
+                </div>
             </ul>
 
 
             <div style="margin: 20px 50px 0 50px;">
                 <button class="btn activity-btn" id="verifyButton" onclick=quizz[5].verifySelection()>Vérifier</button>
-                <button class="btn activity-btn" id="retryButton" onclick=quizz[5].resetQuizz()>Réessayer</button>
+
             </div>
 
 
@@ -265,22 +296,27 @@
 
             <div class="feedback">
                 <!--INSERT FEEDBACK HERE-->
-                <i class="fa"></i>
+                <i class="fa fa-question-circle-o "></i>
                 <p></p>
             </div>
             <!--Choices section-->
             <ul class="choices-list">
                 <!--Associate each list element onclick attribute to
       the question's respective choice-->
-                <li onclick=quizz[6].onChoiceClick(0)><input type="radio" name="optradio"><span></span></li>
-                <li onclick=quizz[6].onChoiceClick(1)><input type="radio" name="optradio"><span></span></li>
-
+                <div>
+                    <li onclick=quizz[6].onChoiceClick(0)><input type="radio" name="optradio"><span></span></li>
+                    <i class="fa "></i>
+                </div>
+                <div>
+                    <li onclick=quizz[6].onChoiceClick(1)><input type="radio" name="optradio"><span></span></li>
+                    <i class="fa "></i>
+                </div>
             </ul>
 
 
             <div style="margin: 20px 50px 0 50px;">
                 <button class="btn activity-btn" id="verifyButton" onclick=quizz[6].verifySelection()>Vérifier</button>
-                <button class="btn activity-btn" id="retryButton" onclick=quizz[6].resetQuizz()>Réessayer</button>
+
             </div>
 
 
@@ -304,22 +340,27 @@
 
             <div class="feedback">
                 <!--INSERT FEEDBACK HERE-->
-                <i class="fa"></i>
+                <i class="fa fa-question-circle-o "></i>
                 <p></p>
             </div>
             <!--Choices section-->
             <ul class="choices-list">
                 <!--Associate each list element onclick attribute to
       the question's respective choice-->
-                <li onclick=quizz[7].onChoiceClick(0)><input type="radio" name="optradio"><span></span></li>
-                <li onclick=quizz[7].onChoiceClick(1)><input type="radio" name="optradio"><span></span></li>
-
+                <div>
+                    <li onclick=quizz[7].onChoiceClick(0)><input type="radio" name="optradio"><span></span></li>
+                    <i class="fa "></i>
+                </div>
+                <div>
+                    <li onclick=quizz[7].onChoiceClick(1)><input type="radio" name="optradio"><span></span></li>
+                    <i class="fa "></i>
+                </div>
             </ul>
 
 
             <div style="margin: 20px 50px 0 50px;">
                 <button class="btn activity-btn" id="verifyButton" onclick=quizz[7].verifySelection()>Vérifier</button>
-                <button class="btn activity-btn" id="retryButton" onclick=quizz[7].resetQuizz()>Réessayer</button>
+
             </div>
 
 
@@ -343,21 +384,25 @@
 
             <div class="feedback">
                 <!--INSERT FEEDBACK HERE-->
-                <i class="fa"></i>
+                <i class="fa fa-question-circle-o "></i>
                 <p></p>
             </div>
             <!--Choices section-->
             <ul class="choices-list">
                 <!--Associate each list element onclick attribute to
       the question's respective choice-->
-                <li onclick=quizz[8].onChoiceClick(0)><input type="radio" name="optradio"><span></span></li>
-                <li onclick=quizz[8].onChoiceClick(1)><input type="radio" name="optradio"><span></span></li>
-
+                <div>
+                    <li onclick=quizz[8].onChoiceClick(0)><input type="radio" name="optradio"><span></span></li>
+                    <i class="fa "></i>
+                </div>
+                <div>
+                    <li onclick=quizz[8].onChoiceClick(1)><input type="radio" name="optradio"><span></span></li>
+                    <i class="fa "></i>
+                </div>
             </ul>
 
             <div style="margin: 20px 50px 0 50px;">
                 <button class="btn activity-btn" id="verifyButton" onclick=quizz[8].verifySelection()>Vérifier</button>
-                <button class="btn activity-btn" id="retryButton" onclick=quizz[8].resetQuizz()>Réessayer</button>
             </div>
 
 

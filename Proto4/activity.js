@@ -80,8 +80,3 @@ function initQuizz() {
 
 
 }
-
-function ondisabled() {
-
-    console.log("NO")
-}

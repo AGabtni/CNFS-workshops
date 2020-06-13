@@ -1,3 +1,13 @@
+/* Slideshow container */
+
+.slideshow-container {
+    border: 4px solid #9C001D;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    padding: 25px 25px 50px;
+}
+
 .slide {
     display: flex;
     flex-direction: column;
@@ -7,17 +17,6 @@
 
 img {
     vertical-align: middle;
-}
-
-
-/* Slideshow container */
-
-.slideshow-container {
-    border: 4px solid #9C001D;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    padding: 25px 25px 50px;
 }
 
 @media only screen and (max-width: 300px) {
@@ -50,9 +49,6 @@ img {
 .next {
     right: 0px;
 }
-
-
-/* On hover, add a black background color with a little bit see-through */
 
 .prev i,
 .next i {

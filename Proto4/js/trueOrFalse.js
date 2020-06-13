@@ -55,7 +55,6 @@ class Question {
         }
         this.statementElement.querySelectorAll("p")[0].innerHTML = this.statement;
         this.parentContainer.querySelector("#verifyButton").setAttribute("disabled", "disabled");
-        this.parentContainer.querySelector("#retryButton").setAttribute("disabled", "disabled");
 
 
     }
@@ -94,6 +93,8 @@ class Question {
             this.selectedChoice = id;
         }
         this.updateQuizzList()
+
+
     }
 
 
@@ -106,56 +107,45 @@ class Question {
 
             this.choiceListElements[c].classList.remove("selected")
             this.choiceListElements[c].querySelector("input").checked = false;
+            this.choiceListElements[c].parentNode.querySelector("i").style.opacity = "0.0";
+            this.feedbackElement.style.opacity = "0.0";
 
         }
 
         //Check the status array for the choices and update the classes accordingly
         //if there is selected element add the selected css class to that element
-        if (this.selectedChoice != undefined) {
-
-
-            this.choiceListElements[this.selectedChoice].classList.add("selected");
-            this.choiceListElements[this.selectedChoice].querySelector("input").checked = true;
-            this.parentContainer.querySelector("#verifyButton").removeAttribute("disabled");
-            this.parentContainer.querySelector("#retryButton").setAttribute("disabled", "disabled");
-
-
-        }
-
         //Feedback control
         if (this.selectedChoice != undefined) {
 
-            if (this.incorrectChoice != undefined) {
-                this.feedbackElement.querySelectorAll("p")[0].innerHTML = "Incorrect. " + this.feedback;
-                this.feedbackElement.id = "incorrect"
-                    //this.feedbackElement.querySelector("img").src = "./img/cross.png"
-                var feedbackIcon = this.feedbackElement.querySelector("i");
-                feedbackIcon.classList.remove("fa-check-circle-o");
-                feedbackIcon.classList.add("fa-times-circle-o");
+            this.choiceListElements[this.selectedChoice].classList.add("selected");
+            this.choiceListElements[this.selectedChoice].querySelector("input").checked = true;
 
+            this.parentContainer.querySelector("#verifyButton").removeAttribute("disabled");
 
-                this.feedbackElement.style.opacity = "1.0";
-            } else if (this.correctChoice != undefined) {
-                this.feedbackElement.querySelectorAll("p")[0].innerHTML = "Correct.";
-                this.feedbackElement.id = "correct"
-                    //this.feedbackElement.querySelector("img").src = "./img/tick.png"
-                var feedbackIcon = this.feedbackElement.querySelector("i");
-
-                feedbackIcon.classList.add("fa-check-circle-o");
-                feedbackIcon.classList.remove("fa-times-circle-o");
-                this.feedbackElement.style.opacity = "1.0";
-            }
-
-
-
-        } else {
-            if (this.correctChoice != undefined)
-                this.choiceListElements[this.correctChoice].querySelector("input").checked = true;
-            this.feedbackElement.style.opacity = "0.0";
 
         }
 
+        if (this.incorrectChoice != undefined) {
+            this.choiceListElements[this.incorrectChoice].parentNode.querySelector("i").style.opacity = 1;
+            this.choiceListElements[this.incorrectChoice].parentNode.querySelector("i").classList.remove("fa-check-circle-o");
+            this.choiceListElements[this.incorrectChoice].parentNode.querySelector("i").classList.add("fa-times-circle-o");
+            this.choiceListElements[this.incorrectChoice].parentNode.querySelector("i").style.color = "#CC2200"
 
+            this.feedbackElement.querySelectorAll("p")[0].innerHTML = this.feedback;
+            this.feedbackElement.style.opacity = "1.0";
+        }
+        if (this.correctChoice != undefined) {
+
+            this.choiceListElements[this.correctChoice].parentNode.querySelector("i").style.opacity = 1;
+            this.choiceListElements[this.correctChoice].parentNode.querySelector("i").classList.remove("fa-times-circle-o");
+            this.choiceListElements[this.correctChoice].parentNode.querySelector("i").classList.add("fa-check-circle-o");
+            this.choiceListElements[this.correctChoice].parentNode.querySelector("i").style.color = "#408000"
+            this.feedbackElement.querySelectorAll("p")[0].innerHTML = this.feedback;
+            this.feedbackElement.style.opacity = "1.0";
+
+        }
+        //Block choices list after first verification when feedback if visible.
+        /*
         for (var c = 0; c < this.choiceListElements.length; c++) {
 
             if (this.feedbackElement.style.opacity > 0) {
@@ -165,7 +155,8 @@ class Question {
 
             }
 
-        }
+        }*/
+
     }
 
 
@@ -184,18 +175,20 @@ class Question {
         else
             this.correctChoice = this.selectedChoice;
 
+        if (this.correctChoice == undefined)
+            this.correctChoice = this.solutions[0];
+
+
+
+
 
         this.updateQuizzList();
 
         this.parentContainer.querySelector("#verifyButton").setAttribute("disabled", "disabled");
-        this.parentContainer.querySelector("#retryButton").removeAttribute("disabled");
-
 
         this.selectedChoice = undefined;
         this.correctChoice = undefined;
         this.incorrectChoice = undefined;
-
-
     }
 
     // return true if the selected 
@@ -220,16 +213,6 @@ class Question {
 
 
 
-    resetQuizz() {
-
-        //  empty selected and incorrect
-        //  choices after a verification
-        //  after the visual update
-        this.selectedChoice = undefined;
-        this.incorrectChoice = undefined;
-        this.correctChoice = undefined;
-        this.updateQuizzList();
-    }
 
 
 }

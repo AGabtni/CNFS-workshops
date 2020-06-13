@@ -3,7 +3,7 @@ var quizzData = {
 
     0: {
         "statement": "The trainee arrives inadequately dressed on the first day of his placement.",
-        "feedback": "",
+        "feedback": "ddd",
         "solution": [0]
 
     },

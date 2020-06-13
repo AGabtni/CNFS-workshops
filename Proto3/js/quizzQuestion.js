@@ -38,8 +38,6 @@ class Question {
 
 
     //Format quizz data  :
-
-
     parseQuizzData(data) {
 
 
@@ -61,13 +59,9 @@ class Question {
         for (var i = 0; i < this.choiceListElements.length; i++) {
 
             this.choiceListElements[i].querySelector("span").innerHTML = this.choices[i];
-            var feedbackImage = document.createElement("IMG");
-            this.choiceListElements[i].append(feedbackImage);
-            var selectImage = document.createElement("IMG");
-
-            feedbackImage.id = "feedbackImg";
-            selectImage.id = "selectImg";
-            this.choiceListElements[i].parentNode.append(selectImage);
+            this.choiceListElements[i].querySelector("input").checked = false;
+            if (this.solutions.length == 1)
+                this.choiceListElements[i].querySelector("input").type = "radio"
 
 
 
@@ -75,6 +69,7 @@ class Question {
 
         this.feedbackElement.querySelectorAll("p")[0].innerHTML = this.feedback;
         this.statementElement.querySelectorAll("p")[0].innerHTML = this.statement;
+        this.parentContainer.querySelector("#verifyButton").setAttribute("disabled", "disabled");
 
     }
 
@@ -103,9 +98,14 @@ class Question {
                 }
             }
 
-            if (!foundChoice)
+            if (!foundChoice) {
+                //Since radio buttons are used if only one of the choices
+                // Is the solution empty the selectedChoiced array when it 
+                // Selecting another/this element
+                if (this.solutions.length == 1)
+                    this.selectedChoices = []
                 this.selectedChoices.push(id);
-
+            }
         } else {
 
             this.selectedChoices.push(id);
@@ -122,41 +122,43 @@ class Question {
         for (var c = 0; c < this.choiceListElements.length; c++) {
 
             this.choiceListElements[c].classList.remove("selected")
-            this.choiceListElements[c].classList.remove("incorrect")
-            this.choiceListElements[c].classList.remove("correct")
-            this.choiceListElements[c].querySelectorAll("#feedbackImg")[0].style.opacity = "0"
-            this.choiceListElements[c].parentNode.querySelectorAll("#selectImg")[0].style.opacity = "0"
+            this.choiceListElements[c].parentNode.querySelectorAll("i")[0].style.opacity = "0"
+            this.choiceListElements[c].parentNode.querySelectorAll("i")[0].classList.remove("fa-times-circle-o")
+            this.choiceListElements[c].parentNode.querySelectorAll("i")[0].classList.remove("fa-check-circle-o")
+
+            this.choiceListElements[c].querySelector("input").checked = false;
 
             this.feedbackElement.style.opacity = 0;
+            this.parentContainer.querySelector("#verifyButton").removeAttribute("disabled");
 
 
         }
+
+
         if (this.selectedChoices.length > 0) {
             for (var c = 0; c < this.selectedChoices.length; c++) {
 
                 this.choiceListElements[this.selectedChoices[c]].classList.add("selected")
-                this.choiceListElements[this.selectedChoices[c]].parentNode.querySelectorAll("#selectImg")[0].src = "./img/select.png";
-                this.choiceListElements[this.selectedChoices[c]].parentNode.querySelectorAll("#selectImg")[0].style.opacity = "1"
+                this.choiceListElements[this.selectedChoices[c]].querySelector("input").checked = true;
 
             }
         }
 
         for (var c = 0; c < this.incorrectChoices.length; c++) {
-
-            this.choiceListElements[this.incorrectChoices[c]].classList.add("incorrect")
-
-            this.choiceListElements[this.incorrectChoices[c]].querySelectorAll("#feedbackImg")[0].src = "./img/cross.png";
-            this.choiceListElements[this.incorrectChoices[c]].querySelectorAll("#feedbackImg")[0].style.opacity = "1"
+            this.choiceListElements[this.incorrectChoices[c]].parentNode.querySelectorAll("i")[0].style.opacity = "1"
+            this.choiceListElements[this.incorrectChoices[c]].parentNode.querySelectorAll("i")[0].classList.add("fa-times-circle-o")
+            this.choiceListElements[this.incorrectChoices[c]].parentNode.querySelectorAll("i")[0].style.color = "#CC2200";
 
         }
         for (var c = 0; c < this.correctChoices.length; c++) {
 
-            this.choiceListElements[this.correctChoices[c]].classList.add("correct")
+            this.choiceListElements[this.correctChoices[c]].parentNode.querySelectorAll("i")[0].style.opacity = "1"
+            this.choiceListElements[this.correctChoices[c]].parentNode.querySelectorAll("i")[0].classList.add("fa-check-circle-o")
+            this.choiceListElements[this.correctChoices[c]].parentNode.querySelectorAll("i")[0].style.color = "#408000";
 
-            this.choiceListElements[this.correctChoices[c]].querySelectorAll("#feedbackImg")[0].src = "./img/tick.png";
-            this.choiceListElements[this.correctChoices[c]].querySelectorAll("#feedbackImg")[0].style.opacity = "1"
 
-            this.feedbackElement.style.opacity = 1.0;
+            if (this.feedbackElement.querySelectorAll("p")[0].innerHTML != "")
+                this.feedbackElement.style.opacity = 1.0;
         }
 
 
@@ -166,18 +168,6 @@ class Question {
     // choices by user
     verifySelection() {
 
-        // Just an option
-        // to reset the quizz if there is no inputs
-        /*
-        if (this.selectedChoices.length == 0) {
-            this.updateQuizzList();
-            return;
-        }
-        */
-
-        // Filter the selected choices
-        // keep the correct one in the array correctChoices array
-        // and the incorrect ones in incorrectChoices array
         for (var s = 0; s < this.selectedChoices.length; s++) {
 
 
@@ -209,7 +199,6 @@ class Question {
                     this.correctChoices.push(solution);
             }
         }
-        this.selectedChoices = [];
 
 
         this.updateQuizzList()
@@ -217,8 +206,10 @@ class Question {
         //  empty selected and incorrect
         //  choices after a verification
         //  after the visual update
+        this.selectedChoices = [];
         this.incorrectChoices = [];
         this.correctChoices = [];
+        this.parentContainer.querySelector("#verifyButton").setAttribute("disabled", "disabled");
 
     }
 

@@ -25,12 +25,18 @@
     transition: all 0.5s ease;
 }
 
+.choices-list div {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .choices-list li {
     display: flex;
     border: 1px solid #ABABAB;
     border-radius: 2px;
     padding: 5px 20px;
-    margin-top: 20px;
     width: 450px;
     text-align: center;
     cursor: pointer;
@@ -42,6 +48,11 @@
 .choices-list li span {
     text-align: center;
     margin: auto 14px auto;
+    font-weight: bold;
+}
+
+.choices-list i {
+    margin-left: 10px;
 }
 
 .selected {
@@ -72,18 +83,9 @@
     word-break: break-word;
     text-align: start;
     border-radius: 2px;
-}
-
-#correct {
-    border: 1px solid #408000;
-    background: #F2FFE6;
-    color: #408000;
-}
-
-#incorrect {
-    border: 1px solid #CC2200;
-    background: #FFEAE6;
-    color: #CC2200;
+    border: 1px solid #005380;
+    background: #E6F7FF;
+    color: #005380;
 }
 
 .feedback p {
