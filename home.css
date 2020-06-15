@@ -40,6 +40,18 @@ body {
     z-index: 10;
 }
 
+.list-group li {
+    margin-top: 20px;
+    display: flex;
+    max-width: 500px;
+    cursor: pointer;
+}
+
+.list-group h5 {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
 .proto-container button a {
     Color: white;
 }
@@ -62,14 +74,9 @@ body {
     max-width: 300px;
 }
 
-.card,
-ul {
+.card {
     cursor: pointer;
     text-align: center;
-}
-
-li {
-    margin-top: 20px;
 }
 
 .row .card {

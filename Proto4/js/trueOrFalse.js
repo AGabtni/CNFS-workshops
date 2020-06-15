@@ -108,7 +108,7 @@ class Question {
             this.choiceListElements[c].classList.remove("selected")
             this.choiceListElements[c].querySelector("input").checked = false;
             this.choiceListElements[c].parentNode.querySelector("i").style.opacity = "0.0";
-            this.feedbackElement.style.opacity = "0.0";
+            this.feedbackElement.classList.remove("feedbackReveal");
 
         }
 
@@ -132,7 +132,7 @@ class Question {
             this.choiceListElements[this.incorrectChoice].parentNode.querySelector("i").style.color = "#CC2200"
 
             this.feedbackElement.querySelectorAll("p")[0].innerHTML = this.feedback;
-            this.feedbackElement.style.opacity = "1.0";
+            this.feedbackElement.classList.add("feedbackReveal");
         }
         if (this.correctChoice != undefined) {
 
@@ -141,7 +141,7 @@ class Question {
             this.choiceListElements[this.correctChoice].parentNode.querySelector("i").classList.add("fa-check-circle-o");
             this.choiceListElements[this.correctChoice].parentNode.querySelector("i").style.color = "#408000"
             this.feedbackElement.querySelectorAll("p")[0].innerHTML = this.feedback;
-            this.feedbackElement.style.opacity = "1.0";
+            this.feedbackElement.classList.add("feedbackReveal");
 
         }
         //Block choices list after first verification when feedback if visible.

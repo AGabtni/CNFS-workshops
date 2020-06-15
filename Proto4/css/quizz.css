@@ -26,7 +26,7 @@
 }
 
 .choices-list div {
-    margin-top: 20px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -36,7 +36,7 @@
     display: flex;
     border: 1px solid #ABABAB;
     border-radius: 2px;
-    padding: 5px 20px;
+    padding: 7.5px 20px;
     width: 450px;
     text-align: center;
     cursor: pointer;
@@ -59,33 +59,30 @@
     border: 1px solid #5E5E5E !important;
 }
 
-
-/*Remove this shit*/
-
-.feedback-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-
-/*END of Remove this shit*/
-
 .feedback {
     display: flex;
     align-items: center;
-    margin: 10px 50px 0 50px;
-    padding: 10px;
+    margin: 0 50px;
     opacity: 0;
-    transition: opacity 0.5s ease;
+    transform: scaleY(0);
+    transition: all 0.5s ease;
     word-break: break-word;
     text-align: start;
     border-radius: 2px;
     border: 1px solid #005380;
     background: #E6F7FF;
     color: #005380;
+}
+
+
+/*Feedback animation*/
+
+.feedbackReveal {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    opacity: 1.0;
+    transform: scaleY(1);
 }
 
 .feedback p {

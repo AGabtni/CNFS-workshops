@@ -4,8 +4,8 @@
     border: 1px solid #9C001D;
     border-radius: 2px;
     display: flex;
-    padding: 50px;
     align-items: center;
+    margin-top: 20px;
     padding: 25px 25px 50px;
 }
 
@@ -17,15 +17,15 @@
 }
 
 @media only screen and (max-width: 300px) {
-    .prev,
-    .next,
+    .prevArrow,
+    .nextArrow,
     .text {
         font-size: 14px
     }
 }
 
-.prev,
-.next {
+.prevArrow,
+.nextArrow {
     top: 50%;
     position: absolute;
     width: 0;
@@ -36,31 +36,23 @@
     font-weight: 900;
 }
 
-.prev {
+.prevArrow {
     left: 0.1%;
 }
 
-.next {
+.nextArrow {
     right: 0px;
 }
 
-.prev i,
-.next i {
+.prevArrow i,
+.nextArrow i {
     transition: all 0.5s ease;
 }
 
-.prev i:hover,
-.next i:hover {
+.prevArrow i:hover,
+.nextArrow i:hover {
     transform: scale(1.5);
     color: #9C001D;
-}
-
-
-/* On hover, add a black background color with a little bit see-through */
-
-.prev:hover,
-.next:hover {
-    transform: scale(1.5);
 }
 
 

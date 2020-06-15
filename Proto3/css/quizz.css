@@ -21,21 +21,24 @@
     list-style: none;
     padding: 0;
     margin: 0 50px 0 50px;
+    transition: all 0.5s ease-in;
 }
 
 .choices-list div {
     display: flex;
+    width: 100%;
     flex-direction: row;
     align-items: center;
-    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .choices-list li {
     display: flex;
+    width: 100%;
+    margin: 0 10px;
     text-align: center;
     align-items: center;
     justify-content: start;
-    width: 450px;
     padding: 10px;
     list-style: none;
     border: 1px solid #ABABAB;
@@ -58,34 +61,32 @@
     border: 1.5px solid #5E5E5E !important;
 }
 
-#feedbackImg,
-#selectImg {
-    height: 42px;
-    width: 42px;
-    opacity: 0;
-    transition: "all 0.2s ease-in";
-}
-
-#feedbackImg {
-    height: 30px!important;
-    width: 30px!important;
-    margin-left: auto;
-    align-self: stretch;
-}
-
 .feedback {
     display: flex;
     align-items: center;
-    margin: 10px 50px 0 50px;
-    padding: 10px;
+    margin: 0 50px;
     opacity: 0;
-    transition: opacity 0.5s ease;
+    transform: scaleY(-1);
+    transition: all 0.5s ease;
     word-break: break-word;
     text-align: start;
     border-radius: 2px;
     border: 1px solid #005380;
     background: #E6F7FF;
     color: #005380;
+    visibility: hidden;
+}
+
+
+/*Feedback animation*/
+
+.feedbackReveal {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    opacity: 1.0;
+    transform: scaleY(1);
+    visibility: visible;
 }
 
 .feedback p {

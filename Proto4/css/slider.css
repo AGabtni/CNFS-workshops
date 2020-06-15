@@ -1,11 +1,12 @@
 /* Slideshow container */
 
 .slideshow-container {
-    border: 4px solid #9C001D;
+    border: 1px solid #9C001D;
     border-radius: 2px;
     display: flex;
     align-items: center;
     padding: 25px 25px 50px;
+    margin-top: 20px;
 }
 
 .slide {
@@ -13,10 +14,6 @@
     flex-direction: column;
     justify-items: center;
     flex: 1;
-}
-
-img {
-    vertical-align: middle;
 }
 
 @media only screen and (max-width: 300px) {
@@ -38,9 +35,6 @@ img {
     font-size: 24px;
     font-weight: 900;
 }
-
-
-/* Position the "next button" to the right */
 
 .prev {
     left: 0.1%;

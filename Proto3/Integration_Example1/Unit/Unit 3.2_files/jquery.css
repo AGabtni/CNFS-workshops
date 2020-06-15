@@ -1,0 +1,13 @@
+/*You can modify the following styles to suit your needs. */
+.ui-widget-content{padding:10px;
+/*border: solid 1px #814f16;*/
+width:90%;
+background-color:#ffffff;}
+
+.ui-widget-header{padding:10px;}
+
+.ui-state-highlight{padding:10px;}
+
+/* Plain HTML conversion link may be useful for some users with screen readers, hidden to others */
+.ui-helper-hidden-accessible{ position:absolute; left:-9999px; }	
+

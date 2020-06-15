@@ -18,10 +18,9 @@ class Question {
     //  @targetHtmlId : parent container of the question 
     //  @choices : array with the values of the question choices
     //  @solutions : array with the values of the question solutions 
-    constructor(targetHtmlId, choices, data) {
+    constructor(targetHtmlId, data) {
 
         this.parseQuizzData(data)
-        this.choices = choices;
         this.parentContainer = document.getElementById(targetHtmlId);
         this.choiceListElements = this.parentContainer.querySelectorAll("li");
         this.titleElement = this.parentContainer.getElementsByClassName("header")[0];
@@ -44,6 +43,7 @@ class Question {
         this.solutions = data.solution;
         this.statement = data.statement;
         this.feedback = data.feedback;
+        this.choices = data.choices;
 
 
 
@@ -66,7 +66,7 @@ class Question {
 
 
         }
-
+        this.parentContainer.querySelector("ul").style.transform = "translateY(" + -this.feedbackElement.style.height + "px)"
         this.feedbackElement.querySelectorAll("p")[0].innerHTML = this.feedback;
         this.statementElement.querySelectorAll("p")[0].innerHTML = this.statement;
         this.parentContainer.querySelector("#verifyButton").setAttribute("disabled", "disabled");
@@ -128,7 +128,8 @@ class Question {
 
             this.choiceListElements[c].querySelector("input").checked = false;
 
-            this.feedbackElement.style.opacity = 0;
+            this.feedbackElement.classList.remove("feedbackReveal");
+            this.parentContainer.querySelector("ul").style.transform = "translateY(" + -this.feedbackElement.style.height + "px)"
             this.parentContainer.querySelector("#verifyButton").removeAttribute("disabled");
 
 
@@ -157,8 +158,11 @@ class Question {
             this.choiceListElements[this.correctChoices[c]].parentNode.querySelectorAll("i")[0].style.color = "#408000";
 
 
-            if (this.feedbackElement.querySelectorAll("p")[0].innerHTML != "")
-                this.feedbackElement.style.opacity = 1.0;
+            if (this.feedbackElement.querySelectorAll("p")[0].innerHTML != "") {
+
+                this.feedbackElement.classList.add("feedbackReveal");
+                this.parentContainer.querySelector("ul").style.transform = "translateY(0px)"
+            }
         }
 
 
@@ -200,7 +204,7 @@ class Question {
             }
         }
 
-
+        this.statementElement.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
         this.updateQuizzList()
 
         //  empty selected and incorrect
