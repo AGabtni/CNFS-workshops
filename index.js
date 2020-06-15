@@ -20,7 +20,7 @@ var originalLink = {
     },
     3: {
         headerNames: [
-            "Performance assessment - Unité 3.7 (QCM avec une seule solution)",
+            "Performance assessment - Unité 3.7 (QCM avec une seule solution + feedback)",
             "Integrating learning styles - Unité 3.2 (Q.C.M. avec plusieurs solutions)"
         ],
         listElements: [
