@@ -129,7 +129,6 @@ class DNDQuestion {
         for (var d = 0; d < Object.keys(data).length; d++) {
             var newKeyword = document.createElement("div");
             newKeyword.innerHTML = data[d].keyword;
-            newKeyword.classList.add("hvr-float-shadow")
 
             newKeyword.classList.add("keyword")
             newKeyword.id = "keyword" + d;

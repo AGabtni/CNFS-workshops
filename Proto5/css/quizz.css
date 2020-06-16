@@ -1,12 +1,3 @@
-.keywords-bank {
-    background-color: cornflowerblue;
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 200px;
-}
-
 #header0 {
     grid-area: header1;
     background-color: chartreuse;
@@ -32,6 +23,16 @@
     grid-area: footer;
 }
 
+.keywords-bank {
+    border: 1px solid #ABABAB;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    padding: 20px;
+    align-content: start;
+    width: 650px;
+}
+
 .drop-area-container {
     display: grid;
     grid-template-areas: "header1 header1 header2 header2" "main1  main1 main2  main2" "footer footer footer footer";
@@ -49,25 +50,17 @@
     flex-wrap: wrap;
 }
 
-.keywords-bank #keywords {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    margin: 10px;
-    padding: 20px;
-    min-height: 150px;
-    width: 100%;
-    align-content: start;
-    justify-content: center;
-}
-
 .keyword {
-    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 40px;
+    padding: 10px;
     margin: 5px;
-    border-radius: 10px !important;
+    border: 1px solid #ABABAB;
+    border-radius: 2px !important;
     background-color: white;
     cursor: pointer;
     transition: all 0.5s ease-in;
-    min-height: 40px;
 }
 
 .feedbackImg {
@@ -88,11 +81,9 @@
 }
 
 .drop-area {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto;
+    display: flex;
+    flex-wrap: wrap;
     min-width: 100%;
-    min-height: 100px;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.7);
     transition: all 0.5s ease-in;
