@@ -54,7 +54,6 @@ class Question {
 
         }
         this.statementElement.querySelectorAll("p")[0].innerHTML = this.statement;
-        this.parentContainer.querySelector("#verifyButton").setAttribute("disabled", "disabled");
 
 
     }
@@ -93,7 +92,7 @@ class Question {
             this.selectedChoice = id;
         }
         this.updateQuizzList()
-
+        this.verifySelection();
 
     }
 
@@ -117,10 +116,8 @@ class Question {
         //Feedback control
         if (this.selectedChoice != undefined) {
 
-            this.choiceListElements[this.selectedChoice].classList.add("selected");
             this.choiceListElements[this.selectedChoice].querySelector("input").checked = true;
 
-            this.parentContainer.querySelector("#verifyButton").removeAttribute("disabled");
 
 
         }
@@ -140,6 +137,8 @@ class Question {
             this.choiceListElements[this.correctChoice].parentNode.querySelector("i").classList.remove("fa-times-circle-o");
             this.choiceListElements[this.correctChoice].parentNode.querySelector("i").classList.add("fa-check-circle-o");
             this.choiceListElements[this.correctChoice].parentNode.querySelector("i").style.color = "#408000"
+            this.choiceListElements[this.correctChoice].classList.add("selected");
+
             this.feedbackElement.querySelectorAll("p")[0].innerHTML = this.feedback;
             this.feedbackElement.classList.add("feedbackReveal");
 
@@ -184,7 +183,6 @@ class Question {
 
         this.updateQuizzList();
 
-        this.parentContainer.querySelector("#verifyButton").setAttribute("disabled", "disabled");
 
         this.selectedChoice = undefined;
         this.correctChoice = undefined;

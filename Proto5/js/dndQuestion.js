@@ -39,14 +39,13 @@ class DNDQuestion {
 
                             if (target.id != "keywords") {
                                 target.classList.add("hovering");
-                                var headerId = target.id.substring(target.id.length - 1)
-                                var header = document.querySelector("#header" + headerId);
-                                header.classList.add("header-hover");
+                                //var headerId = target.id.substring(target.id.length - 1)
+                                //var header = document.querySelector("#header" + headerId);
                             } else if (target.id == "keywords") {
                                 target.classList.add("hovering");
                                 var headerId = target.id.substring(target.id.length - 1)
-                                var header = document.getElementsByClassName("bank-header")[0];
-                                header.classList.add("header-hover");
+                                    //var header = document.getElementsByClassName("bank-header")[0];
+                                    //header.classList.add("header-hover");
 
                             }
                             return true;

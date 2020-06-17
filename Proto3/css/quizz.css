@@ -58,7 +58,7 @@
 }
 
 .selected {
-    border: 1.5px solid #5E5E5E !important;
+    border: 2px solid #5E5E5E !important;
 }
 
 .feedback {
@@ -81,8 +81,8 @@
 /*Feedback animation*/
 
 .feedbackReveal {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     padding: 10px;
     opacity: 1.0;
     transform: scaleY(1);

@@ -1,46 +1,19 @@
-#header0 {
-    grid-area: header1;
-    background-color: chartreuse;
-}
-
-#header1 {
-    grid-area: header2;
-    background-color: darkorange;
-}
-
-#dropArea0 {
-    grid-area: main1;
-    background-color: chartreuse;
-}
-
-#dropArea1 {
-    grid-area: main2;
-    background-color: darkorange;
-}
-
-#footer {
-    margin-top: 50px;
-    grid-area: footer;
-}
-
 .keywords-bank {
     border: 1px solid #ABABAB;
     display: flex;
     flex-wrap: wrap;
-    margin: 10px;
+    margin: 10px 0;
     padding: 20px;
     align-content: start;
     width: 650px;
+    min-height: 150px;
 }
 
 .drop-area-container {
-    display: grid;
-    grid-template-areas: "header1 header1 header2 header2" "main1  main1 main2  main2" "footer footer footer footer";
-    justify-items: center;
-    text-align: center;
-    background-color: #B1CAF6;
-    padding: 20px;
+    display: flex;
+    flex-direction: row;
     margin: 10px;
+    margin-top: 30px;
 }
 
 .bank-header {
@@ -59,6 +32,8 @@
     border: 1px solid #ABABAB;
     border-radius: 2px !important;
     background-color: white;
+    font-weight: bold;
+    font-size: 14px;
     cursor: pointer;
     transition: all 0.5s ease-in;
 }
@@ -84,14 +59,15 @@
     display: flex;
     flex-wrap: wrap;
     min-width: 100%;
+    min-height: 200px;
+    margin: 10px 0;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.7);
     transition: all 0.5s ease-in;
+    border: 1px dashed #ABABAB;
 }
 
 .area-header {
-    padding: 10px;
-    margin: 10px;
     transition: all 0.5s ease-in;
 }
 
@@ -115,43 +91,4 @@
         transform: scale(1);
         box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     }
-}
-
-.activity-button {
-    border-radius: 4px;
-    background-color: #283b5e;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 15px;
-    padding: 20px;
-    width: 150px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.activity-button span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-}
-
-.activity-button span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-}
-
-.activity-button:hover span {
-    padding-right: 25px;
-}
-
-.activity-button:hover span:after {
-    opacity: 1;
-    right: 0;
 }

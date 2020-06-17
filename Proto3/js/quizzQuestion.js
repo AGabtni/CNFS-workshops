@@ -69,7 +69,13 @@ class Question {
         this.parentContainer.querySelector("ul").style.transform = "translateY(" + -this.feedbackElement.style.height + "px)"
         this.feedbackElement.querySelectorAll("p")[0].innerHTML = this.feedback;
         this.statementElement.querySelectorAll("p")[0].innerHTML = this.statement;
-        this.parentContainer.querySelector("#verifyButton").setAttribute("disabled", "disabled");
+
+
+
+        this.verifyButton = this.parentContainer.querySelector("#verifyButton");
+
+        if (this.verifyButton != undefined)
+            this.verifyButton.setAttribute("disabled", "disabled");
 
     }
 
@@ -111,6 +117,8 @@ class Question {
             this.selectedChoices.push(id);
         }
         this.updateQuizzList()
+        if (this.verifyButton == undefined)
+            this.verifySelection();
     }
 
 
@@ -129,8 +137,9 @@ class Question {
             this.choiceListElements[c].querySelector("input").checked = false;
 
             this.feedbackElement.classList.remove("feedbackReveal");
-            this.parentContainer.querySelector("ul").style.transform = "translateY(" + -this.feedbackElement.style.height + "px)"
-            this.parentContainer.querySelector("#verifyButton").removeAttribute("disabled");
+            this.parentContainer.querySelector("ul").style.transform = "translateY(" + -this.feedbackElement.style.height + "px)";
+            if (this.verifyButton != undefined)
+                this.verifyButton.removeAttribute("disabled");
 
 
         }
@@ -139,7 +148,6 @@ class Question {
         if (this.selectedChoices.length > 0) {
             for (var c = 0; c < this.selectedChoices.length; c++) {
 
-                this.choiceListElements[this.selectedChoices[c]].classList.add("selected")
                 this.choiceListElements[this.selectedChoices[c]].querySelector("input").checked = true;
 
             }
@@ -157,6 +165,7 @@ class Question {
             this.choiceListElements[this.correctChoices[c]].parentNode.querySelectorAll("i")[0].classList.add("fa-check-circle-o")
             this.choiceListElements[this.correctChoices[c]].parentNode.querySelectorAll("i")[0].style.color = "#408000";
 
+            this.choiceListElements[this.correctChoices[c]].classList.add("selected")
 
             if (this.feedbackElement.querySelectorAll("p")[0].innerHTML != "") {
 
@@ -213,7 +222,8 @@ class Question {
         this.selectedChoices = [];
         this.incorrectChoices = [];
         this.correctChoices = [];
-        this.parentContainer.querySelector("#verifyButton").setAttribute("disabled", "disabled");
+        if (this.verifyButton != undefined)
+            this.verifyButton.setAttribute("disabled", "disabled");
 
     }
 

@@ -18,30 +18,36 @@
 
 <body>
     <!--COPY CODE FROM HERE-->
-
-    <h3 class="bank-header">
+    <div style="margin: 10px;">
+        <span>
         Banque de mots :
-    </h3>
-    <div class="keywords-bank" id="keywords">
+        </span>
+        <div class="keywords-bank" id="keywords">
+
+        </div>
 
     </div>
-
-
 
     <div class="drop-area-container">
+        <div style="display: flex; flex-direction: column;  margin: 0 10px 0 0; width: 50%;">
+            <span>Joue un rôle central</span>
+            <div id="dropArea0" class="drop-area"></div>
 
-        <h3 id="header0" class="area-header">Joue un rôle central</h3>
-        <h3 id="header1" class="area-header">Ne joue pas un rôle central</h3>
-        <div id="dropArea0" class="drop-area"></div>
-        <div id="dropArea1" class="drop-area"></div>
+        </div>
+        <div style="display: flex; flex-direction: column; margin: 0 10px 0 0; width: 50%; ">
+
+            <span>Ne joue pas un rôle central</span>
+            <div id="dropArea1" class="drop-area"></div>
+
+        </div>
 
 
 
 
     </div>
-    <div id="footer">
-        <button id="verificationButton" class="activity-button" onclick=dndQuestion.verifyItems()><span>Vérifier </span></button>
-        <button id="solutionButton" class="activity-button" onclick=dndQuestion.showSolution()><span>Réponse </span></button>
+    <div style="display : flex ;flex-direction : row; margin: 0 10px 0 0;padding : 10px">
+        <button class="btn" onclick=dndQuestion.verifyItems()><span>Vérifier </span></button>
+        <button id="solutionButton" class="btn" onclick=dndQuestion.showSolution()><span>Voir la solution </span></button>
 
     </div>
 

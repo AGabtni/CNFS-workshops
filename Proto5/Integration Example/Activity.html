@@ -28551,31 +28551,35 @@
                 <!--COPY CODE FROM HERE-->
 
 
-                <div class="keywords-bank">
-                    <h3 class="bank-header">
-                        Banque de mots :
-                    </h3>
-                    <div id="keywords">
-
-                    </div>
+                <h3 class="bank-header">
+                    Banque de mots :
+                </h3>
+                <div class="keywords-bank" id="keywords">
 
                 </div>
 
 
 
                 <div class="drop-area-container">
+                    <div style="display: flex; flex-direction: column;  margin: 0 10px 0 0; width: 50%;">
+                        <h3>Joue un rôle central</h3>
+                        <div id="dropArea0" class="drop-area"></div>
 
-                    <h3 id="header0" class="area-header">Joue un rôle central</h3>
-                    <h3 id="header1" class="area-header">Ne joue pas un rôle central</h3>
-                    <div id="dropArea0" class="drop-area"></div>
-                    <div id="dropArea1" class="drop-area"></div>
-                    <div id="footer">
-                        <button id="verificationButton" class="activity-button" onclick=dndQuestion.verifyItems()><span>Vérifier </span></button>
-                        <button id="solutionButton" class="activity-button" onclick=dndQuestion.showSolution()><span>Réponse </span></button>
+                    </div>
+                    <div style="display: flex; flex-direction: column; margin: 0 10px 0 0; width: 50%; ">
+
+                        <h3>Ne joue pas un rôle central</h3>
+                        <div id="dropArea1" class="drop-area"></div>
 
                     </div>
 
 
+
+
+                </div>
+                <div class="display : flex ; margin: 0 10px 0 0;padding : 10px">
+                    <button id="verificationButton" class="btn" onclick=dndQuestion.verifyItems()><span>Vérifier </span></button>
+                    <button id="solutionButton" class="btn" onclick=dndQuestion.showSolution()><span>Voir la solution </span></button>
 
                 </div>
 
