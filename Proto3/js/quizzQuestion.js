@@ -16,8 +16,8 @@ class Question {
 
     //Creates a question object .
     //  @targetHtmlId : parent container of the question 
-    //  @choices : array with the values of the question choices
-    //  @solutions : array with the values of the question solutions 
+    //  @data : json object containing the question data (choices, solutions, feedback, ..)
+
     constructor(targetHtmlId, data) {
 
         this.parseQuizzData(data)
@@ -73,10 +73,10 @@ class Question {
 
 
         this.verifyButton = this.parentContainer.querySelector("#verifyButton");
-
-        if (this.verifyButton != undefined)
-            this.verifyButton.setAttribute("disabled", "disabled");
-
+        /*
+                if (this.verifyButton != undefined)
+                    this.verifyButton.setAttribute("disabled", "disabled");
+                */
     }
 
 
@@ -117,16 +117,21 @@ class Question {
             this.selectedChoices.push(id);
         }
         this.updateQuizzList()
+
+        //If there is no verfication btn 
+        // in the slide/question verify the
+        // answers when a choice is selected
         if (this.verifyButton == undefined)
             this.verifySelection();
     }
 
 
     //  update view when new items
-    // are selected or verification button is hit
+    //  are selected or verification button is hit
     updateQuizzList() {
 
-        //Reset all elements related to the question
+        //Reset all modifications 
+        // applied to the elements related to this question
         for (var c = 0; c < this.choiceListElements.length; c++) {
 
             this.choiceListElements[c].classList.remove("selected")
@@ -138,22 +143,24 @@ class Question {
 
             this.feedbackElement.classList.remove("feedbackReveal");
             this.parentContainer.querySelector("ul").style.transform = "translateY(" + -this.feedbackElement.style.height + "px)";
+            /*
             if (this.verifyButton != undefined)
                 this.verifyButton.removeAttribute("disabled");
 
-
+            */
         }
 
 
         if (this.selectedChoices.length > 0) {
             for (var c = 0; c < this.selectedChoices.length; c++) {
-
+                //Check the input button when one of the choices is selected
                 this.choiceListElements[this.selectedChoices[c]].querySelector("input").checked = true;
 
             }
         }
 
         for (var c = 0; c < this.incorrectChoices.length; c++) {
+            //Add a feedback icon next to the incorrect choices
             this.choiceListElements[this.incorrectChoices[c]].parentNode.querySelectorAll("i")[0].style.opacity = "1"
             this.choiceListElements[this.incorrectChoices[c]].parentNode.querySelectorAll("i")[0].classList.add("fa-times-circle-o")
             this.choiceListElements[this.incorrectChoices[c]].parentNode.querySelectorAll("i")[0].style.color = "#CC2200";
@@ -161,12 +168,14 @@ class Question {
         }
         for (var c = 0; c < this.correctChoices.length; c++) {
 
+            //Add a feedback icon next to the correct choices
             this.choiceListElements[this.correctChoices[c]].parentNode.querySelectorAll("i")[0].style.opacity = "1"
             this.choiceListElements[this.correctChoices[c]].parentNode.querySelectorAll("i")[0].classList.add("fa-check-circle-o")
             this.choiceListElements[this.correctChoices[c]].parentNode.querySelectorAll("i")[0].style.color = "#408000";
 
             this.choiceListElements[this.correctChoices[c]].classList.add("selected")
 
+            //Reveal the feedback after revealing the correct choices
             if (this.feedbackElement.querySelectorAll("p")[0].innerHTML != "") {
 
                 this.feedbackElement.classList.add("feedbackReveal");
@@ -222,9 +231,13 @@ class Question {
         this.selectedChoices = [];
         this.incorrectChoices = [];
         this.correctChoices = [];
+
+
+
+        /*
         if (this.verifyButton != undefined)
             this.verifyButton.setAttribute("disabled", "disabled");
-
+        */
     }
 
     // return true if the selected 

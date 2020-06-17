@@ -96,7 +96,7 @@
 }
 
 .verify-btn {
-    margin-right: 10px;
+    margin: 0 0 10px 10px;
     color: white!important;
     border-radius: 2px;
     background-color: #9C001D;

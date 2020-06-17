@@ -17,40 +17,45 @@
 }
 
 @media only screen and (max-width: 300px) {
-    .prev,
-    .next,
+    .prevArrow,
+    .nextArrow,
     .text {
         font-size: 14px
     }
 }
 
-.prev,
-.next {
+.prevArrow,
+.nextArrow {
     top: 50%;
     position: absolute;
     width: 0;
     height: 0;
     cursor: pointer;
     color: #9C001D;
-    font-size: 24px;
+    font-size: 3rem;
     font-weight: 900;
 }
 
-.prev {
+.prevArrow {
     left: 0.1%;
 }
 
-.next {
+.nextArrow {
     right: 0px;
 }
 
-.prev i,
-.next i {
+.prevArrow i {
+    margin-right: 2rem;
     transition: all 0.5s ease;
 }
 
-.prev i:hover,
-.next i:hover {
+.nextArrow i {
+    margin-left: -2rem;
+    transition: all 0.5s ease;
+}
+
+.prevArrow i:hover,
+.nextArrow i:hover {
     transform: scale(1.5);
     color: #9C001D;
 }

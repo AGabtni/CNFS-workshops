@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     margin-top: 20px;
-    padding: 25px 25px 50px;
+    padding: 25px 25px 75px;
 }
 
 .slide {
@@ -32,7 +32,7 @@
     height: 0;
     cursor: pointer;
     color: #9C001D;
-    font-size: 24px;
+    font-size: 3rem;
     font-weight: 900;
 }
 
@@ -44,8 +44,13 @@
     right: 0px;
 }
 
-.prevArrow i,
+.prevArrow i {
+    margin-right: 2rem;
+    transition: all 0.5s ease;
+}
+
 .nextArrow i {
+    margin-left: -2rem;
     transition: all 0.5s ease;
 }
 

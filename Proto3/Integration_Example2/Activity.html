@@ -28519,28 +28519,7 @@
     <script type="text/javascript" src="Activity_files/jquery_004.js"></script>
     <script type="text/javascript" src="Activity_files/jquery_003.js"></script>
     <script src="Activity_files/swfobject_modified.html" type="text/javascript"></script>
-    <script type="text/javascript">
-        //<![CDATA[
-        $(function() {
-            // types=["type", "vj_type", "find", "vj_find_type","vj_find", "multiple_choice", "vj_multiple_choice","multiple_choice_radio"]
-            $('.wordquiz').wordQuiz({
-                'type': 'multiple_choice_radio',
 
-                correct_icon_html: '<strong style="color:#009900;">Correct</strong>&nbsp;',
-                incorrect_icon_html: '<strong style="color:#990000;">Incorrect</strong>&nbsp;',
-
-                // Plain HTML link css defined at -9999px to only be "seen" by screenreaders
-                d_link_html: '<div class="ui-helper-hidden-accessible"><a href="#">Plain HTML</a> ' +
-                    'This exercise uses JavaScript to display and hide content. ' +
-                    'If you wish to see the plain HTML of the exercise, please ' +
-                    'click the "Plain HTML" link.</div>'
-
-                // word_quiz_finished_message: {title:'Good job!', text:'You have completed the quiz.'},
-                // word_quiz_check_answers_message: {title:'Score', text:'<%=correct%>/<%=total%>'},
-            });
-        });
-        //]]>
-    </script>
 
     <!-- End general activity JQuery-->
 
@@ -28983,7 +28962,8 @@
                             </ul>
                         </div>
 
-
+                        <div style="margin: 20px 50px 0 50px;"><button class="btn verify-btn" id="verifyButton" onclick=quizz[4].verifySelection()>Check
+                            answer</button></div>
 
                         <a class="prevArrow" onclick="prev(-1)"> <i class="fa fa-angle-left" aria-hidden="true"></i>
                         </a>
@@ -29141,7 +29121,8 @@
 
                             </ul>
                         </div>
-
+                        <div style="margin: 20px 50px 0 50px;"><button class="btn verify-btn" id="verifyButton" onclick=quizz[7].verifySelection()>Check
+                            answer</button></div>
 
                         <a class="prevArrow" onclick="prev(-1)"> <i class="fa fa-angle-left" aria-hidden="true"></i>
                         </a>
@@ -29244,7 +29225,8 @@
 
                             </ul>
                         </div>
-
+                        <div style="margin: 20px 50px 0 50px;"><button class="btn verify-btn" id="verifyButton" onclick=quizz[9].verifySelection()>Check
+                            answer</button></div>
 
                         <a class="prevArrow" onclick="prev(-1)"> <i class="fa fa-angle-left" aria-hidden="true"></i>
                         </a>
@@ -29296,7 +29278,8 @@
 
                             </ul>
                         </div>
-
+                        <div style="margin: 20px 50px 0 50px;"><button class="btn verify-btn" id="verifyButton" onclick=quizz[10].verifySelection()>Check
+                            answer</button></div>
 
                         <a class="prevArrow" onclick="prev(-1)"> <i class="fa fa-angle-left" aria-hidden="true"></i>
                         </a>
@@ -29400,7 +29383,8 @@
 
                             </ul>
                         </div>
-
+                        <div style="margin: 20px 50px 0 50px;"><button class="btn verify-btn" id="verifyButton" onclick=quizz[12].verifySelection()>Check
+                            answer</button></div>
 
                         <a class="prevArrow" onclick="prev(-1)"> <i class="fa fa-angle-left" aria-hidden="true"></i>
                         </a>
@@ -29410,7 +29394,7 @@
 
 
                 </div>
-                <div style="text-align:center; position: relative;bottom: 30px;">
+                <div style="text-align:center; position: relative;bottom: 50px; padding: 20px;">
                     <span class="dot" onclick="currentSlide(1)"></span>
                     <span class="dot" onclick="currentSlide(2)"></span>
                     <span class="dot" onclick="currentSlide(3)"></span>
@@ -29420,6 +29404,7 @@
                     <span class="dot" onclick="currentSlide(7)"></span>
                     <span class="dot" onclick="currentSlide(8)"></span>
                     <span class="dot" onclick="currentSlide(9)"></span>
+                    <span class="dot" onclick="currentSlide(10)"></span>
                     <span class="dot" onclick="currentSlide(11)"></span>
                     <span class="dot" onclick="currentSlide(12)"></span>
                     <span class="dot" onclick="currentSlide(13)"></span>
