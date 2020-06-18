@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="css/dragula/dragula.css">
     <link rel="stylesheet" href="css/quizz.css">
-    <link rel="stylesheet" href="css/hover-CSS/hover-min.css">
     <link rel="stylesheet" href="css/bootstrapClasses.css">
+    <script src="https://kit.fontawesome.com/c9a98fd9da.js" crossorigin="anonymous"></script>
 
     <meta charset=utf-8 />
 
@@ -18,39 +18,40 @@
 
 <body>
     <!--COPY CODE FROM HERE-->
-    <div style="margin: 10px;">
-        <span>
-        Banque de mots :
-        </span>
-        <div class="keywords-bank" id="keywords">
+    <div style="font-family: Arial;">
+        <div style="margin: 10px 10px 10px 0;">
+            <h3>
+                Banque de mots :
+            </h3>
+            <div class="keywords-bank" id="keywords">
+
+            </div>
 
         </div>
 
-    </div>
+        <div class="drop-area-container">
+            <div style="display : flex ;flex-direction : row;">
+                <div style="display: flex; flex-direction: column;  margin: 0 10px 0 0; width: 50%;">
+                    <h3>Joue un rôle central</h3>
+                    <div id="dropArea0" class="drop-area"></div>
 
-    <div class="drop-area-container">
-        <div style="display: flex; flex-direction: column;  margin: 0 10px 0 0; width: 50%;">
-            <span>Joue un rôle central</span>
-            <div id="dropArea0" class="drop-area"></div>
+                </div>
+                <div style="display: flex; flex-direction: column; margin: 0 10px 0 0; width: 50%; ">
+
+                    <h3>Ne joue pas un rôle central</h3>
+                    <div id="dropArea1" class="drop-area"></div>
+
+                </div>
+            </div>
+            <div style="display : flex ;flex-direction : row; margin: 10px 10px 0px 0px;">
+                <button id="verificationBtn" style="margin-right: 10px;" class="btn" onclick=dndQuestion.verifyItems()><span>Vérifier </span></button>
+                <button id="solutionBtn" class="btn" onclick=dndQuestion.showSolution()><span>Voir la solution </span></button>
+
+            </div>
+
 
         </div>
-        <div style="display: flex; flex-direction: column; margin: 0 10px 0 0; width: 50%; ">
-
-            <span>Ne joue pas un rôle central</span>
-            <div id="dropArea1" class="drop-area"></div>
-
-        </div>
-
-
-
-
     </div>
-    <div style="display : flex ;flex-direction : row; margin: 0 10px 0 0;padding : 10px">
-        <button class="btn" onclick=dndQuestion.verifyItems()><span>Vérifier </span></button>
-        <button id="solutionButton" class="btn" onclick=dndQuestion.showSolution()><span>Voir la solution </span></button>
-
-    </div>
-
     <!--TO HERE-->
 
     <!--DONT FORGET ABOUT THE SCRIPTS-->

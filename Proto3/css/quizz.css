@@ -62,31 +62,28 @@
 }
 
 .feedback {
-    display: flex;
+    display: none;
     align-items: center;
     margin: 0 50px;
-    opacity: 0;
     transform: scaleY(-1);
-    transition: all 0.5s ease;
     word-break: break-word;
     text-align: start;
     border-radius: 2px;
     border: 1px solid #005380;
     background: #E6F7FF;
     color: #005380;
-    visibility: hidden;
+    transition: all 0.5s ease;
 }
 
 
 /*Feedback animation*/
 
 .feedbackReveal {
+    display: flex;
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 10px;
-    opacity: 1.0;
     transform: scaleY(1);
-    visibility: visible;
 }
 
 .feedback p {

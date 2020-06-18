@@ -73,7 +73,6 @@ window.onload = initQuizz();
 window.addEventListener('touchmove', function() {})
 
 function initQuizz() {
-
     dndQuestion = new DNDQuestion("keywords");
     dndQuestion.initQuestion(questionData);
 

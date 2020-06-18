@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box
+}
+
 .keywords-bank {
     border: 1px solid #ABABAB;
     display: flex;
@@ -11,47 +15,69 @@
 
 .drop-area-container {
     display: flex;
-    flex-direction: row;
-    margin: 10px;
+    flex-direction: column;
+    margin: 10px 10px 10px 0px;
     margin-top: 30px;
 }
 
-.bank-header {
-    margin: 10px;
-    padding: 10px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .keyword {
-    display: flex;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
     flex-wrap: wrap;
     height: 40px;
+    align-items: center;
     padding: 10px;
     margin: 5px;
     border: 1px solid #ABABAB;
-    border-radius: 2px !important;
+    border-radius: 2px;
     background-color: white;
     font-weight: bold;
     font-size: 14px;
-    cursor: pointer;
     transition: all 0.5s ease-in;
 }
 
-.feedbackImg {
-    height: 25px;
-    width: 25px;
-    vertical-align: middle;
-    margin: 10px;
+.keyword i {
+    margin-left: 10px;
+}
+
+.keyword .tooltiptext {
+    visibility: hidden;
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    text-align: start;
+    border-radius: 2px;
+    padding: 10px 10px 20px 10px;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    right: -100%;
+    margin-left: 60px;
+    opacity: 0;
+    transition: all 0.3s;
+    font-size: 14px;
+    font-weight: normal;
+    box-shadow: 0 0 5px 2px #888888;
+}
+
+.keyword .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
 }
 
 .correct {
-    border-radius: 10px;
+    border: 2.5px solid #ABABAB;
     color: green;
 }
 
 .incorrect {
-    border-radius: 10px;
     color: red;
 }
 
@@ -71,13 +97,6 @@
     transition: all 0.5s ease-in;
 }
 
-.header-hover {
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
-    border-radius: 10px;
-    transform: scale(1);
-    animation: pulse 1s infinite;
-}
-
 @keyframes pulse {
     00% {
         transform: scale(1);
@@ -91,4 +110,21 @@
         transform: scale(1);
         box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     }
+}
+
+#verificationBtn {
+    background: #9C001D;
+    border-radius: 2px;
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+}
+
+#solutionBtn {
+    border: 1px solid #9C001D;
+    background: #FFFFFF;
+    border-radius: 2px;
+    color: #9C001D;
+    padding: 10px 15px;
+    font-weight: bold;
 }

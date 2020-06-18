@@ -33,22 +33,8 @@ class DNDQuestion {
                         removeOnSpill: false,
                         accepts: (el, target, source, sibling) => {
 
+                            return true
 
-
-                            this.resetHoverContainers()
-
-                            if (target.id != "keywords") {
-                                target.classList.add("hovering");
-                                //var headerId = target.id.substring(target.id.length - 1)
-                                //var header = document.querySelector("#header" + headerId);
-                            } else if (target.id == "keywords") {
-                                target.classList.add("hovering");
-                                var headerId = target.id.substring(target.id.length - 1)
-                                    //var header = document.getElementsByClassName("bank-header")[0];
-                                    //header.classList.add("header-hover");
-
-                            }
-                            return true;
                         }
 
 
@@ -65,7 +51,6 @@ class DNDQuestion {
 
                 dndQuestion.resetAllContainers()
 
-                this.resetHoverContainers();
 
 
             },
@@ -74,27 +59,13 @@ class DNDQuestion {
             dropped: function(el) {
 
 
-                this.resetHoverContainers();
 
 
 
 
             },
 
-            resetHoverContainers: function() {
-                var currentDropAreas = document.getElementsByClassName("hovering");
-                while (currentDropAreas.length > 0) {
-                    currentDropAreas[0].classList.remove("hovering")
-                }
 
-
-                var currentHeaders = document.getElementsByClassName("header-hover");
-                while (currentHeaders.length > 0) {
-                    currentHeaders[0].classList.remove("header-hover")
-                }
-
-
-            }
 
 
 
@@ -126,18 +97,36 @@ class DNDQuestion {
         this.jsonData = data;
         //Create keywords dynamicly and append them to wrapping container
         for (var d = 0; d < Object.keys(data).length; d++) {
-            var newKeyword = document.createElement("div");
-            newKeyword.innerHTML = data[d].keyword;
-
-            newKeyword.classList.add("keyword")
-            newKeyword.id = "keyword" + d;
-
-            this.bankContainer.appendChild(newKeyword)
-            this.keywordsBank.push(newKeyword)
-
-
+            this.createKeyword(data[d].keyword, d, data[d].feedback)
 
         }
+    }
+    createKeyword(keyword, index, feedback) {
+        var newKeyword = document.createElement("div");
+        newKeyword.innerHTML = keyword;
+
+        newKeyword.classList.add("keyword")
+        newKeyword.id = "keyword" + index;
+
+
+        //Attach feedback icon to keyword
+
+        var feedBackIcon = document.createElement("i");
+        feedBackIcon.classList.add("fa");
+        newKeyword.appendChild(feedBackIcon);
+
+
+        //Attach tooltip to keyword 
+        var tooltip = document.createElement("span")
+        tooltip.classList.add("tooltiptext")
+        tooltip.innerHTML = feedback;
+        newKeyword.appendChild(tooltip);
+
+        this.bankContainer.appendChild(newKeyword)
+        this.keywordsBank.push(newKeyword)
+
+
+
     }
 
     //Remove feedback related classes and html nodes
@@ -152,8 +141,19 @@ class DNDQuestion {
                 //remove feedback image if there is any attached to the keyword div
 
 
-            if (this.keywordsBank[a].querySelector("img") != undefined) {
-                this.keywordsBank[a].removeChild(this.keywordsBank[a].querySelector("img"))
+            if (this.keywordsBank[a].querySelector("i") != undefined) {
+                this.keywordsBank[a].querySelector("i").classList = "fa"
+                this.keywordsBank[a].onmouseover = null;
+                //this.keywordsBank[a].querySelector("span").style.visibility = "hidden"
+
+                this.keywordsBank[a].addEventListener("mouseover", (event) => {
+                    var feedback = event.target.querySelector("span")
+                    if (feedback != null) {
+                        feedback.style.visibility = "hidden"
+                        feedback.style.opacity = "0"
+                    }
+                })
+
 
 
             }
@@ -182,61 +182,49 @@ class DNDQuestion {
                 //Ignore this keyword if its already correctly placed
                 if (currentKeyword.classList.contains("correct"))
                     continue;
+
                 //Reset the keyword feedback class and image 
                 //if it was misplaced by the user
-                else if (currentKeyword.classList.contains("incorrect")) {
-
-                    currentKeyword.classList.remove("incorrect")
-                    currentKeyword.removeChild(currentKeyword.querySelector("img"))
-
-                }
+                currentKeyword.classList.remove("incorrect")
 
 
-
-
-                //Append feedback img inside keyword
-                var feedBackImg = document.createElement("img");
-                feedBackImg.classList.add("feedbackImg");
-                currentKeyword.parentNode.style.width = "250px"
-                currentKeyword.appendChild(feedBackImg);
-
+                //Reset feedback icon classes
+                var feedBackIcon = currentKeyword.querySelector("i");
+                feedBackIcon.classList = "fa"
 
                 //Verify according to the json data if the keyword is correctly classified in
                 // its drop area
                 var keywordId = Number(currentKeyword.id.substring(currentKeyword.id.length - 1))
 
-
                 if (this.jsonData[keywordId].classification == Number(dropAreas[a].id.substring(dropAreas[a].id.length - 1))) {
-
                     currentKeyword.classList.add("correct")
-                    feedBackImg.src = "./img/tick.png"
-
-
+                    feedBackIcon.classList.add("fa-check-circle-o")
 
                 } else {
-
-
                     currentKeyword.classList.add("incorrect")
-                    feedBackImg.src = "./img/cross.png"
-
+                    feedBackIcon.classList.add("fa-times-circle-o")
                 }
 
+                currentKeyword.addEventListener("mouseover", (event) => {
+                    var feedback = event.target.querySelector("span")
+                    if (feedback != null) {
+                        feedback.style.visibility = "visible"
+                        feedback.style.opacity = "1"
+                    }
+                })
+
+
+                currentKeyword.addEventListener("mouseleave", (event) => {
+                    var feedback = event.target.querySelector("span")
+                    if (feedback != null) {
+                        feedback.style.visibility = "hidden"
+                        feedback.style.opacity = "0"
+                    }
+                })
 
             }
 
-
-
-
-
-
-
-
-
-
         }
-
-
-
     }
 
 
