@@ -38,7 +38,7 @@
 }
 
 .keyword {
-    display: inline;
+    display: inline-block;
     max-height: 50px;
     position: relative;
     padding: 15px 10px;
@@ -55,6 +55,7 @@
 }
 
 .keyword i {
+    font-size: 1.25rem;
     margin-left: 10px;
 }
 

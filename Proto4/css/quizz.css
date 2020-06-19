@@ -55,7 +55,8 @@
 /*Feedback icon*/
 
 .choices-list i {
-    margin-left: 10px;
+    margin: 10px 0 0 10px;
+    font-size: 1.5rem;
 }
 
 .selected {
