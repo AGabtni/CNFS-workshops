@@ -1,47 +1,61 @@
-.keywords-bank {
-    background-color: cornflowerblue;
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 200px;
-}
-
-.drop-area-container {
-    background-color: #B1CAF6;
-    padding: 20px;
-    bottom: 50%;
-    margin: 20px;
-    line-height: 60px;
-}
-
 .bank-header {
-    margin: 10px;
     display: flex;
     flex-wrap: wrap;
 }
 
-.keywords-bank #keywords {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    margin: 10px;
-    padding: 20px;
+.keywords-bank {
+    margin: 20px 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 70%;
     min-height: 150px;
-    width: 100%;
-    align-content: start;
-    justify-content: center;
+    align-items: flex-start;
+    border: 1px solid #ABABAB;
+}
+
+.drop-area-container {
+    margin: 20px 0;
+    padding: 20px;
+    bottom: 50%;
+    line-height: 60px;
+    justify-items: center;
+    border: 1px solid #ABABAB;
+}
+
+.drop-area {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    vertical-align: middle;
+    width: 250px;
+    min-height: 50px;
+    padding: 5px;
+    margin: 5px 10px;
+    border: 1px dashed #ABABAB;
+    transition: all 0.5s ease-in;
 }
 
 .keyword {
     display: inline;
-    padding: 10px;
-    margin: 10px;
+    max-height: 50px;
+    position: relative;
+    padding: 15px 10px;
+    margin: 0px 10px;
     text-align: center;
-    border-radius: 10px;
+    border: 1px solid #ABABAB;
+    border-radius: 2px;
     background-color: white;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 16px;
     transition: all 0.5s ease-in;
-    position: relative;
+}
+
+.keyword i {
+    margin-left: 10px;
 }
 
 .feedbackImg {
@@ -52,60 +66,29 @@
 }
 
 .correct {
-    border-radius: 10px;
+    border: 2.5px solid #ABABAB;
     color: green;
 }
 
 .incorrect {
-    border-radius: 10px;
     color: red;
 }
 
-.drop-area {
-    display: inline-block;
-    background-color: rgba(255, 255, 255, 0.7);
-    text-align: center;
-    vertical-align: middle;
-    width: 250px;
-    height: 50px;
-    transition: all 0.5s ease-in;
-}
-
-.activity-button {
-    border-radius: 4px;
-    background-color: #283b5e;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 15px;
-    padding: 20px;
-    width: 150px;
-    transition: all 0.5s;
+.activity-btn {
+    font-weight: bold!important;
+    border-radius: 2px;
+    padding: 10px 15px;
     cursor: pointer;
-    margin: 5px;
+    margin-right: 5px;
 }
 
-.activity-button span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
+#verificationButton {
+    background: #9C001D;
+    color: white;
 }
 
-.activity-button span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-}
-
-.activity-button:hover span {
-    padding-right: 25px;
-}
-
-.activity-button:hover span:after {
-    opacity: 1;
-    right: 0;
+#solutionButton {
+    border: 1px solid #9C001D;
+    color: #9C001D;
+    background: #FFFFFF;
 }

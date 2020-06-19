@@ -6,9 +6,10 @@
 
 
     <!--DONT FORGET ABOUT THE CSS-->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="css/dragula/dragula.css">
-    <link rel="stylesheet" href="css/quizz.css">
+    <link rel="stylesheet" href="./css/dragula/dragula.css">
+    <link rel="stylesheet" href="./css/quizz.css">
+    <link rel="stylesheet" href="./css/bootstrapClasses.css">
+    <script src="https://kit.fontawesome.com/c9a98fd9da.js" crossorigin="anonymous"></script>
 
     <meta charset=utf-8 />
 
@@ -17,41 +18,44 @@
 <body>
     <!--COPY CODE FROM HERE-->
 
-
-    <div class="keywords-bank">
-        <div class="bank-header">
+    <div style="margin-top: 20px; font-family: Arial, Helvetica, sans-serif;">
+        <h3 class="bank-header">
             Banque de mots :
-        </div>
-        <div id="keywords">
+        </h3>
+
+
+        <div class="keywords-bank" id="keywords">
 
         </div>
 
+
+
+
+        <div class="drop-area-container">
+
+
+            La collaboration interprofessionnelle (CIP) ou la pratique en collaboration interprofessionnelle (PCI) consiste en un processus
+            <div class="drop-area" id="dropArea0"></div> de communication et de prise de décision, qui permet aux
+            <div class="drop-area" id="dropArea1"></div> et aux
+            <div class="drop-area" id="dropArea2"></div> distinctes et
+            <div class="drop-area" id="dropArea3">
+            </div> des fournisseurs de soins d’influencer, de façon
+            <div class="drop-area" id="dropArea4"></div>, les
+            <div class="drop-area" id="dropArea5"></div> prodigués au patient ou client (Way, Jones et Busing, 2000, traduction libre)
+
+
+
+
+        </div>
+        <div style="margin: 20px 10px;">
+            <button id="verificationButton" class="btn activity-btn" onclick=dndQuestion.verifyItems()>Vérifier
+           </button>
+
+            <button id="solutionButton" class="btn activity-btn" onclick=dndQuestion.showSolution()>Voir la solution
+            </button>
+
+        </div>
     </div>
-
-
-
-    <div class="drop-area-container">
-
-
-        La collaboration interprofessionnelle (CIP) ou la pratique en collaboration interprofessionnelle (PCI) consiste en un processus
-        <div class="drop-area" id="dropArea0"></div> de communication et de prise de décision, qui permet aux
-        <div class="drop-area" id="dropArea1"></div> et aux
-        <div class="drop-area" id="dropArea2"></div> distinctes et
-        <div class="drop-area" id="dropArea3">
-        </div> des fournisseurs de soins d’influencer, de façon
-        <div class="drop-area" id="dropArea4"></div>, les
-        <div class="drop-area" id="dropArea5"></div> prodigués au patient ou client (Way, Jones et Busing, 2000, traduction libre)
-
-
-        <div style="display: flex; flex-direction: row; justify-content: flex-end;">
-            <button id="verificationButton" class="activity-button" onclick=dndQuestion.verifyItems()><span>Vérifier </span></button>
-
-            <button id="solutionButton" class="activity-button" onclick=dndQuestion.showSolution()><span>Réponse </span></button>
-
-        </div>
-
-    </div>
-
     <!--TO HERE-->
 
     <!--DONT FORGET ABOUT THE SCRIPTS-->

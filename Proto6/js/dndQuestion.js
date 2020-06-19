@@ -115,17 +115,33 @@ class DNDQuestion {
         this.jsonData = data;
         //Create keywords dynamicly and append them to wrapping container
         for (var d = 0; d < Object.keys(data).length; d++) {
-            var newKeyword = document.createElement("span");
-            newKeyword.innerHTML = data[d].keyword;
-            newKeyword.classList.add("keyword")
-            newKeyword.id = "keyword" + d;
-
-            this.bankContainer.appendChild(newKeyword)
-            this.keywordsBank.push(newKeyword)
-
-
+            this.createKeyword(data[d].keyword, d)
 
         }
+    }
+
+    createKeyword(keyword, index) {
+        var newKeyword = document.createElement("div");
+        newKeyword.innerHTML = keyword;
+
+        newKeyword.classList.add("keyword")
+        newKeyword.id = "keyword" + index;
+
+
+        //Attach feedback icon to keyword
+
+        var feedBackIcon = document.createElement("i");
+        feedBackIcon.classList.add("fa");
+        newKeyword.appendChild(feedBackIcon);
+
+
+
+
+        this.bankContainer.appendChild(newKeyword)
+        this.keywordsBank.push(newKeyword)
+
+
+
     }
 
     //Remove feedback related classes and html nodes
@@ -137,14 +153,11 @@ class DNDQuestion {
 
             this.keywordsBank[a].classList.remove("correct")
             this.keywordsBank[a].classList.remove("incorrect")
-                //remove feedback image if there is any attached to the keyword div
 
+            //remove feedback icon if there is any attached to the keyword div
+            if (this.keywordsBank[a].querySelector("i") != undefined)
+                this.keywordsBank[a].querySelector("i").classList = "fa"
 
-            if (this.keywordsBank[a].querySelector("img") != undefined) {
-                this.keywordsBank[a].removeChild(this.keywordsBank[a].querySelector("img"))
-
-
-            }
 
 
         }
@@ -174,7 +187,6 @@ class DNDQuestion {
             else if (keyword.classList.contains("incorrect")) {
 
                 keyword.classList.remove("incorrect")
-                keyword.removeChild(keyword.querySelector("img"))
 
             }
 
@@ -182,11 +194,10 @@ class DNDQuestion {
 
 
 
-            //Append feedback img inside keyword
-            var feedBackImg = document.createElement("img");
-            feedBackImg.classList.add("feedbackImg");
-            keyword.parentNode.style.width = "250px"
-            keyword.appendChild(feedBackImg)
+
+            //Reset feedback icon classes
+            var feedBackIcon = keyword.querySelector("i");
+            feedBackIcon.classList = "fa"
 
             //Verify in the json data if the keyword is correctly classified in
             // its drop area
@@ -196,10 +207,9 @@ class DNDQuestion {
             if (this.jsonData[keywordId].classification == Number(dropAreas[a].id.substring(dropAreas[a].id.length - 1))) {
 
                 keyword.classList.add("correct")
-                feedBackImg.src = "./img/tick.png"
+                feedBackIcon.classList.add("fa-check-circle-o")
 
                 // Adjust the drop container to fit the the dragged keyword 
-                // for a cool effect (dont get excited its not that cool)
                 var xOffset = 30;
                 var adjustedWidth = Math.ceil(keyword.parentNode.clientWidth * (keyword.offsetWidth / keyword.parentNode.clientWidth)) + xOffset;
                 keyword.parentNode.style.width = adjustedWidth + "px";
@@ -208,7 +218,7 @@ class DNDQuestion {
 
 
                 keyword.classList.add("incorrect")
-                feedBackImg.src = "./img/cross.png"
+                feedBackIcon.classList.add("fa-times-circle-o")
 
             }
 

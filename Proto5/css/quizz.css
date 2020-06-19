@@ -114,17 +114,17 @@
 
 #verificationBtn {
     background: #9C001D;
-    border-radius: 2px;
     color: white;
+    border-radius: 2px;
     padding: 10px 15px;
     font-weight: bold;
 }
 
 #solutionBtn {
     border: 1px solid #9C001D;
+    color: #9C001D;
     background: #FFFFFF;
     border-radius: 2px;
-    color: #9C001D;
     padding: 10px 15px;
     font-weight: bold;
 }

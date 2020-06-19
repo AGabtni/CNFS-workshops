@@ -101,6 +101,9 @@ class DNDQuestion {
 
         }
     }
+
+    //Create a keyboard (with a tool tip text feedback)
+    //And append it to bank container
     createKeyword(keyword, index, feedback) {
         var newKeyword = document.createElement("div");
         newKeyword.innerHTML = keyword;
@@ -141,23 +144,19 @@ class DNDQuestion {
                 //remove feedback image if there is any attached to the keyword div
 
 
-            if (this.keywordsBank[a].querySelector("i") != undefined) {
+            if (this.keywordsBank[a].querySelector("i") != undefined)
                 this.keywordsBank[a].querySelector("i").classList = "fa"
-                this.keywordsBank[a].onmouseover = null;
-                //this.keywordsBank[a].querySelector("span").style.visibility = "hidden"
 
-                this.keywordsBank[a].addEventListener("mouseover", (event) => {
-                    var feedback = event.target.querySelector("span")
-                    if (feedback != null) {
-                        feedback.style.visibility = "hidden"
-                        feedback.style.opacity = "0"
-                    }
-                })
+            this.keywordsBank[a].onmouseover = null;
+            //this.keywordsBank[a].querySelector("span").style.visibility = "hidden"
 
-
-
-            }
-
+            this.keywordsBank[a].addEventListener("mouseover", (event) => {
+                var feedback = event.target.querySelector("span")
+                if (feedback != null) {
+                    feedback.style.visibility = "hidden"
+                    feedback.style.opacity = "0"
+                }
+            })
 
         }
     }
