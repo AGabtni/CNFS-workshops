@@ -1,37 +1,48 @@
 class Question {
 
 
+
+
+    // html list elements found 
+    // in the parent container
+
+    //Array for the selected choices 
+    // by the user
+
+    // Arrays for  the correct & incorrect
+    // choices selected fills up 
+    // after hitting the verify button
+
+
     //Creates a question object .
     //  @targetHtmlId : parent container of the question 
-    //  @choices : array with the values of the question choices
-    //  @solutions : array with the values of the question solutions 
-    constructor(targetHtmlId, choices, data) {
+    //  @data : json object containing the question data (choices, solutions, feedback, ..)
 
+    constructor(targetHtmlId, data) {
         this.parseQuizzData(data)
-        this.choices = choices;
         this.parentContainer = document.getElementById(targetHtmlId);
         this.choiceListElements = this.parentContainer.querySelectorAll("li");
-        //this.titleElement = this.parentContainer.getElementsByClassName("header")[0];
+        this.titleElement = this.parentContainer.getElementsByClassName("header")[0];
         this.feedbackElement = this.parentContainer.getElementsByClassName("feedback")[0];
         this.statementElement = this.parentContainer.getElementsByClassName("statement")[0];
+
+
         this.selectedChoices = [];
+
         this.incorrectChoices = [];
         this.correctChoices = [];
-
     }
 
 
 
     //Format quizz data  :
-
-
     parseQuizzData(data) {
 
 
         this.solutions = data.solution;
         this.statement = data.statement;
         this.feedback = data.feedback;
-
+        this.choices = data.choices;
 
 
 
@@ -45,15 +56,25 @@ class Question {
 
         for (var i = 0; i < this.choiceListElements.length; i++) {
 
-            this.choiceListElements[i].textContent = this.choices[i];
-            this.choiceListElements[i].parentNode.querySelectorAll("img")[0].style.transition = "all 0.2s ease-in"
+            this.choiceListElements[i].querySelector("span").innerHTML = this.choices[i];
+            this.choiceListElements[i].querySelector("input").checked = false;
+            if (this.solutions.length == 1)
+                this.choiceListElements[i].querySelector("input").type = "radio"
+
 
 
         }
-
+        this.parentContainer.querySelector("ul").style.transform = "translateY(" + -this.feedbackElement.style.height + "px)"
         this.feedbackElement.querySelectorAll("p")[0].innerHTML = this.feedback;
         this.statementElement.querySelectorAll("p")[0].innerHTML = this.statement;
 
+
+
+        this.verifyButton = this.parentContainer.querySelector("#verifyButton");
+        /*
+                if (this.verifyButton != undefined)
+                    this.verifyButton.setAttribute("disabled", "disabled");
+                */
     }
 
 
@@ -81,57 +102,83 @@ class Question {
                 }
             }
 
-            if (!foundChoice)
+            if (!foundChoice) {
+                //Since radio buttons are used if only one of the choices
+                // Is the solution empty the selectedChoiced array when it 
+                // Selecting another/this element
+                if (this.solutions.length == 1)
+                    this.selectedChoices = []
                 this.selectedChoices.push(id);
-
+            }
         } else {
 
             this.selectedChoices.push(id);
         }
         this.updateQuizzList()
+
+        //If there is no verfication btn 
+        // in the slide/question verify the
+        // answers when a choice is selected
+        if (this.verifyButton == undefined)
+            this.verifySelection();
     }
 
 
     //  update view when new items
-    // are selected or verification button is hit
+    //  are selected or verification button is hit
     updateQuizzList() {
 
-        //Reset all elements related to the question
+        //Reset all modifications 
+        // applied to the elements related to this question
         for (var c = 0; c < this.choiceListElements.length; c++) {
 
             this.choiceListElements[c].classList.remove("selected")
-            this.choiceListElements[c].classList.remove("incorrect")
-            this.choiceListElements[c].classList.remove("correct")
-            this.choiceListElements[c].parentNode.querySelectorAll("img")[0].style.opacity = "0"
+            this.choiceListElements[c].parentNode.querySelectorAll("i")[0].style.opacity = "0"
+            this.choiceListElements[c].parentNode.querySelectorAll("i")[0].classList.remove("fa-times-circle-o")
+            this.choiceListElements[c].parentNode.querySelectorAll("i")[0].classList.remove("fa-check-circle-o")
 
-            this.feedbackElement.style.opacity = 0;
+            this.choiceListElements[c].querySelector("input").checked = false;
 
+            this.feedbackElement.classList.remove("feedbackReveal");
+            this.parentContainer.querySelector("ul").style.transform = "translateY(" + -this.feedbackElement.style.height + "px)";
+            /*
+            if (this.verifyButton != undefined)
+                this.verifyButton.removeAttribute("disabled");
 
+            */
         }
-        for (var c = 0; c < this.selectedChoices.length; c++) {
 
-            this.choiceListElements[this.selectedChoices[c]].classList.add("selected")
-            this.choiceListElements[this.selectedChoices[c]].parentNode.querySelectorAll("img")[0].src = "./img/select.png";
-            this.choiceListElements[this.selectedChoices[c]].parentNode.querySelectorAll("img")[0].style.opacity = "1"
 
+        if (this.selectedChoices.length > 0) {
+            for (var c = 0; c < this.selectedChoices.length; c++) {
+                //Check the input button when one of the choices is selected
+                this.choiceListElements[this.selectedChoices[c]].querySelector("input").checked = true;
+
+            }
         }
 
         for (var c = 0; c < this.incorrectChoices.length; c++) {
-
-            this.choiceListElements[this.incorrectChoices[c]].classList.add("incorrect")
-
-            this.choiceListElements[this.incorrectChoices[c]].parentNode.querySelectorAll("img")[0].src = "./img/cross.png";
-            this.choiceListElements[this.incorrectChoices[c]].parentNode.querySelectorAll("img")[0].style.opacity = "1"
+            //Add a feedback icon next to the incorrect choices
+            this.choiceListElements[this.incorrectChoices[c]].parentNode.querySelectorAll("i")[0].style.opacity = "1"
+            this.choiceListElements[this.incorrectChoices[c]].parentNode.querySelectorAll("i")[0].classList.add("fa-times-circle-o")
+            this.choiceListElements[this.incorrectChoices[c]].parentNode.querySelectorAll("i")[0].style.color = "#CC2200";
 
         }
         for (var c = 0; c < this.correctChoices.length; c++) {
 
-            this.choiceListElements[this.correctChoices[c]].classList.add("correct")
+            //Add a feedback icon next to the correct choices
+            this.choiceListElements[this.correctChoices[c]].parentNode.querySelectorAll("i")[0].style.opacity = "1"
+            this.choiceListElements[this.correctChoices[c]].parentNode.querySelectorAll("i")[0].classList.add("fa-check-circle-o")
+            this.choiceListElements[this.correctChoices[c]].parentNode.querySelectorAll("i")[0].style.color = "#408000";
 
-            this.choiceListElements[this.correctChoices[c]].parentNode.querySelectorAll("img")[0].src = "./img/tick.png";
-            this.choiceListElements[this.correctChoices[c]].parentNode.querySelectorAll("img")[0].style.opacity = "1"
+            this.choiceListElements[this.correctChoices[c]].classList.add("selected")
 
-            this.feedbackElement.style.opacity = 1.0;
+            //Reveal the feedback after revealing the correct choices
+            if (this.feedbackElement.querySelectorAll("p")[0].innerHTML != "") {
+
+                this.feedbackElement.classList.add("feedbackReveal");
+                this.parentContainer.querySelector("ul").style.transform = "translateY(0px)"
+            }
         }
 
 
@@ -141,18 +188,6 @@ class Question {
     // choices by user
     verifySelection() {
 
-        // Just an option
-        // to reset the quizz if there is no inputs
-        /*
-        if (this.selectedChoices.length == 0) {
-            this.updateQuizzList();
-            return;
-        }
-        */
-
-        // Filter the selected choices
-        // keep the correct one in the array correctChoices array
-        // and the incorrect ones in incorrectChoices array
         for (var s = 0; s < this.selectedChoices.length; s++) {
 
 
@@ -185,7 +220,7 @@ class Question {
             }
         }
 
-
+        this.statementElement.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
         this.updateQuizzList()
 
         //  empty selected and incorrect
@@ -196,8 +231,11 @@ class Question {
         this.correctChoices = [];
 
 
-        //Move to next slide after verification 
-        var slideIndex = this.parentContainer.id.substring(this.parentContainer.id.length - 1) - 1;
+
+        /*
+        if (this.verifyButton != undefined)
+            this.verifyButton.setAttribute("disabled", "disabled");
+        */
     }
 
     // return true if the selected 

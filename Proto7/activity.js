@@ -69,7 +69,7 @@ function initQuizz() {
     //create question here
 
     for (var q = 1; q < Object.keys(quizzData).length + 1; q++) {
-        var newQuestion = new Question("slide_" + q, quizzData[q - 1].choices, quizzData[q - 1])
+        var newQuestion = new Question("slide_" + q, quizzData[q - 1])
         var newInteractiveVideo = new InteractiveVideo(newQuestion);
         quizz.push(newQuestion);
         interactiveVideos.push(newInteractiveVideo);
@@ -77,6 +77,12 @@ function initQuizz() {
 
     }
 
+
+    quizz.forEach((element, index) => {
+        element.updateQuizzList();
+        element.titleElement.textContent = "Situation  " + (index + 1) + "/" + quizz.length;
+
+    });
 
 
 
