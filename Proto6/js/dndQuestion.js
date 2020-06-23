@@ -57,7 +57,6 @@ class DNDQuestion {
 
                 dndQuestion.resetAllContainers()
 
-                el.parentNode.style.width = "250px"
 
 
             },
@@ -161,6 +160,8 @@ class DNDQuestion {
 
 
         }
+
+
     }
 
 
@@ -212,7 +213,7 @@ class DNDQuestion {
                 // Adjust the drop container to fit the the dragged keyword 
                 var xOffset = 30;
                 var adjustedWidth = Math.ceil(keyword.parentNode.clientWidth * (keyword.offsetWidth / keyword.parentNode.clientWidth)) + xOffset;
-                keyword.parentNode.style.width = adjustedWidth + "px";
+                //keyword.parentNode.style.width = adjustedWidth + "px";
 
             } else {
 

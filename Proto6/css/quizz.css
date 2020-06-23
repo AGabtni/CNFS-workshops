@@ -25,25 +25,39 @@
 }
 
 .drop-area {
-    display: inline-block;
+    display: inline-flex;
     background-color: rgba(255, 255, 255, 0.7);
     text-align: center;
-    vertical-align: middle;
-    width: 250px;
-    min-height: 50px;
+    min-width: 150px;
+    min-height: 30px;
     padding: 5px;
-    margin: 5px 10px;
+    margin: 5px;
     border: 1px dashed #ABABAB;
     transition: all 0.5s ease-in;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.full {
+    border: none;
+    padding: 0;
+    min-width: 0px !important;
+    min-height: 0px;
+}
+
+.full .keyword {
+    margin: 0px;
+    padding: 5px;
 }
 
 .keyword {
     display: inline-block;
     max-height: 50px;
     position: relative;
-    padding: 15px 10px;
+    padding: 10px 5px;
     margin: 0px 10px;
-    text-align: center;
     border: 1px solid #ABABAB;
     border-radius: 2px;
     background-color: white;
@@ -57,13 +71,6 @@
 .keyword i {
     font-size: 1.25rem;
     margin-left: 10px;
-}
-
-.feedbackImg {
-    height: 25px;
-    width: 25px;
-    vertical-align: middle;
-    margin: 10px;
 }
 
 .correct {
