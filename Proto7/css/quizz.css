@@ -49,7 +49,7 @@
 
 .choices-list li span {
     font-weight: bold;
-    text-align: center;
+    text-align: start;
     margin: auto 14px auto;
 }
 
