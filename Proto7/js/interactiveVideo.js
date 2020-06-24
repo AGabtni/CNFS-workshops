@@ -12,7 +12,7 @@ class InteractiveVideo {
 
         this.videoHeader = this.quizzQuestion.parentContainer.querySelectorAll("h3")[0];
         this.videoHeader.innerHTML = "Étape " + this.quizzQuestion.parentContainer.id.substring(this.quizzQuestion.parentContainer.id.length - 1);
-        this.videoComponent = this.quizzQuestion.parentContainer.querySelectorAll("div")[0];
+        this.videoComponent = this.quizzQuestion.parentContainer.querySelectorAll(".interactive-video")[0];
         this.questionComponent = this.quizzQuestion.parentContainer.getElementsByClassName("questionContainer")[0];
 
 

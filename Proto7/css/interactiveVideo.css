@@ -8,6 +8,8 @@
     transition: all 0.2s ease-in;
     border: 5px solid black;
     border-radius: 20px !important;
+    display: flex;
+    justify-items: center;
 }
 
 .videoHeader {

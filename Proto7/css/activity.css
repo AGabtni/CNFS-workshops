@@ -1,3 +1,11 @@
+/* Slideshow container */
+
+.slideshow-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
 .slide {
     display: flex;
     flex: 1;
@@ -12,17 +20,66 @@ img {
 }
 
 
-/* Slideshow container */
+/* The dots/bullets/indicators */
 
-.slideshow-container {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    border: 1px solid #9C001D;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
 }
 
-#interactiveVideo {
-    display: flex;
-    justify-content: center;
-    margin: 10px;
-    transition: all 0.5s ease;
+.active {
+    background-color: #9C001D;
+}
+
+.dot:hover {
+    background-color: #ae7375;
+}
+
+
+/* slide animation */
+
+.moved-left {
+    position: relative;
+    animation: animateleft 0.5s
+}
+
+@keyframes animateleft {
+    0% {
+        left: -300px;
+        opacity: 0
+    }
+    70% {
+        left: 0;
+        opacity: 0.4
+    }
+    100% {
+        left: 0;
+        opacity: 1
+    }
+}
+
+.moved-right {
+    position: relative;
+    animation: animateright 0.5s
+}
+
+@keyframes animateright {
+    0% {
+        right: -300px;
+        opacity: 0
+    }
+    70% {
+        right: 0;
+        opacity: 0.4
+    }
+    100% {
+        right: 0;
+        opacity: 1
+    }
 }
