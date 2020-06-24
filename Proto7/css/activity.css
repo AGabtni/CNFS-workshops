@@ -23,22 +23,39 @@ img {
 /* The dots/bullets/indicators */
 
 .dot {
+    position: relative;
     cursor: pointer;
-    height: 15px;
-    width: 15px;
+    height: 50px;
+    width: 75px;
     margin: 0 2px;
-    border: 1px solid #9C001D;
-    border-radius: 50%;
+    border-radius: 2px;
+    border: 1.5px solid #9C001D;
     display: inline-block;
+}
+
+.dot div {
+    display: flex;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    z-index: 1;
     transition: background-color 0.6s ease;
 }
 
-.active {
-    background-color: #9C001D;
+.dot span {
+    background-size: cover;
+    display: flex;
+    width: inherit;
+    height: inherit;
 }
 
-.dot:hover {
-    background-color: #ae7375;
+.active div {
+    background-color: rgba(156, 0, 29, 0.5);
+}
+
+.dot:hover div {
+    background-color: rgba(174, 115, 117, 0.3);
 }
 
 

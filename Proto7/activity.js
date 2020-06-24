@@ -104,7 +104,7 @@ function resetQuestions() {
 
 
 
-
+//Slider related functions : 
 
 // Next/previous controls
 function next(n) {
@@ -173,6 +173,8 @@ function showSlides(n) {
     }
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
+        dots[i].querySelector("span").style.backgroundImage = "url('./thumbnails/thumbnail_" + i + ".png')";
+
     }
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
