@@ -20,7 +20,7 @@
     align-items: start;
     list-style: none;
     padding: 0;
-    margin: 0 50px 0 50px;
+    margin: 0 50px;
     transition: all 0.5s ease-in;
 }
 
@@ -35,7 +35,6 @@
 .choices-list li {
     display: flex;
     width: 100%;
-    margin: 0 10px;
     text-align: center;
     align-items: center;
     justify-content: start;
@@ -94,7 +93,7 @@
 }
 
 .verify-btn {
-    margin: 0 0 10px 10px;
+    margin: 0 0 10px 0px;
     color: white!important;
     border-radius: 2px;
     background-color: #9C001D;

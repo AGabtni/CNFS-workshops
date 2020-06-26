@@ -230,6 +230,17 @@ class Question {
         this.incorrectChoices = [];
         this.correctChoices = [];
 
+        var associatedThumbnail = document.getElementsByClassName("dot")[slideIndex - 1];
+        if (associatedThumbnail.querySelector("i") == undefined) {
+            associatedThumbnail.querySelector("div").style.backgroundColor = "rgba(0,0,0,0.75)";
+
+            var icon = document.createElement("i");
+            icon.classList.add("fa", "fa-check-circle-o");
+
+
+            associatedThumbnail.querySelector("div").append(icon)
+            associatedThumbnail.onclick = "";
+        }
 
 
         /*

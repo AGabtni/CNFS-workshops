@@ -15,10 +15,6 @@
     margin-bottom: 50px;
 }
 
-img {
-    vertical-align: middle;
-}
-
 
 /* The dots/bullets/indicators */
 
@@ -41,6 +37,13 @@ img {
     top: 0;
     z-index: 1;
     transition: background-color 0.6s ease;
+    align-items: center;
+    justify-content: center;
+}
+
+.dot div i {
+    font-size: 2rem;
+    color: white;
 }
 
 .dot span {
@@ -51,11 +54,7 @@ img {
 }
 
 .active div {
-    background-color: rgba(156, 0, 29, 0.5);
-}
-
-.dot:hover div {
-    background-color: rgba(174, 115, 117, 0.3);
+    background-color: rgba(156, 0, 29, 0.75);
 }
 
 
